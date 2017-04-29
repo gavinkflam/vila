@@ -1,0 +1,2 @@
+export SHELL=/bin/zsh
+
