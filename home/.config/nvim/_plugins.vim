@@ -13,6 +13,9 @@ Plug 'majutsushi/tagbar'
 " Run your favorite search tool from Vim, with an enhanced results list
 Plug 'mileszs/ack.vim'
 
+" Mustache and handlebars mode for vim
+Plug 'mustache/vim-mustache-handlebars'
+
 " Tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 
@@ -25,6 +28,9 @@ Plug 'vim-airline/vim-airline'
 " Vim Space Controller
 Plug 'vim-ctrlspace/vim-ctrlspace'
 
-" Syntax checking hacks for vim
-Plug 'vim-syntastic/syntastic'
+" VimRubySupport
+Plug 'vim-ruby/vim-ruby'
+
+" Asynchronous Lint Engine
+Plug 'w0rp/ale'
 

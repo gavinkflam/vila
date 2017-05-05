@@ -10,6 +10,17 @@ if executable('ag')
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ALE
+
+" Status line format
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+
+" Echo message format
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline
 set laststatus=2
 
@@ -25,18 +36,6 @@ let g:CtrlSpaceSaveWorkspaceOnExit = 1
 
 " Workaround for Vim-CtrlSpace 
 let g:CtrlSpaceDefaultMappingKey = "<C-space> "
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" syntastic
-" Recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
