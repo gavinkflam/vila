@@ -22,7 +22,13 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline
+
+" Display statusline all the time
 set laststatus=2
+
+" Smarter tab line
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim-CtrlSpace

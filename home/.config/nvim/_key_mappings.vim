@@ -23,18 +23,8 @@ vnoremap X "_X
 " Do not overwrite default register when pasting
 xnoremap p "_dP
 
-" Tab navigation
-nnoremap <A-1> <Esc>1gt
-nnoremap <A-2> <Esc>2gt
-nnoremap <A-3> <Esc>3gt
-nnoremap <A-4> <Esc>4gt
-nnoremap <A-5> <Esc>5gt
-nnoremap <A-6> <Esc>6gt
-nnoremap <A-7> <Esc>7gt
-nnoremap <A-8> <Esc>8gt
-nnoremap <A-9> <Esc>9gt
-nnoremap <A-0> <Esc>10gt
-
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Buffer navigation
 nnoremap H gT
 nnoremap L gt
 nnoremap J :tabclose<CR>
