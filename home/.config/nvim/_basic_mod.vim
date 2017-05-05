@@ -16,6 +16,12 @@ set tw=80
 " Display line number
 set number
 
+" Disable hidden buffer
+set nohidden
+
+" Highlight current line
+set cursorline
+
 " Get back Vim-CtrlSpace
 nnoremap <silent><C-space> :CtrlSpace<CR>
 
