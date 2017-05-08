@@ -32,7 +32,7 @@ nnoremap L :bnext<CR>
 nnoremap T :enew<CR>
 
 " Close the current buffer and move to the previous one
-nnoremap Q :bp <BAR> bd #<CR>
+nnoremap Q :bdelete<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keys for custom commands

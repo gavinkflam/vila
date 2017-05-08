@@ -22,6 +22,9 @@ Plug 'mustache/vim-mustache-handlebars'
 " Tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 
+" Run async shell commands in Vim 8.0 / NeoVim and output to quickfix window
+Plug 'skywind3000/asyncrun.vim'
+
 " fugitive.vim: a Git wrapper
 Plug 'tpope/vim-fugitive'
 

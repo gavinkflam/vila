@@ -10,6 +10,15 @@ if executable('ag')
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" asyncrun.vim
+
+" Asyncrun fugitive commands
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
+
+" Display asyncrun status in airline status bar
+let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE
 
 " Status line format

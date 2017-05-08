@@ -25,3 +25,5 @@ set cursorline
 " Configure default register with system clipboard
 set clipboard=unnamed,unnamedplus
 
+" Buffer settings
+set switchbuf=useopen
