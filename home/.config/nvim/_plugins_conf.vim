@@ -31,19 +31,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim-CtrlSpace
-set nocompatible
-set hidden
-
-" Automatically save workspace
-let g:CtrlSpaceLoadLastWorkspaceOnStart = 1
-let g:CtrlSpaceSaveWorkspaceOnSwitch = 1
-let g:CtrlSpaceSaveWorkspaceOnExit = 1
-
-" Workaround for Vim-CtrlSpace 
-let g:CtrlSpaceDefaultMappingKey = "<C-space> "
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 let NERDTreeShowHidden=1
 

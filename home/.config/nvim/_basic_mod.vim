@@ -2,6 +2,9 @@
 " basic.vim <https://github.com/amix/vimrc>
 runtime _basic.vim
 
+" Allow hidden buffer
+set hidden
+
 " Height of the command bar
 set cmdheight=1
 
@@ -16,14 +19,8 @@ set tw=80
 " Display line number
 set number
 
-" Disable hidden buffer
-set nohidden
-
 " Highlight current line
 set cursorline
-
-" Get back Vim-CtrlSpace
-nnoremap <silent><C-space> :CtrlSpace<CR>
 
 " Configure default register with system clipboard
 set clipboard=unnamed,unnamedplus

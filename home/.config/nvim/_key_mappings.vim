@@ -21,16 +21,20 @@ vnoremap X "_X
 " Paste
 "
 " Do not overwrite default register when pasting
-xnoremap p "_dP
+xnoremap p pgvy
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Buffer navigation
-nnoremap H gT
-nnoremap L gt
-nnoremap J :tabclose<CR>
-nnoremap K :tabnew<CR>
+" Buffer
 
+" Buffer navigation
+nnoremap H :bprevious<CR>
+nnoremap L :bnext<CR>
+nnoremap T :enew<CR>
+
+" Close the current buffer and move to the previous one
+nnoremap Q :bp <BAR> bd #<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keys for custom commands
-nnoremap <C-t> <Esc>:Fuzzy<CR>
 nnoremap <C-g> <Esc>:Ag 
 

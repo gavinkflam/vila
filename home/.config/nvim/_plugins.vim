@@ -4,6 +4,9 @@ Plug 'airblade/vim-gitgutter'
 " Precision colorscheme for the vim text editor
 Plug 'altercation/vim-colors-solarized'
 
+" Fuzzy file, buffer, mru, tag, etc finder
+Plug 'ctrlpvim/ctrlp.vim'
+
 " Simple tmux statusline generator
 Plug 'edkolev/tmuxline.vim'
 
@@ -24,9 +27,6 @@ Plug 'tpope/vim-fugitive'
 
 " Lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
-
-" Vim Space Controller
-Plug 'vim-ctrlspace/vim-ctrlspace'
 
 " VimRubySupport
 Plug 'vim-ruby/vim-ruby'
