@@ -27,3 +27,9 @@ set clipboard=unnamed,unnamedplus
 
 " Buffer settings
 set switchbuf=useopen
+
+" Exclude quickfix buffers from buffer list
+augroup qf
+  autocmd!
+  autocmd FileType qf set nobuflisted
+augroup END
