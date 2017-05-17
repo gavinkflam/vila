@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$VILA=$HOME/.vila
+VILA=$HOME/.vila
 
 # Install vila
 git clone https://github.com/gavinkflam/vila.git ~/.vila
