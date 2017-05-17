@@ -13,13 +13,13 @@ curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Merge files to home directory
-cp -rf $vila/home/. $HOME
+cp -rf $VILA/home/. $HOME
 
 # Install plugins for oh-my-zsh
-$HOME/.oh-my-zsh/custom/plugins/install.sh
+$VILA/config/.oh-my-zsh/custom/plugins/install.sh
 
 # Install plugins for vim
-nvim -u ~/.config/nvim/plugins_only.vim \
+nvim -u $VILA/config/.config/nvim/plugins_only.vim \
   -c ':PlugInstall' \
   -c 'qa!'
 

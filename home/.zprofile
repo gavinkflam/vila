@@ -1,2 +1,1 @@
-export SHELL=/bin/zsh
-
+. $VILA/config/.zprofile
