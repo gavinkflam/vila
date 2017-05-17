@@ -1,9 +1,9 @@
 #!/bin/bash
 
-vila=~/vila
+$VILA=$HOME/.vila
 
 # Install vila
-git clone https://github.com/gavinkflam/vila.git ~/vila
+git clone https://github.com/gavinkflam/vila.git ~/.vila
 
 # Install on-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
