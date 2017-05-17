@@ -30,6 +30,12 @@ let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ctrlp.vim
+
+" Show hidden files
+let g:ctrlp_show_hidden = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline
 
 " Display statusline all the time
