@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dir=$HOME/.oh-my-zsh/custom/plugins
+dir=$VILA/config/.oh-my-zsh/custom/plugins
 
 # Install zsh-completions
 git clone https://github.com/zsh-users/zsh-completions $dir/zsh-completions &
