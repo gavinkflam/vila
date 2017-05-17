@@ -2,22 +2,22 @@
 " Plugins
 
 call plug#begin('~/.local/share/nvim/plugged')
-runtime _plugins.vim
+source $VILA/config/.config/nvim/_plugins.vim
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " basic.vim mod
-runtime _basic_mod.vim
+source $VILA/config/.config/nvim/_basic_mod.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configurations
-runtime _plugins_conf.vim
+source $VILA/config/.config/nvim/_plugins_conf.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
-runtime _commands.vim
+source $VILA/config/.config/nvim/_commands.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
-runtime _key_mappings.vim
+source $VILA/config/.config/nvim/_key_mappings.vim
 

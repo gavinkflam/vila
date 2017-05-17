@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " basic.vim <https://github.com/amix/vimrc>
-runtime _basic.vim
+source $VILA/config/.config/nvim/_basic.vim
 
 " Allow hidden buffer
 set hidden
