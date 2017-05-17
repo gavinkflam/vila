@@ -90,3 +90,8 @@ source $ZSH/oh-my-zsh.sh
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 
+#################################################
+# Configurations for asdf
+
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
