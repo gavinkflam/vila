@@ -38,3 +38,8 @@ nnoremap Q :bdelete<CR>
 " Keys for custom commands
 nnoremap <C-g> <Esc>:Ag 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Terminal
+
+" Use escape to exit from terminal mode
+tnoremap <Esc> <C-\><C-n>
