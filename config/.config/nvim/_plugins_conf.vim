@@ -41,6 +41,9 @@ let g:ctrlp_show_hidden = 1
 " Enable deoplete at startup
 let g:deoplete#enable_at_startup = 1
 
+" Auto select first hint
+set completeopt+=noinsert
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline
 
