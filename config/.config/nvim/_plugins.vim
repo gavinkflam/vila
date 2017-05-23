@@ -7,6 +7,9 @@ Plug 'altercation/vim-colors-solarized'
 " Fuzzy file, buffer, mru, tag, etc finder
 Plug 'ctrlpvim/ctrlp.vim'
 
+" Dark powered asynchronous completion framework for neovim
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " Displays tags in a window, ordered by scope
 Plug 'majutsushi/tagbar'
 

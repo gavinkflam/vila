@@ -36,6 +36,12 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ctrlp_show_hidden = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" deoplete.vim
+
+" Enable deoplete at startup
+let g:deoplete#enable_at_startup = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline
 
 " Display statusline all the time
