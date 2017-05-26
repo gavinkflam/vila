@@ -16,8 +16,9 @@ set tabstop=2
 set lbr
 set tw=80
 
-" Display line number
+" Display line number in hybrid mode
 set number
+set relativenumber
 
 " Highlight current line
 set cursorline
