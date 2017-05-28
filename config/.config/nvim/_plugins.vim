@@ -19,6 +19,9 @@ Plug 'mileszs/ack.vim'
 " Tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 
+" Interactive command execution in Vim
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
 " Run async shell commands in Vim 8.0 / NeoVim and output to quickfix window
 Plug 'skywind3000/asyncrun.vim'
 
@@ -49,3 +52,11 @@ Plug 'mustache/vim-mustache-handlebars'
 " VimRubySupport
 Plug 'vim-ruby/vim-ruby'
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Typescript
+
+" Typescript syntax files for Vim
+Plug 'leafgarland/typescript-vim'
+
+" Tsuquyomi works as a client for TSServer
+Plug 'Quramy/tsuquyomi'
