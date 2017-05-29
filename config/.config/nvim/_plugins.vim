@@ -31,6 +31,9 @@ Plug 'vim-airline/vim-airline'
 " Asynchronous Lint Engine
 Plug 'w0rp/ale'
 
+" A vim plugin to display the indention levels with thin vertical lines
+Plug 'Yggdroot/indentLine'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
 
