@@ -1,6 +1,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Core
 
+" Forget Vim tabs – now you can have buffer tabs
+Plug 'ap/vim-buftabline'
+
 " Precision colorscheme for the vim text editor
 Plug 'altercation/vim-colors-solarized'
 

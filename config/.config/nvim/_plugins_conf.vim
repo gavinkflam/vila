@@ -50,10 +50,6 @@ set completeopt+=noinsert
 " Display statusline all the time
 set laststatus=2
 
-" Smarter tab line
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 let NERDTreeShowHidden=1
