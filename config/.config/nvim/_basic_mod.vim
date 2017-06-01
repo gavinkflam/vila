@@ -29,6 +29,9 @@ set clipboard=unnamed,unnamedplus
 " Buffer settings
 set switchbuf=useopen
 
+" Turn off mouse mode
+set mouse=
+
 " Exclude quickfix buffers from buffer list
 augroup qf
   autocmd!
