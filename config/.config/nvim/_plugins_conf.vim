@@ -38,8 +38,6 @@ let g:ctrlp_show_hidden = 1
 " Custom mappings
 let g:ctrlp_prompt_mappings = {
     \ 'PrtClearCache()':      ['<c-r>'],
-    \ 'OpenMulti()':          ['<c-o>'],
-    \ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>', '<c-space>'],
     \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -66,4 +64,3 @@ let NERDTreeShowHidden=1
 syntax enable
 set background=dark
 colorscheme solarized
-
