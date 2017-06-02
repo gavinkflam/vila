@@ -39,10 +39,14 @@ nnoremap Q :bdelete<CR>
 nnoremap <C-g> <Esc>:Ag 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Terminal
+" Escape
 
-" Use escape to exit from terminal mode
-tnoremap <Esc> <C-\><C-n>
+" Use Ctrl-Space to exit from various mode
+cnoremap <C-Space> <Esc>
+inoremap <C-Space> <Esc>
+nnoremap <C-Space> <Esc>
+onoremap <C-Space> <Esc>
+vnoremap <C-Space> <Esc>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mouse
