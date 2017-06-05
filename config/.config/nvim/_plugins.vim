@@ -66,12 +66,3 @@ Plug 'mustache/vim-mustache-handlebars'
 
 " VimRubySupport
 Plug 'vim-ruby/vim-ruby'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Typescript
-
-" Typescript syntax files for Vim
-Plug 'leafgarland/typescript-vim'
-
-" Tsuquyomi works as a client for TSServer
-Plug 'Quramy/tsuquyomi'
