@@ -47,6 +47,15 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" JavaScript
+
+" Vastly improved Javascript indentation and syntax support in Vim
+Plug 'pangloss/vim-javascript'
+
+" React JSX syntax highlighting and indenting for vim
+Plug 'mxw/vim-jsx'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mustache
 
 " Mustache and handlebars mode for vim
