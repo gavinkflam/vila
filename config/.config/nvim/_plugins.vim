@@ -28,6 +28,9 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " Run async shell commands in Vim 8.0 / NeoVim and output to quickfix window
 Plug 'skywind3000/asyncrun.vim'
 
+" Pairs of handy bracket mappings
+Plug 'tpope/vim-unimpaired'
+
 " Lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
 
