@@ -5,4 +5,3 @@
 call plug#begin('~/.local/share/nvim/plugged')
 runtime _plugins.vim
 call plug#end()
-

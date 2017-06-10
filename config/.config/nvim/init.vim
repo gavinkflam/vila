@@ -20,4 +20,3 @@ source $VILA/config/.config/nvim/_commands.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
 source $VILA/config/.config/nvim/_key_mappings.vim
-
