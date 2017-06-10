@@ -6,8 +6,8 @@ source $VILA/config/.config/nvim/_plugins.vim
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" basic.vim mod
-source $VILA/config/.config/nvim/_basic_mod.vim
+" core.vim
+source $VILA/config/.config/nvim/_core.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configurations

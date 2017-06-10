@@ -15,6 +15,13 @@ command! LNextError ALENextWrap
 command! LPrevError ALEPreviousWrap
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Files
+
+" :W sudo saves the file 
+" (useful for handling the permission-denied error)
+command! W w !sudo tee % > /dev/null
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GitGutter
 command! GPrevHunk GitGutterPrevHunk
 command! GNextHunk GitGutterNextHunk
@@ -22,4 +29,3 @@ command! GNextHunk GitGutterNextHunk
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 command! Tree NERDTreeFind
-
