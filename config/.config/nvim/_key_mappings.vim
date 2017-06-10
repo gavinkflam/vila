@@ -106,6 +106,9 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fast quiting
+nmap <leader>q :q<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keys for custom commands
 nnoremap <C-g> <Esc>:Ag
