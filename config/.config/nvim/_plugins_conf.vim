@@ -37,8 +37,13 @@ let g:ctrlp_show_hidden = 1
 
 " Custom mappings
 let g:ctrlp_prompt_mappings = {
-    \ 'PrtClearCache()':      ['<M-r>'],
-    \ }
+  \ 'PrtClearCache()':      ['<M-r>'],
+  \ }
+
+if executable('ag')
+  " Use ag in CtrlP for listing files
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 --hidden -g ""'
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " deoplete.vim
