@@ -29,6 +29,7 @@ command! Gnexthunk GitGutterNextHunk
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 command! Tfocus NERDTreeFind
+command! Tclose NERDTreeClose
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim profile
