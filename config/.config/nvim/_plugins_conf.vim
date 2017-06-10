@@ -69,6 +69,9 @@ augroup END
 " Display statusline all the time
 set laststatus=2
 
+" Use solarized theme
+let g:airline_theme='solarized'
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-emacs-bindings
 

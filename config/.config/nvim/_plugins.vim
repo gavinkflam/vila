@@ -37,6 +37,9 @@ Plug 'tpope/vim-unimpaired'
 " Lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
 
+" A collection of themes for vim-airline
+Plug 'vim-airline/vim-airline-themes'
+
 " Asynchronous Lint Engine
 Plug 'w0rp/ale'
 
