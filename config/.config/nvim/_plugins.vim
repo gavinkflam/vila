@@ -16,6 +16,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Displays tags in a window, ordered by scope
 Plug 'majutsushi/tagbar'
 
+" Add emacs/bash/cocoa key bindings to vim, in insert and command-line modes
+Plug 'maxbrunsfeld/vim-emacs-bindings'
+
 " Run your favorite search tool from Vim, with an enhanced results list
 Plug 'mileszs/ack.vim'
 

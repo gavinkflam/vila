@@ -13,16 +13,6 @@ let g:mapleader = ","
 nnoremap <silent> \b :Bclose<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Command mode
-
-" Bash like keys for the command line
-cnoremap <C-A> <Home>
-cnoremap <C-E> <End>
-
-cnoremap <C-B> <left>
-cnoremap <C-F> <right>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing
 
 " Remap VIM 0 to first non-blank character
