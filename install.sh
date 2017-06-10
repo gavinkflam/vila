@@ -12,6 +12,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Install Tmux Plugin Manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # Merge files to home directory
 cp -rf $VILA/home/. $HOME
 
@@ -22,4 +25,3 @@ $VILA/config/.oh-my-zsh/custom/plugins/install.sh
 nvim -u $VILA/config/.config/nvim/plugins_only.vim \
   -c ':PlugInstall' \
   -c 'qa!'
-
