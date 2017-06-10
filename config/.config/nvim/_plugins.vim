@@ -50,6 +50,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GraphQL
+
+Plug 'jparise/vim-graphql'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JavaScript
 
 " Vastly improved Javascript indentation and syntax support in Vim
