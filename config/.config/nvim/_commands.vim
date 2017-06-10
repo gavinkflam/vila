@@ -7,12 +7,12 @@ command! -nargs=* -complete=file Ag Ack! -Q <q-args>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffer
-command! BClose bp|bd #
+command! Bclose bp|bd #
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE
-command! LNextError ALENextWrap
-command! LPrevError ALEPreviousWrap
+command! Lnexterror ALENextWrap
+command! Lpreverror ALEPreviousWrap
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files
@@ -23,14 +23,14 @@ command! W w !sudo tee % > /dev/null
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GitGutter
-command! GPrevHunk GitGutterPrevHunk
-command! GNextHunk GitGutterNextHunk
+command! Gprevhunk GitGutterPrevHunk
+command! Gnexthunk GitGutterNextHunk
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
-command! Tree NERDTreeFind
+command! Tfocus NERDTreeFind
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim profile
-command! VReloadProfile source $MYVIMRC
-command! VEditProfile edit $MYVIMRC
+command! Vreload source $MYVIMRC
+command! Vedit edit $MYVIMRC

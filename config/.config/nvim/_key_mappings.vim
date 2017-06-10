@@ -10,7 +10,7 @@ let g:mapleader = ","
 " Buffer
 
 " Close the current buffer and move to the previous one
-nnoremap <silent> \b :BClose<CR>
+nnoremap <silent> \b :Bclose<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command mode
