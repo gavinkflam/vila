@@ -41,6 +41,12 @@ nmap <leader>w :w!<cr>
 xnoremap p pgvy
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quickfix
+
+" Close the quickfix window
+nnoremap <silent> \q :cclose<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Replace and delete
 "
 " These are to cancel the default behavior of c, C, x, X
