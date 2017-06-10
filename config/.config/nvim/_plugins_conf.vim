@@ -104,5 +104,5 @@ let NERDTreeShowHidden=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-colors-solarized
 
-set background=light
+set background=dark
 colorscheme solarized
