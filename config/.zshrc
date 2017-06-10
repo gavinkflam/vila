@@ -84,6 +84,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Use 256 color
+if [[ -n ${TMUX} ]]; then
+  export TERM="screen-256color"
+else
+  export TERM="xterm-256color"
+fi
+
 #################################################
 # Configurations for plugins
 
