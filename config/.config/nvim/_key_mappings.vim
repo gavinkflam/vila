@@ -26,13 +26,8 @@ xnoremap p pgvy
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffer
 
-" Buffer navigation
-nnoremap H :bprevious<CR>
-nnoremap L :bnext<CR>
-nnoremap T :enew<CR>
-
 " Close the current buffer and move to the previous one
-nnoremap Q :bdelete<CR>
+nnoremap <silent> \b :BClose<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keys for custom commands
