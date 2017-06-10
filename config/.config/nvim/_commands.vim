@@ -29,3 +29,8 @@ command! GNextHunk GitGutterNextHunk
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 command! Tree NERDTreeFind
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim profile
+command! VReloadProfile source $MYVIMRC
+command! VEditProfile edit $MYVIMRC
