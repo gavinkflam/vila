@@ -7,7 +7,22 @@ command! -nargs=* -complete=file Ag Ack! -Q <q-args>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffer
+
+" Close the current buffer and move to the previous one
 command! Bclose bp|bd #
+
+" Close other buffers except the current one
+function! Bonly()
+  try
+    execute 'bp'
+    while 1
+      execute 'bp|bd #'
+    endwhile
+  catch
+  endtry
+endfunction
+
+command! Bonly call Bonly()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ALE

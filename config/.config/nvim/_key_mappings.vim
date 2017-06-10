@@ -9,8 +9,8 @@ let g:mapleader = ","
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffer
 
-" Close the current buffer and move to the previous one
 nnoremap <silent> \b :Bclose<CR>
+nnoremap <silent> \B :Bonly<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing
