@@ -10,7 +10,7 @@
 " Allow hidden buffer
 set hidden
 
-" When using quickfix, jump to the first open window that 
+" When using quickfix, jump to the first open window that
 " contains the specified buffer
 set switchbuf=useopen
 
@@ -33,7 +33,7 @@ set clipboard=unnamed,unnamedplus
 " Colors and fonts
 
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 " Enable 256 colors palette in Gnome Terminal
 if $COLORTERM == 'gnome-terminal'
@@ -69,13 +69,13 @@ set wildmenu
 set ruler
 
 " Don't redraw while executing macros (good performance config)
-set lazyredraw 
+set lazyredraw
 
 " For regular expressions turn magic on
 set magic
 
 " Show matching brackets when text indicator is over them
-set showmatch 
+set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -108,7 +108,7 @@ endif
 " Files
 
 " Avoid garbled characters in Chinese language windows OS
-let $LANG='en' 
+let $LANG='en'
 set langmenu=en
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
@@ -137,14 +137,14 @@ set ffs=unix,dos,mac
 " Ignore case when searching
 set ignorecase
 
-" When searching try to be smart about cases 
+" When searching try to be smart about cases
 set smartcase
 
 " Highlight search results
 set hlsearch
 
 " Makes search act like search in modern browsers
-set incsearch 
+set incsearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab, indent and linebreak

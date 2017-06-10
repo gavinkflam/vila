@@ -108,4 +108,4 @@ map <C-l> <C-W>l
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keys for custom commands
-nnoremap <C-g> <Esc>:Ag 
+nnoremap <C-g> <Esc>:Ag
