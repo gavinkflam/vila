@@ -50,6 +50,15 @@ let g:deoplete#enable_at_startup = 1
 set completeopt+=noinsert
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-graphql.vim
+"
+" Recognize graphql schema files
+augroup filetype_graphqls
+  autocmd!
+  autocmd BufNewFile,BufRead *.graphqls set filetype=graphql
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-airline
 
 " Display statusline all the time
