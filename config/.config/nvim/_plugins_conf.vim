@@ -51,9 +51,6 @@ endif
 " Enable deoplete at startup
 let g:deoplete#enable_at_startup = 1
 
-" Auto select first hint
-set completeopt+=noinsert
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-graphql.vim
 "
