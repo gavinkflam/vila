@@ -34,6 +34,9 @@ endif
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Disable Ex mode
+nnoremap Q <Nop>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Paste
 "
