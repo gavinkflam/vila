@@ -67,25 +67,25 @@ Plug 'tpope/vim-fugitive'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GraphQL
 
-Plug 'jparise/vim-graphql'
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JavaScript
 
 " Vastly improved Javascript indentation and syntax support in Vim
-Plug 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 " React JSX syntax highlighting and indenting for vim
-Plug 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mustache
 
 " Mustache and handlebars mode for vim
-Plug 'mustache/vim-mustache-handlebars'
+Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.mustache' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruby
 
 " VimRubySupport
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
