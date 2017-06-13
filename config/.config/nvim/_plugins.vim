@@ -31,6 +31,15 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " Run async shell commands in Vim 8.0 / NeoVim and output to quickfix window
 Plug 'skywind3000/asyncrun.vim'
 
+" Commentary.vim: comment stuff out
+Plug 'tpope/vim-commentary'
+
+" Abolish.vim: easily search for, substitute, and abbreviate multiple variants of a word
+Plug 'tpope/tpope-vim-abolish'
+
+" Surround.vim: quoting/parenthesizing made simple
+Plug 'tpope/vim-surround'
+
 " Pairs of handy bracket mappings
 Plug 'tpope/vim-unimpaired'
 
