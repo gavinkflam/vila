@@ -49,6 +49,9 @@ augroup filetype_scala
   autocmd BufWritePost *.scala silent :EnTypeCheck
 augroup END
 
+" Make use of server 2.0
+let ensime_server_v2=1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-graphql.vim
 "
