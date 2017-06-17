@@ -89,3 +89,12 @@ Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.mustache' }
 
 " VimRubySupport
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Scala
+
+" Scala filetype detection and highlighting
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+
+" Enhanced Scala and Java Interaction Mode for text Editors
+Plug 'ensime/ensime-vim', { 'for': 'scala', 'do': ':UpdateRemotePlugins' }
