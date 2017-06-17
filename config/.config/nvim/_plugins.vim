@@ -22,6 +22,9 @@ Plug 'maxbrunsfeld/vim-emacs-bindings'
 " Run your favorite search tool from Vim, with an enhanced results list
 Plug 'mileszs/ack.vim'
 
+" Asynchronous linting and make framework for Neovim/Vim
+Plug 'neomake/neomake'
+
 " Tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 
@@ -48,9 +51,6 @@ Plug 'vim-airline/vim-airline'
 
 " A collection of themes for vim-airline
 Plug 'vim-airline/vim-airline-themes'
-
-" Asynchronous Lint Engine
-Plug 'w0rp/ale'
 
 " A vim plugin to display the indention levels with thin vertical lines
 Plug 'Yggdroot/indentLine'

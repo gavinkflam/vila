@@ -19,17 +19,6 @@ command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ALE
-
-" Status line format
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
-
-" Echo message format
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp.vim
 
 " Show hidden files
@@ -102,6 +91,12 @@ cmap <M-b> <S-Left>
 cmap <M-f> <S-Right>
 cnoremap <M-d> <S-Right><C-w>
 cnoremap <M-h> <C-w>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" neomake
+
+" Run Neomake on save
+autocmd! BufWritePost * Neomake
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
