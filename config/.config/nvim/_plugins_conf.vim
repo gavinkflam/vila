@@ -84,6 +84,13 @@ cnoremap <M-d> <S-Right><C-w>
 cnoremap <M-h> <C-w>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-scala
+
+" Sort imports across groups
+let g:scala_sort_across_groups=1
+let g:scala_first_party_namespaces='\(com.rovle.\|hk.gavin.\)'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-pug
 
 " Recognize jade filetype
