@@ -41,18 +41,6 @@ endif
 let g:deoplete#enable_at_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ensime-vim
-
-" Typecheck after writing
-augroup filetype_scala
-  autocmd!
-  autocmd BufWritePost *.scala silent :EnTypeCheck
-augroup END
-
-" Make use of server 2.0
-let ensime_server_v2=1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-graphql.vim
 "
 " Recognize graphql schema files
