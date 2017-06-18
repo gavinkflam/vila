@@ -85,6 +85,12 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.mustache' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Pug
+
+" Vim syntax highlighting for Pug (formerly Jade) templates
+Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ruby
 
 " VimRubySupport

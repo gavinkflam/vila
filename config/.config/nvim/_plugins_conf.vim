@@ -84,6 +84,15 @@ cnoremap <M-d> <S-Right><C-w>
 cnoremap <M-h> <C-w>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-pug
+
+" Recognize jade filetype
+augroup filetype_jade
+  autocmd!
+  autocmd BufNewFile,BufRead *.jade set filetype=pug
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " neomake
 
 " Run Neomake on save
