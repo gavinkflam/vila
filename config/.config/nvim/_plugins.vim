@@ -65,6 +65,14 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ansible
+
+" Syntax highlighting Ansible's common filetypes
+Plug 'pearofducks/ansible-vim', {
+  \ 'for': ['ansible', 'ansible_template', 'ansible_hosts']
+  \ }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
 
 " A Vim plugin which shows a git diff in the 'gutter'
