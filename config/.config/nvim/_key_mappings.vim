@@ -105,4 +105,4 @@ nmap <leader>q :q<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Keys for custom commands
-nnoremap <C-g> <Esc>:Ag
+nnoremap <C-g> <Esc>:Ag<space>
