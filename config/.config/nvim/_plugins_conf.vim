@@ -41,6 +41,27 @@ endif
 let g:deoplete#enable_at_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" easymotion/vim-easymotion
+
+" Bindings
+map <Leader> <Plug>(easymotion-prefix)
+
+" Move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" Move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>d <Plug>(easymotion-bd-w)
+nmap <Leader>d <Plug>(easymotion-overwin-w)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Valloric/MatchTagAlways
 
 " Recognize mustache files
