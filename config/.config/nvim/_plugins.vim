@@ -10,6 +10,9 @@ Plug 'altercation/vim-colors-solarized'
 " Fuzzy file, buffer, mru, tag, etc finder
 Plug 'ctrlpvim/ctrlp.vim'
 
+" Better Rainbow Parentheses
+Plug 'kien/rainbow_parentheses.vim'
+
 " Dark powered asynchronous completion framework for neovim
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
@@ -45,6 +48,9 @@ Plug 'tpope/vim-surround'
 
 " Pairs of handy bracket mappings
 Plug 'tpope/vim-unimpaired'
+
+" Always highlights the enclosing html/xml tags
+Plug 'Valloric/MatchTagAlways'
 
 " Lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
