@@ -43,9 +43,6 @@ let g:deoplete#enable_at_startup = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " easymotion/vim-easymotion
 
-" Bindings
-map <Leader> <Plug>(easymotion-prefix)
-
 " Move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)

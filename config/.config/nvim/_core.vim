@@ -129,6 +129,14 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Leader
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+let g:mapleader = ","
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Searching
 
 " Ignore case when searching
