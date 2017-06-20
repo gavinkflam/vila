@@ -33,6 +33,12 @@ nmap <leader>w :w!<cr>
 nnoremap Q <Nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" GitGutter
+
+nnoremap <silent> [g :Gprevhunk<CR>
+nnoremap <silent> ]g :Gnexthunk<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Paste
 "
 " Do not overwrite default register when pasting
