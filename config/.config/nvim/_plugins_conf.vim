@@ -133,7 +133,9 @@ augroup END
 " neomake
 
 " Run Neomake on save
-autocmd! BufWritePost * Neomake
+augroup neomake_auto_make
+  autocmd! BufWritePost * Neomake
+augroup END
 
 " Enable credo as a neomake maker for elixir
 let g:neomake_elixir_enabled_makers = ['mix', 'credo']
