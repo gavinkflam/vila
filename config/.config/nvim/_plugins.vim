@@ -73,6 +73,15 @@ Plug 'pearofducks/ansible-vim', {
   \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Elixir
+
+" Vim configuration files for Elixir
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+
+" Elixir Integration Into Vim
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git
 
 " A Vim plugin which shows a git diff in the 'gutter'
