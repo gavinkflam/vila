@@ -75,6 +75,9 @@ Plug 'pearofducks/ansible-vim', {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Elixir
 
+" phoenix.vim: rails.vim inspired tools for Phoenix
+Plug 'c-brenn/phoenix.vim', { 'for': 'elixir' }
+
 " Vim configuration files for Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 
