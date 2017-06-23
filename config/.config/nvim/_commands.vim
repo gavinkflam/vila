@@ -53,8 +53,19 @@ command! Gnexthunk GitGutterNextHunk
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
-command! Tfocus NERDTreeFind
-command! Tclose NERDTreeClose
+
+function! IsNerdTreeEnabled()
+    return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
+endfunction
+
+function! NERDTreeFindToggle()
+  if IsNerdTreeEnabled()
+    NERDTreeClose
+  else
+    NERDTreeFind
+  endif
+endfunction
+command! NERDTreeFindToggle call NERDTreeFindToggle()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim profile

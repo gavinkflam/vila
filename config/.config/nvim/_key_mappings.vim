@@ -43,6 +43,11 @@ nnoremap <silent> [g :Gprevhunk<CR>
 nnoremap <silent> ]g :Gnexthunk<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree
+
+nnoremap <silent> \n :NERDTreeFindToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Paste
 "
 " Do not overwrite default register when pasting
