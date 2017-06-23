@@ -21,6 +21,9 @@ let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp.vim
 
+" Change key mapping for invoking CtrlP
+let g:ctrlp_map = '<M-p>'
+
 " Show hidden files
 let g:ctrlp_show_hidden = 1
 
