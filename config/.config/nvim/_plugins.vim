@@ -19,6 +19,9 @@ Plug 'kien/rainbow_parentheses.vim'
 " Dark powered asynchronous completion framework for neovim
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
+" True Sublime Text style multiple selections for Vim
+Plug 'terryma/vim-multiple-cursors'
+
 " Displays tags in a window, ordered by scope
 Plug 'majutsushi/tagbar'
 
