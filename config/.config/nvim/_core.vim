@@ -137,7 +137,7 @@ let mapleader = ","
 let g:mapleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Searching
+" Search and replace
 
 " Ignore case when searching
 set ignorecase
@@ -150,6 +150,11 @@ set hlsearch
 
 " Makes search act like search in modern browsers
 set incsearch
+
+" Turn on inccommand
+if exists('&inccommand')
+  set inccommand=nosplit
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab, indent and linebreak
