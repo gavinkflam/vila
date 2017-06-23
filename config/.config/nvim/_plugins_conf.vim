@@ -43,6 +43,11 @@ endif
 " Enable deoplete at startup
 let g:deoplete#enable_at_startup = 1
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" dyng/ctrlsf.vim
+
+nnoremap <leader>f :CtrlSF<space>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " rhysd/clever-f.vim
 
