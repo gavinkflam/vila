@@ -10,8 +10,8 @@ Plug 'altercation/vim-colors-solarized'
 " Fuzzy file, buffer, mru, tag, etc finder
 Plug 'ctrlpvim/ctrlp.vim'
 
-" Vim motion on speed!
-Plug 'easymotion/vim-easymotion'
+" The missing motion for Vim
+Plug 'justinmk/vim-sneak'
 
 " Better Rainbow Parentheses
 Plug 'kien/rainbow_parentheses.vim'
@@ -30,6 +30,9 @@ Plug 'mileszs/ack.vim'
 
 " Asynchronous linting and make framework for Neovim/Vim
 Plug 'neomake/neomake'
+
+" Extended f, F, t and T key mappings for Vim
+Plug 'rhysd/clever-f.vim'
 
 " Tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'

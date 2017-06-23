@@ -41,22 +41,13 @@ endif
 let g:deoplete#enable_at_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" easymotion/vim-easymotion
+" rhysd/clever-f.vim
 
-" Move to {char}
-map  <Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader>f <Plug>(easymotion-overwin-f)
+" Search a character only in current line
+let g:clever_f_across_no_line = 1
 
-" Move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
-
-" Move to line
-map <Leader>l <Plug>(easymotion-bd-jk)
-nmap <Leader>l <Plug>(easymotion-overwin-line)
-
-" Move to word
-map  <Leader>d <Plug>(easymotion-bd-w)
-nmap <Leader>d <Plug>(easymotion-overwin-w)
+" Smart case
+let g:clever_f_smart_case = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Valloric/MatchTagAlways
