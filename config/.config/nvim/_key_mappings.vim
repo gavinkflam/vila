@@ -45,8 +45,8 @@ nnoremap <silent> ]g :Gnexthunk<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 
-nnoremap <silent> \n :NERDTreeFindToggle<CR>
-nnoremap <silent> \N :NERDTreeFind<CR>
+nnoremap <silent> \n :NERDTreeFind<CR>
+nnoremap <silent> \N :NERDTreeFindToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Paste
