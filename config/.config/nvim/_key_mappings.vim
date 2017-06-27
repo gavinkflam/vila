@@ -80,6 +80,12 @@ nnoremap X "_X
 vnoremap X "_X
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Search and replace
+
+" Turn off search highlight
+nnoremap <silent> \h :noh<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab
 
 nnoremap <silent> \t :tabclose<CR>
