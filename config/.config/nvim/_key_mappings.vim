@@ -80,12 +80,6 @@ nnoremap X "_X
 vnoremap X "_X
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Spell checking
-
-" Pressing ,ss will toggle and untoggle spell checking
-map <leader>ss :setlocal spell!<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab
 
 nnoremap <silent> \t :tabclose<CR>

@@ -54,6 +54,10 @@ nnoremap <leader>f :CtrlSF<space>
 " Turn on label mode
 let g:sneak#label = 1
 
+" Normal mode mappings to allow invoking in plugin contexts
+nmap <leader>s <Plug>Sneak_s
+nmap <leader>S <Plug>Sneak_S
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " rhysd/clever-f.vim
 
