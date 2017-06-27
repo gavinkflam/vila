@@ -48,6 +48,12 @@ let g:deoplete#enable_at_startup = 1
 
 nnoremap <leader>f :CtrlSF<space>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" justinmk/vim-sneak
+
+" Turn on label mode
+let g:sneak#label = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " rhysd/clever-f.vim
 
