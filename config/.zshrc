@@ -91,6 +91,9 @@ else
   export TERM="xterm-256color"
 fi
 
+# Use base16_tomorrow_night theme
+source "$VILA/themes/base16-tomorrow-night.sh"
+
 #################################################
 # Configurations for plugins
 
