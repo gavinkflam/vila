@@ -43,6 +43,9 @@ Plug 'rhysd/clever-f.vim'
 " Tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 
+" A collection of language packs for Vim
+Plug 'sheerun/vim-polyglot'
+
 " Interactive command execution in Vim
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
@@ -74,21 +77,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Yggdroot/indentLine'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ansible
-
-" Syntax highlighting Ansible's common filetypes
-Plug 'pearofducks/ansible-vim', {
-  \ 'for': ['ansible', 'ansible_template', 'ansible_hosts']
-  \ }
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Elixir
 
 " phoenix.vim: rails.vim inspired tools for Phoenix
 Plug 'c-brenn/phoenix.vim', { 'for': 'elixir' }
-
-" Vim configuration files for Elixir
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 
 " Elixir Integration Into Vim
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
@@ -101,41 +93,3 @@ Plug 'airblade/vim-gitgutter'
 
 " fugitive.vim: a Git wrapper
 Plug 'tpope/vim-fugitive'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GraphQL
-
-Plug 'jparise/vim-graphql', { 'for': 'graphql' }
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" JavaScript
-
-" Vastly improved Javascript indentation and syntax support in Vim
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-
-" React JSX syntax highlighting and indenting for vim
-Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mustache
-
-" Mustache and handlebars mode for vim
-Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.mustache' }
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pug
-
-" Vim syntax highlighting for Pug (formerly Jade) templates
-Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ruby
-
-" VimRubySupport
-Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Scala
-
-" Scala filetype detection and highlighting
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
