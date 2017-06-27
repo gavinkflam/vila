@@ -50,6 +50,9 @@ set history=500
 set number
 set relativenumber
 
+" Show a different background colour past 80 characters
+let &colorcolumn=join(range(81,200),",")
+
 " Highlight current line
 set cursorline
 
