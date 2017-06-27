@@ -16,7 +16,8 @@ endif
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 
 " Display asyncrun status in airline status bar
-let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+let g:airline_section_error =
+  \ airline#section#create_right(['%{g:asyncrun_status}'])
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " chriskempson/base16-vim

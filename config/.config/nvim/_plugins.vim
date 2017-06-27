@@ -31,7 +31,7 @@ Plug 'skywind3000/asyncrun.vim'
 " True Sublime Text style multiple selections for Vim
 Plug 'terryma/vim-multiple-cursors'
 
-" Abolish.vim: easily search for, substitute, and abbreviate multiple variants of a word
+" Easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'tpope/tpope-vim-abolish'
 
 " Commentary.vim: comment stuff out
