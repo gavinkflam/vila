@@ -46,6 +46,9 @@ Plug 'tpope/vim-unimpaired'
 " Provides insert mode auto-completion for quotes, parens, brackets, etc.
 Plug 'raimondi/delimitmate'
 
+" Provides support for expanding abbreviations similar to emmet
+Plug 'mattn/emmet-vim'
+
 " Dark powered asynchronous completion framework for neovim
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
