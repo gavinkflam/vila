@@ -43,8 +43,14 @@ Plug 'tpope/vim-unimpaired'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Completion
 
+" Provides insert mode auto-completion for quotes, parens, brackets, etc.
+Plug 'raimondi/delimitmate'
+
 " Dark powered asynchronous completion framework for neovim
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" Wisely add 'end'
+Plug 'tpope/vim-endwise'
 
 " Surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'
