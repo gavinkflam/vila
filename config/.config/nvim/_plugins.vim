@@ -78,6 +78,9 @@ Plug 'airblade/vim-gitgutter'
 " An ack.vim alternative mimics Ctrl-Shift-F on Sublime Text 2
 Plug 'dyng/ctrlsf.vim'
 
+" A git commit browser
+Plug 'junegunn/gv.vim'
+
 " Add emacs/bash/cocoa key bindings to vim, in insert and command-line modes
 Plug 'maxbrunsfeld/vim-emacs-bindings'
 
