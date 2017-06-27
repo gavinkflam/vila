@@ -83,6 +83,11 @@ vnoremap X "_X
 map <leader>ss :setlocal spell!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tab
+
+nnoremap <silent> \t :tabclose<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual mode
 
 " Pressing * or # searches for the current selection
