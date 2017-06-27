@@ -120,5 +120,5 @@ Plug 'vim-airline/vim-airline-themes'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Themes
 
-" Precision colorscheme for the vim text editor
-Plug 'altercation/vim-colors-solarized'
+" Base16 for Vim
+Plug 'chriskempson/base16-vim'

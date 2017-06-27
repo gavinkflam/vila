@@ -19,6 +19,12 @@ command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" chriskempson/base16-vim
+
+let base16colorspace=256
+colorscheme base16-tomorrow-night
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp.vim
 
 " Change key mapping for invoking CtrlP
@@ -107,7 +113,7 @@ augroup END
 set laststatus=2
 
 " Use solarized theme
-let g:airline_theme='solarized'
+let g:airline_theme='base16'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-emacs-bindings
@@ -164,9 +170,3 @@ let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 let NERDTreeShowHidden=1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-colors-solarized
-
-set background=dark
-colorscheme solarized
