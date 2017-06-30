@@ -174,4 +174,10 @@ let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
+
+" Show hidden files in NERDTree
 let NERDTreeShowHidden=1
+
+" Use <leader>n variants for NERDTree
+nnoremap <leader>n :NERDTreeFind<CR>
+nnoremap <leader>N :NERDTreeClose<CR>

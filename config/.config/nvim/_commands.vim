@@ -52,22 +52,6 @@ command! Gprevhunk GitGutterPrevHunk
 command! Gnexthunk GitGutterNextHunk
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree
-
-function! IsNerdTreeEnabled()
-    return exists('t:NERDTreeBufName') && bufwinnr(t:NERDTreeBufName) != -1
-endfunction
-
-function! NERDTreeFindToggle()
-  if IsNerdTreeEnabled()
-    NERDTreeClose
-  else
-    NERDTreeFind
-  endif
-endfunction
-command! NERDTreeFindToggle call NERDTreeFindToggle()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim profile
 command! Vreload source $MYVIMRC
 command! Vedit edit $MYVIMRC
