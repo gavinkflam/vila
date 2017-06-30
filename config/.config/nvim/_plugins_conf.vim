@@ -29,7 +29,9 @@ colorscheme base16-tomorrow-night
 " ctrlp.vim
 
 " Change key mapping for invoking CtrlP
-let g:ctrlp_map = '<M-p>'
+let g:ctrlp_map = '<leader>p'
+
+nnoremap <leader>b :CtrlPBuffer<cr>
 
 " Show hidden files
 let g:ctrlp_show_hidden = 1
