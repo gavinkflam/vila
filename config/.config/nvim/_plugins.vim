@@ -37,6 +37,9 @@ Plug 'tpope/tpope-vim-abolish'
 " Commentary.vim: comment stuff out
 Plug 'tpope/vim-commentary'
 
+" Use CTRL-A/CTRL-X to increment dates, times, and more
+Plug 'tpope/vim-speeddating'
+
 " Pairs of handy bracket mappings
 Plug 'tpope/vim-unimpaired'
 
