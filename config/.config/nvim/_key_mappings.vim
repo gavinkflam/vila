@@ -3,7 +3,7 @@
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ag
-nnoremap <leader>g :Ag<space>
+nnoremap <leader>ag :Ag<space>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffer
@@ -38,6 +38,13 @@ nmap <leader>w :w!<cr>
 
 " Disable Ex mode
 nnoremap Q <Nop>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fugitive
+
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gP :Gpush<CR>
+nnoremap <leader>gp :Gpull --rebase<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GitGutter
