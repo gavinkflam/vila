@@ -16,6 +16,9 @@ Plug 'Yggdroot/indentLine'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 
+" simple, easy-to-use alignment plugin
+Plug 'junegunn/vim-easy-align'
+
 " The missing motion for Vim
 Plug 'justinmk/vim-sneak'
 
