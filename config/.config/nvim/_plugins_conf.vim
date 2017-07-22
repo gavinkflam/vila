@@ -79,15 +79,6 @@ nmap <leader>s <Plug>Sneak_s
 nmap <leader>S <Plug>Sneak_S
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" rhysd/clever-f.vim
-
-" Search a character only in current line
-let g:clever_f_across_no_line = 1
-
-" Smart case
-let g:clever_f_smart_case = 1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terryma/vim-multiple-cursors
 
 let g:multi_cursor_use_default_mapping=0

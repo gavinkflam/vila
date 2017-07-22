@@ -16,14 +16,14 @@ Plug 'Yggdroot/indentLine'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 
+" Highlight the character which can move directly to
+Plug 'deris/vim-shot-f'
+
 " simple, easy-to-use alignment plugin
 Plug 'junegunn/vim-easy-align'
 
 " The missing motion for Vim
 Plug 'justinmk/vim-sneak'
-
-" Extended f, F, t and T key mappings for Vim
-Plug 'rhysd/clever-f.vim'
 
 " Interactive command execution in Vim
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
