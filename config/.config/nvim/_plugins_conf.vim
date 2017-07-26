@@ -78,6 +78,12 @@ nmap S <Plug>Sneak_S
 nmap <leader>s <Plug>Sneak_s
 nmap <leader>S <Plug>Sneak_S
 
+" Replace f and t with one-character sneak
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terryma/vim-multiple-cursors
 
