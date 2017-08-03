@@ -99,6 +99,12 @@ nmap x <Plug>MoveMotionPlug
 xmap x <Plug>MoveMotionXPlug
 nmap xx <Plug>MoveMotionLinePlug
 
+" Use Alt-p and Alt-n for swaping pastes
+let g:EasyClipUsePasteToggleDefaults = 0
+
+nmap <M-p> <plug>EasyClipSwapPasteForward
+nmap <M-n> <plug>EasyClipSwapPasteBackwards
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terryma/vim-multiple-cursors
 
