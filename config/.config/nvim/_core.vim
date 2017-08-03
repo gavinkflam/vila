@@ -27,7 +27,7 @@ augroup END
 " Clipboard
 
 " Configure default register with system clipboard
-set clipboard=unnamed,unnamedplus
+set clipboard=unnamed
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and fonts

@@ -85,6 +85,14 @@ map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" svermeulen/vim-easyclip
+
+" Use gs for substitute
+nmap <silent> gs <plug>SubstituteOverMotionMap
+nmap gss <plug>SubstituteLine
+xmap gs <plug>XEasyClipPaste
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terryma/vim-multiple-cursors
 
 let g:multi_cursor_use_default_mapping=0

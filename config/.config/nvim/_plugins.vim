@@ -31,6 +31,9 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " Run async shell commands in Vim 8.0 / NeoVim and output to quickfix window
 Plug 'skywind3000/asyncrun.vim'
 
+" Simplified clipboard functionality for Vim
+Plug 'svermeulen/vim-easyclip'
+
 " True Sublime Text style multiple selections for Vim
 Plug 'terryma/vim-multiple-cursors'
 
