@@ -92,6 +92,13 @@ nmap <silent> gs <plug>SubstituteOverMotionMap
 nmap gss <plug>SubstituteLine
 xmap gs <plug>XEasyClipPaste
 
+" Use x for move
+let g:EasyClipUseCutDefaults = 0
+
+nmap x <Plug>MoveMotionPlug
+xmap x <Plug>MoveMotionXPlug
+nmap xx <Plug>MoveMotionLinePlug
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " terryma/vim-multiple-cursors
 
