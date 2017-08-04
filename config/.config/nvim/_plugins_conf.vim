@@ -10,6 +10,13 @@ if executable('ag')
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" andrewradev/sideways.vim
+
+" Shortcut to move items sideways
+nnoremap <M-h> :SidewaysLeft<cr>
+nnoremap <M-l> :SidewaysRight<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " asyncrun.vim
 
 " Asyncrun fugitive commands

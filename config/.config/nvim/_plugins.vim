@@ -16,6 +16,9 @@ Plug 'Yggdroot/indentLine'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 
+" Move items left and right
+Plug 'andrewradev/sideways.vim'
+
 " Highlight the character which can move directly to
 Plug 'deris/vim-shot-f'
 
