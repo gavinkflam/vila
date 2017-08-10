@@ -19,9 +19,6 @@ Plug 'Yggdroot/indentLine'
 " Move items left and right
 Plug 'andrewradev/sideways.vim'
 
-" Highlight the character which can move directly to
-Plug 'deris/vim-shot-f'
-
 " simple, easy-to-use alignment plugin
 Plug 'junegunn/vim-easy-align'
 
