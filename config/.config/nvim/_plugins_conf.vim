@@ -92,6 +92,13 @@ map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" KuoE0/vim-janitor
+
+" Auto cleanup on file save but only current changes
+let g:janitor_auto_clean_up_on_write = 1
+let g:janitor_auto_clean_up_only_added = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " svermeulen/vim-easyclip
 
 " Use gs for substitute

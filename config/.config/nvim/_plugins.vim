@@ -25,6 +25,9 @@ Plug 'junegunn/vim-easy-align'
 " The missing motion for Vim
 Plug 'justinmk/vim-sneak'
 
+" Multiple empty lines and trailing white spaces cleaner for Vim
+Plug 'KuoE0/vim-janitor'
+
 " Interactive command execution in Vim
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
