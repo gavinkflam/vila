@@ -30,7 +30,7 @@ let g:airline_section_error =
 " chriskempson/base16-vim
 
 let base16colorspace=256
-colorscheme base16-tomorrow-night
+colorscheme base16-grayscale-dark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp.vim
