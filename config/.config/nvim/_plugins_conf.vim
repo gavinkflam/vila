@@ -92,6 +92,14 @@ map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" mattn/emmet-vim
+
+" Use space for indentation
+let g:user_emmet_settings = {
+  \ 'indentation' : ' '
+  \}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " svermeulen/vim-easyclip
 
 " Use gs for substitute
