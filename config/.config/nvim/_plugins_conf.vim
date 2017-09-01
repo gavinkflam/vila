@@ -17,6 +17,24 @@ nnoremap <M-h> :SidewaysLeft<cr>
 nnoremap <M-l> :SidewaysRight<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ap/vim-buftabline
+
+" Display ordinal numbering on buftabline
+let g:buftabline_numbers = 2
+
+" Key mapping to switch buffers by their ordinal number
+nmap <M-1> <Plug>BufTabLine.Go(1)
+nmap <M-2> <Plug>BufTabLine.Go(2)
+nmap <M-3> <Plug>BufTabLine.Go(3)
+nmap <M-4> <Plug>BufTabLine.Go(4)
+nmap <M-5> <Plug>BufTabLine.Go(5)
+nmap <M-6> <Plug>BufTabLine.Go(6)
+nmap <M-7> <Plug>BufTabLine.Go(7)
+nmap <M-8> <Plug>BufTabLine.Go(8)
+nmap <M-9> <Plug>BufTabLine.Go(9)
+nmap <M-0> <Plug>BufTabLine.Go(10)
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " asyncrun.vim
 
 " Asyncrun fugitive commands
