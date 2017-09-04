@@ -42,6 +42,7 @@ nnoremap Q <Nop>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fugitive
 
+nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gP :Gpush<CR>
 nnoremap <leader>gp :Gpull --rebase<CR>
@@ -51,6 +52,13 @@ nnoremap <leader>gp :Gpull --rebase<CR>
 
 nnoremap <silent> [g :Gprevhunk<CR>
 nnoremap <silent> ]g :Gnexthunk<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gv.vim
+
+nnoremap <leader>gv :GV!<CR>
+nnoremap <leader>gV :GV<CR>
+xnoremap <leader>gv :GV<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quickfix
