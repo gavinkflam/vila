@@ -1,0 +1,46 @@
+{
+  "magic":"nassh-prefs",
+  "version":1,
+  "nassh":{
+    "profile-ids":[
+      {
+        "id":"fd9a",
+        "json":{
+          "description":"gavin@localhost",
+          "username":"gavin",
+          "hostname":"localhost",
+          "port":""
+        }
+      }
+    ],
+    "welcome/notes-version":901,
+    "welcome/show-count":5
+  },
+  "hterm":{
+    "default":{
+      "cursor-color":"rgba(185, 185, 185, 0.5)",
+      "color-palette-overrides":{
+        "1":"#101010",
+        "2":"#7c7c7c",
+        "3":"#8e8e8e",
+        "4":"#a0a0a0",
+        "5":"#686868",
+        "6":"#747474",
+        "7":"#868686",
+        "8":"#b9b9b9",
+        "9":"#525252",
+        "10":"#999999",
+        "11":"#252525",
+        "12":"#464646",
+        "13":"#ababab",
+        "14":"#e3e3e3",
+        "15":"#5e5e5e",
+        "16":"#f7f7f7"
+      },
+      "enable-blink":false,
+      "font-size":"15",
+      "foreground-color":"rgba(185,185, 185, 1)",
+      "scrollbar-visible":false
+    }
+  }
+}
