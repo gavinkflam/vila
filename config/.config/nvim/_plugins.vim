@@ -105,6 +105,9 @@ Plug 'mileszs/ack.vim'
 " Asynchronous linting and make framework for Neovim/Vim
 Plug 'neomake/neomake'
 
+" Seamless integration for vim and tmux's clipboard
+Plug 'roxma/vim-tmux-clipboard'
+
 " fugitive.vim: a Git wrapper
 Plug 'tpope/vim-fugitive'
 
