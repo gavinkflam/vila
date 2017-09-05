@@ -51,7 +51,7 @@ ZSH_CUSTOM=$VILA/config/.oh-my-zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(gitfast zsh-completions zsh-autosuggestions)
+plugins=(gitfast ssh-agent zsh-completions zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,6 +99,10 @@ source "$VILA/themes/base16-grayscale-dark.sh"
 
 # zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
+
+# ssh-agent
+zstyle :omz:plugins:ssh-agent identities id_rsa
+zstyle :omz:plugins:ssh-agent lifetime 4h
 
 #################################################
 # Configurations for asdf
