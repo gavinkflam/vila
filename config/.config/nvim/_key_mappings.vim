@@ -53,6 +53,8 @@ nnoremap <leader>gp :Gpull --rebase<CR>
 nnoremap <silent> [g :Gprevhunk<CR>
 nnoremap <silent> ]g :Gnexthunk<CR>
 
+nnoremap <leader>sh :GitGutterStageHunk<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gv.vim
 
@@ -110,6 +112,10 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+
+" Fast splitting
+nmap <leader>hs :split<cr>
+nmap <leader>vs :vsplit<cr>
 
 " Fast quiting
 nmap <leader>q :q<cr>
