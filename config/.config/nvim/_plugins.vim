@@ -19,6 +19,9 @@ Plug 'Yggdroot/indentLine'
 " Move items left and right
 Plug 'andrewradev/sideways.vim'
 
+" Provide CamelCase motion through words
+Plug 'bkad/CamelCaseMotion'
+
 " simple, easy-to-use alignment plugin
 Plug 'junegunn/vim-easy-align'
 

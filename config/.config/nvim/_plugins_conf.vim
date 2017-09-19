@@ -45,6 +45,12 @@ let g:airline_section_error =
   \ airline#section#create_right(['%{g:asyncrun_status}'])
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" bkad/CamelCaseMotion
+
+" Apply default mappings for CamelCaseMotion with comma prefix
+call camelcasemotion#CreateMotionMappings(',')
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " chriskempson/base16-vim
 
 let base16colorspace=256
@@ -108,6 +114,10 @@ map f <Plug>Sneak_f
 map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
+
+" Use two commas for reverse fFtT mottions
+nmap ,, <Plug>Sneak_,
+vmap ,, <Plug>Sneak_,
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mattn/emmet-vim
