@@ -99,9 +99,6 @@ Plug 'dyng/ctrlsf.vim'
 " A git commit browser
 Plug 'junegunn/gv.vim'
 
-" Add emacs/bash/cocoa key bindings to vim, in insert and command-line modes
-Plug 'maxbrunsfeld/vim-emacs-bindings'
-
 " Run your favorite search tool from Vim, with an enhanced results list
 Plug 'mileszs/ack.vim'
 
@@ -113,6 +110,9 @@ Plug 'roxma/vim-tmux-clipboard'
 
 " fugitive.vim: a Git wrapper
 Plug 'tpope/vim-fugitive'
+
+" Readline style insertion
+Plug 'tpope/vim-rsi'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface

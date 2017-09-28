@@ -191,31 +191,6 @@ set laststatus=2
 let g:airline_theme='base16'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-emacs-bindings
-
-" Meta keys for insert mode
-inoremap <Esc>b <M-b>
-inoremap <Esc>f <M-f>
-inoremap <Esc>d <M-d>
-inoremap <Esc>h <M-h>
-
-imap <M-b> <C-o>b
-imap <M-f> <C-o>e<Right>
-imap <M-d> <C-o>de
-imap <M-h> <C-w>
-
-" Meta keys for command mode
-cnoremap <Esc>b <M-b>
-cnoremap <Esc>f <M-f>
-cnoremap <Esc>d <M-d>
-cnoremap <Esc>h <M-h>
-
-cmap <M-b> <S-Left>
-cmap <M-f> <S-Right>
-cnoremap <M-d> <S-Right><C-w>
-cnoremap <M-h> <C-w>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-scala
 
 " Sort imports across groups
