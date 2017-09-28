@@ -35,11 +35,6 @@ endfunction
 command! Bonly call Bonly()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ALE
-command! Lnexterror ALENextWrap
-command! Lpreverror ALEPreviousWrap
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files
 
 " :W sudo saves the file
