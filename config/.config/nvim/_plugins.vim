@@ -46,6 +46,9 @@ Plug 'terryma/vim-multiple-cursors'
 " Easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'tpope/tpope-vim-abolish'
 
+" Software capslock
+Plug 'tpope/vim-capslock'
+
 " Commentary.vim: comment stuff out
 Plug 'tpope/vim-commentary'
 
