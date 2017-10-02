@@ -12,3 +12,4 @@ services:
       - "32282:22"
     volumes:
       - toolbox-home:/home/gavin
+      - /var/run/docker.sock:/var/run/docker.sock
