@@ -1,0 +1,14 @@
+version: '3.2'
+
+volumes:
+  toolbox-home:
+    driver: local
+
+services:
+  toolbox:
+    build:
+      context: .
+    ports:
+      - "32282:22"
+    volumes:
+      - toolbox-home:/home/gavin
