@@ -13,4 +13,5 @@ services:
       - "32282:22"
     volumes:
       - toolbox-home:/home/gavin
+      - /home/gavin/.ssh:/home/gavin/.ssh
       - /var/run/docker.sock:/var/run/docker.sock
