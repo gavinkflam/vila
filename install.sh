@@ -5,16 +5,6 @@ VILA=$HOME/.vila
 # Install vila
 git clone git@github.com:gavinkflam/vila.git ~/.vila
 
-# Install on-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-# Install vim-plug
-curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# Install Tmux Plugin Manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
 # Merge files to home directory
 cp -rf $VILA/home/. $HOME
 
