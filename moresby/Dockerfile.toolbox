@@ -60,6 +60,7 @@ RUN \
     sudo \
     the_silver_searcher \
     tmux \
+    tzdata \
     wget \
     zsh && \
   # Update ca certificates
