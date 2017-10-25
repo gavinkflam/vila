@@ -82,6 +82,11 @@ Plug 'tpope/vim-surround'
 " A collection of language packs for Vim
 Plug 'sheerun/vim-polyglot'
 
+"----- Clojure -----
+
+" Clojure REPL support
+Plug 'tpope/vim-fireplace'
+
 "----- Elixir -----
 
 " phoenix.vim: rails.vim inspired tools for Phoenix
