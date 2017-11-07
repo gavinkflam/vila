@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$VILA/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -103,6 +100,16 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 # ssh-agent
 zstyle :omz:plugins:ssh-agent identities id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
+
+#################################################
+# Add vila bin to PATH
+export PATH=$PATH:$VILA/bin
+
+#################################################
+# Add Go bin if exist
+if [ -d "$HOME/go/bin" ] ; then
+  export PATH=$PATH:$HOME/go/bin
+fi
 
 #################################################
 # Configurations for asdf
