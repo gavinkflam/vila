@@ -106,9 +106,10 @@ zstyle :omz:plugins:ssh-agent lifetime 4h
 export PATH=$PATH:$VILA/bin
 
 #################################################
-# Add Go bin if exist
-if [ -d "$HOME/go/bin" ] ; then
-  export PATH=$PATH:$HOME/go/bin
+# Configurations for Go
+if [ -x "$(command -v go)" ] ; then
+  export PATH=$PATH:$(go env GOPATH)/bin
+  export GOPATH=$(go env GOPATH)
 fi
 
 #################################################
