@@ -161,6 +161,31 @@ let g:multi_cursor_quit_key='<C-c>'
 nnoremap <C-c> :call multiple_cursors#quit()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tpope/fugitive
+
+function! Gstash()
+  execute "!git add --all && git commit -m 'Stash'"
+endfunction
+
+command! -nargs=* Gaddall silent execute "!git add --all" <q-args>
+command! -nargs=* Ggraph  execute "Git log --graph" <q-args>
+command! -nargs=* Greset  execute "!git reset" <q-args>
+command!          Gstash  call Gstash()
+
+nnoremap <leader>gA :Gaddall<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gg :Ggraph --oneline --decorate<CR>
+nnoremap <leader>gl :Git log<CR>
+nnoremap <leader>gP :Gpush origin HEAD<CR>
+nnoremap <leader>gp :Gpull --rebase origin HEAD<CR>
+nnoremap <leader>gr :Greset --mixed<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>g- :Greset --mixed HEAD~1<CR>
+nnoremap <leader>g+ :Gstash<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Valloric/MatchTagAlways
 
 " Recognize mustache files

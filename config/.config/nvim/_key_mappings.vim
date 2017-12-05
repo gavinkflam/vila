@@ -33,14 +33,6 @@ nmap <leader>w :w!<cr>
 nnoremap Q <Nop>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" fugitive
-
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gP :Gpush<CR>
-nnoremap <leader>gp :Gpull --rebase<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GitGutter
 
 nnoremap <silent> [g :Gprevhunk<CR>
