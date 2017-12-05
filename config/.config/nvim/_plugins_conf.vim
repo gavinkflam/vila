@@ -175,6 +175,7 @@ command!          Gstash  call Gstash()
 nnoremap <leader>gA :Gaddall<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gc :Gcommit<CR>
+nnoremap <leader>gC :Gaddall<CR>:Gcommit<CR>
 nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gg :Ggraph --oneline --decorate<CR>
 nnoremap <leader>gl :Git log<CR>
