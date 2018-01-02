@@ -180,7 +180,7 @@ nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gg :Ggraph --oneline --decorate<CR>
 nnoremap <leader>gl :Git log<CR>
 nnoremap <leader>gP :Gpush origin HEAD<CR>
-nnoremap <leader>gp :Gpull --rebase origin HEAD<CR>
+nnoremap <leader>gp :Gpull --rebase<CR>
 nnoremap <leader>gr :Greset --mixed<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>g- :Greset --mixed HEAD~1<CR>
