@@ -108,8 +108,9 @@ export PATH=$PATH:$VILA/bin
 #################################################
 # Configurations for Go
 if [ -x "$(command -v go)" ] ; then
-  export PATH=$PATH:$(go env GOPATH)/bin
+  export GOROOT=$(go env GOROOT)
   export GOPATH=$(go env GOPATH)
+  export PATH=$PATH:$GOPATH/bin
 fi
 
 #################################################
