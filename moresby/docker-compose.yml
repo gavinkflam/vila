@@ -5,7 +5,7 @@ volumes:
     driver: local
 
 services:
-  toolbox:
+  centrix:
     build:
       context: .
       dockerfile: Dockerfile.toolbox
