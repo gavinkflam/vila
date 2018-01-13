@@ -240,8 +240,8 @@ augroup neomake_auto_make
   autocmd! BufRead,BufWritePost * Neomake
 augroup END
 
-" Enable credo as a neomake maker for elixir
-let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+" Configure linters for elixir
+let g:neomake_elixir_enabled_makers = ['mix', 'credo', 'dogma']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
