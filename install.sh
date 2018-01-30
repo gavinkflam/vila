@@ -2,9 +2,6 @@
 
 VILA=$HOME/.vila
 
-# Install vila
-git clone https://github.com/gavinkflam/vila.git ~/.vila
-
 # Merge files to home directory
 cp -rf $VILA/home/. $HOME
 

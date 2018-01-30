@@ -10,6 +10,7 @@ ENV \
   GNAME=gavin \
   GID=1000 \
   HOME=/home/gavin \
+  VILA=/home/gavin/.vila \
   SHELL=/bin/zsh \
   # System variables
   LANG=en_US.UTF-8 \
@@ -18,6 +19,8 @@ ENV \
   TZ=Asia/Hong_Kong \
   # Set this so that CTRL+G works properly
   TERM=xterm
+
+ADD . ${VILA}
 
 RUN \
   # Create user and home directory
@@ -79,7 +82,7 @@ RUN \
   # Install tpm
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
   # Install vila
-  sh -c "$(curl -sSL https://raw.githubusercontent.com/gavinkflam/vila/master/install.sh)" && \
+  ./$VILA/install.sh && \
   # Apply ownership for home folders properly
   chown -R ${UID}:${GID} ${HOME} && \
   # Cleanup
