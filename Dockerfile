@@ -81,8 +81,8 @@ RUN \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
   # Install tpm
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
-  # Install vila
-  ./$VILA/install.sh && \
+  # Setup vila
+  .$VILA/setup && \
   # Apply ownership for home folders properly
   chown -R ${UID}:${GID} ${HOME} && \
   # Cleanup

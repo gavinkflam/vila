@@ -6,7 +6,7 @@ VILA=$HOME/.vila
 cp -rf $VILA/home/. $HOME
 
 # Install plugins for oh-my-zsh
-$VILA/config/.oh-my-zsh/custom/plugins/install.sh
+$VILA/config/.oh-my-zsh/custom/plugins/install
 
 # Install plugins for vim
 nvim -u $VILA/config/.config/nvim/plugins_only.vim \
