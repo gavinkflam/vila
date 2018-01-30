@@ -53,11 +53,10 @@ RUN \
     openssh \
     make \
     neovim \
-    python \
-    python-dev \
     python2 \
     python2-dev \
-    py-pip \
+    python3 \
+    python3-dev \
     py-yaml \
     py2-pip \
     sudo \
@@ -69,7 +68,7 @@ RUN \
   # Update ca certificates
   update-ca-certificates --fresh && \
   # Install python packages
-  pip install -U \
+  pip3 install -U \
     docker-compose \
     neovim && \
   pip2 install -U \
