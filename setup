@@ -11,4 +11,5 @@ $VILA/config/.oh-my-zsh/custom/plugins/install
 # Install plugins for vim
 nvim -u $VILA/config/.config/nvim/plugins_only.vim \
   -c ':PlugInstall' \
+  -c ':UpdateRemotePlugins' \
   -c 'qa!'
