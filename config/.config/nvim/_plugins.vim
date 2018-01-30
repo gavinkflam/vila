@@ -4,9 +4,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code display
 
-" Better Rainbow Parentheses
-Plug 'kien/rainbow_parentheses.vim'
-
 " Always highlights the enclosing html/xml tags
 Plug 'Valloric/MatchTagAlways'
 
