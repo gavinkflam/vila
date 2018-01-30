@@ -3,5 +3,5 @@
 " thus making initial plugin installation graceful
 
 call plug#begin('~/.local/share/nvim/plugged')
-runtime _plugins.vim
+source $VILA/config/.config/nvim/_plugins.vim
 call plug#end()
