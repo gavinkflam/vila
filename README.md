@@ -1,13 +1,19 @@
-VILA
+vila
 ====
 
-How to install
---------------
-`sh -c "$(curl -sSL https://raw.githubusercontent.com/gavinkflam/vila/master/install.sh)"`
+My dockerized portable development environment.
 
-How to update
+Out of the box
 --------------
-`./$VILA/update.sh`
+Packed with neovim, tmux, zsh, oh-my-zsh, ag, docker-cli, etc..
+
+Minimal
+-------
+Each project should be self-contained and containerized.
+
+Interactions are restricted through docker-cli and the binded Docker socket.
+
+Thus, allowing a clean and minimal core of the development environment.
 
 License
 -------
