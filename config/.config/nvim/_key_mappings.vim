@@ -20,12 +20,6 @@ map 0 ^
 " Map Ctrl-J to enter key for better plugin support
 imap <C-J> <CR>
 
-" Move a line of text using ALT+[jk]
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
 " Fast saving
 nmap <leader>w :w!<cr>
 
