@@ -40,9 +40,6 @@ Plug 'skywind3000/asyncrun.vim'
 " Simplified clipboard functionality for Vim
 Plug 'svermeulen/vim-easyclip'
 
-" True Sublime Text style multiple selections for Vim
-Plug 'terryma/vim-multiple-cursors'
-
 " Easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'tpope/tpope-vim-abolish'
 
