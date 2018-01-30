@@ -13,9 +13,6 @@ Plug 'Yggdroot/indentLine'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 
-" Move items left and right
-Plug 'andrewradev/sideways.vim'
-
 " Provide CamelCase motion through words
 Plug 'bkad/CamelCaseMotion'
 

@@ -10,13 +10,6 @@ if executable('ag')
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" andrewradev/sideways.vim
-
-" Shortcut to move items sideways
-nnoremap <M-h> :SidewaysLeft<cr>
-nnoremap <M-l> :SidewaysRight<cr>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ap/vim-buftabline
 
 " Display ordinal numbering on buftabline
