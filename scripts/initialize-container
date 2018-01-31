@@ -10,16 +10,16 @@ if [[
 fi
 
 # Generate fresh RSA key for sshd
-if [ ! -f "/etc/ssh/ssh_host_rsa_key" ]; then
-	sudo ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
-  sudo chmod 0600 /etc/ssh/ssh_host_rsa_key
+if [ ! -f "/etc/ssh/host_keys/ssh_host_rsa_key" ]; then
+	sudo ssh-keygen -f /etc/ssh/host_keys/ssh_host_rsa_key -N '' -t rsa
+  sudo chmod 0600 /etc/ssh/host_keys/ssh_host_rsa_key
   echo -e 'Generated fresh RSA key for sshd'
 fi
 
 # Generate fresh DSA key for sshd
-if [ ! -f "/etc/ssh/ssh_host_dsa_key" ]; then
-	sudo ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa
-  sudo chmod 0600 /etc/ssh/ssh_host_dsa_key
+if [ ! -f "/etc/ssh/host_keys/ssh_host_dsa_key" ]; then
+	sudo ssh-keygen -f /etc/ssh/host_keys/ssh_host_dsa_key -N '' -t dsa
+  sudo chmod 0600 /etc/ssh/host_keys/ssh_host_dsa_key
   echo -e 'Generated fresh DSA key for sshd'
 fi
 

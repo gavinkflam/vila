@@ -90,6 +90,8 @@ ADD . ${VILA}
 RUN \
   # Merge vila files to home directory
   cp -rf ${VILA}/home/. ${HOME} && \
+  # Override sshd_config
+  cp ${VILA}/config/sshd_config /etc/ssh/sshd_config && \
   # Install custom plugins for oh-my-zsh
   ${VILA}/config/.oh-my-zsh/custom/plugins/install && \
   # Install plugins for neovim
