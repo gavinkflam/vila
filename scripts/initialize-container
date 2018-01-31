@@ -8,3 +8,25 @@ if [[
   sudo chown $UID:$GID /var/run/docker.sock
   echo -e 'Fixed ownership for docker.sock'
 fi
+
+# Generate fresh RSA key for sshd
+if [ ! -f "/etc/ssh/ssh_host_rsa_key" ]; then
+	sudo ssh-keygen -f /etc/ssh/ssh_host_rsa_key -N '' -t rsa
+  sudo chmod 0600 /etc/ssh/ssh_host_rsa_key
+  echo -e 'Generated fresh RSA key for sshd'
+fi
+
+# Generate fresh DSA key for sshd
+if [ ! -f "/etc/ssh/ssh_host_dsa_key" ]; then
+	sudo ssh-keygen -f /etc/ssh/ssh_host_dsa_key -N '' -t dsa
+  sudo chmod 0600 /etc/ssh/ssh_host_dsa_key
+  echo -e 'Generated fresh DSA key for sshd'
+fi
+
+# Prepare run directory for sshd
+if [ ! -d "/var/run/sshd" ]; then
+  sudo mkdir -p /var/run/sshd
+  echo -e 'Created run directory for sshd'
+fi
+
+exec "$@"

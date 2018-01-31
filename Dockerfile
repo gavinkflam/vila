@@ -76,18 +76,18 @@ RUN \
     docker-compose \
     neovim && \
   pip2 install -U \
-    neovim
-
-ADD . ${VILA}
-
-RUN \
+    neovim && \
   # Install oh-my-zsh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
   # Install vim-plug
   curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
   # Install tpm
-  git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm && \
+  git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm
+
+ADD . ${VILA}
+
+RUN \
   # Merge vila files to home directory
   cp -rf ${VILA}/home/. ${HOME} && \
   # Install custom plugins for oh-my-zsh
@@ -105,4 +105,6 @@ RUN \
 WORKDIR ${HOME}
 USER ${UNAME}
 
-CMD ["tail", "-f", "/dev/null"]
+EXPOSE 22
+ENTRYPOINT [".vila/scripts/initialize-container"]
+CMD ["sudo", "/usr/sbin/sshd", "-D"]

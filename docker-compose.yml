@@ -7,4 +7,5 @@ services:
       - ~/.ssh:/home/gavin/.ssh
       - ~/dev:/home/gavin/dev
       - /var/run/docker.sock:/var/run/docker.sock
-    command: sh -c "$VILA/scripts/initialize-container && tail -f /dev/null"
+    ports:
+      - "34722:22"
