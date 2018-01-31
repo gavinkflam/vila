@@ -67,6 +67,8 @@ RUN \
     zsh && \
   # Update ca certificates
   update-ca-certificates --fresh && \
+  # Add user to sudoer in order to sudo without entering password
+  echo "${UNAME} ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/${UNAME} && \
   # Install python packages
   pip3 install -U \
     docker-compose \
