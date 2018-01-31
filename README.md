@@ -3,10 +3,6 @@ vila
 
 My dockerized portable development environment.
 
-Out of the box
---------------
-Packed with neovim, tmux, zsh, oh-my-zsh, ag, docker-cli, etc..
-
 Minimal
 -------
 Each project should be self-contained and containerized.
