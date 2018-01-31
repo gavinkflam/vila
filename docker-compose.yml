@@ -2,6 +2,7 @@ version: "3"
 
 services:
   vila:
+    hostname: gavin-vila
     image: gavinkflam/vila:latest
     volumes:
       - ~/.ssh:/home/gavin/.ssh
