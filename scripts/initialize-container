@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Fix ownership for binded Docker socket
+if [[
+  -e /var/run/docker.sock &&
+  "ls -ln1 /var/run/docker.sock | awk '{print $3}'" != $UID
+]]; then
+  sudo chown $UID:$GID /var/run/docker.sock
+  echo -e 'Fixed ownership for docker.sock'
+fi
