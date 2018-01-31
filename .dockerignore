@@ -1,2 +1,10 @@
 # Ignore oh-my-zsh plugins git repository
 config/.oh-my-zsh/custom/plugins/*/*
+
+# Ignore git files
+.git
+.gitignore
+
+# Ignore Docker related files
+.dockerignore
+Dockerfile

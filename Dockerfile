@@ -3,7 +3,7 @@ FROM alpine:3.6
 MAINTAINER Gavin Lam <me@gavin.hk>
 
 ENV \
-  REFRESHED_AT=2017-10-01 \
+  REFRESHED_AT=2018-01-31 \
   # User and preferences
   UNAME=gavin \
   UID=1000 \
@@ -35,7 +35,9 @@ RUN \
     -u ${UID} \
     -h ${HOME} \
     -s ${SHELL} \
-    ${UNAME} && \
+    ${UNAME}
+
+RUN \
   # Add edge repos tagged so that we can selectively install edge packages
   echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
   # Upgrade Alpine and base packages
@@ -67,6 +69,10 @@ RUN \
     zsh && \
   # Update ca certificates
   update-ca-certificates --fresh && \
+  # Cleanup
+  rm -rf /var/cache/apk/*
+
+RUN \
   # Add user to sudoer in order to sudo without entering password
   echo "${UNAME} ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/${UNAME} && \
   # Install python packages
@@ -74,20 +80,20 @@ RUN \
     docker-compose \
     neovim && \
   pip2 install -U \
-    neovim && \
+    neovim
+
+RUN \
   # Install oh-my-zsh
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
   # Install vim-plug
   curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
   # Install tpm
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && \
+  git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm && \
   # Setup vila
   .$VILA/setup && \
   # Apply ownership for home folders properly
-  chown -R ${UID}:${GID} ${HOME} && \
-  # Cleanup
-  rm -rf /var/cache/apk/*
+  chown -R ${UID}:${GID} ${HOME}
 
 WORKDIR ${HOME}
 USER ${UNAME}
