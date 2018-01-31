@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  vila:
+    image: gavinkflam/vila:latest
+    volumes:
+    - ~/.ssh:/home/gavin/.ssh
+    - /var/run/docker.sock:/var/run/docker.sock
+    command: sh -c "$VILA/scripts/initialize-container && tail -f /dev/null"
