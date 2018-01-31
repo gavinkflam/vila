@@ -36,8 +36,6 @@ RUN \
     ${UNAME}
 
 RUN \
-  # Add edge repos tagged so that we can selectively install edge packages
-  echo "@edge http://nl.alpinelinux.org/alpine/edge/main" >> /etc/apk/repositories && \
   # Upgrade Alpine and base packages
   apk --no-cache upgrade && \
   # Install packages
