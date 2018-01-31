@@ -20,8 +20,6 @@ ENV \
   # Set this so that CTRL+G works properly
   TERM=xterm
 
-ADD . ${VILA}
-
 RUN \
   # Create user and home directory
   mkdir -p ${HOME} && \
@@ -81,6 +79,8 @@ RUN \
     neovim && \
   pip2 install -U \
     neovim
+
+ADD . ${VILA}
 
 RUN \
   # Install oh-my-zsh
