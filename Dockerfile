@@ -90,11 +90,11 @@ RUN \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
   # Install tpm
   git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm && \
-  # Merge files to home directory
+  # Merge vila files to home directory
   cp -rf ${VILA}/home/. ${HOME} && \
-  # Install plugins for oh-my-zsh
+  # Install custom plugins for oh-my-zsh
   ${VILA}/config/.oh-my-zsh/custom/plugins/install && \
-  # Install plugins for vim
+  # Install plugins for neovim
   nvim \
     -u ${VILA}/config/.config/nvim/plugins_only.vim \
     -c ':PlugInstall' \
