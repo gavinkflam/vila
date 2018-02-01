@@ -21,19 +21,24 @@ ENV \
   TERM=xterm
 
 RUN \
-  # Create user and home directory
+  # Create home directory for the user
   mkdir -p ${HOME} && \
+  # Create group
   addgroup \
     -S \
     -g ${GID} \
     ${GNAME} && \
+  # Create user and configure the home directory and default shell
   adduser \
     -S \
     -G ${GNAME} \
     -u ${UID} \
     -h ${HOME} \
     -s ${SHELL} \
-    ${UNAME}
+    ${UNAME} && \
+  # Unlock the newly created user
+  passwd \
+    -u ${UNAME}
 
 RUN \
   # Upgrade Alpine and base packages
