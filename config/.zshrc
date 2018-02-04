@@ -104,19 +104,3 @@ zstyle :omz:plugins:ssh-agent lifetime 4h
 #################################################
 # Add vila bin to PATH
 export PATH=$PATH:$VILA/bin
-
-#################################################
-# Configurations for Go
-if [ -x "$(command -v go)" ] ; then
-  export GOROOT=$(go env GOROOT)
-  export GOPATH=$(go env GOPATH)
-  export PATH=$PATH:$GOPATH/bin
-fi
-
-#################################################
-# Configurations for asdf
-
-if [ -d "$HOME/.asdf" ]; then
-  source "$HOME/.asdf/asdf.sh"
-  source "$HOME/.asdf/completions/asdf.bash"
-fi
