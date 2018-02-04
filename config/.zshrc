@@ -102,5 +102,7 @@ zstyle :omz:plugins:ssh-agent identities id_rsa
 zstyle :omz:plugins:ssh-agent lifetime 4h
 
 #################################################
-# Add vila bin to PATH
-export PATH=$PATH:$VILA/bin
+# Add vila bin to PATH if not already
+if [[ ! "$PATH" = *"$VILA/bin:"* ]]; then
+  export PATH="$VILA/bin:$PATH"
+fi
