@@ -53,6 +53,7 @@ RUN \
     git \
     gnupg \
     inotify-tools \
+    less \
     openssh \
     make \
     neovim \
