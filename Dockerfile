@@ -53,6 +53,7 @@ RUN \
     git \
     gnupg \
     inotify-tools \
+    iputils \
     less \
     openssh \
     make \
