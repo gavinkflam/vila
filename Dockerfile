@@ -41,35 +41,46 @@ RUN \
     -u ${UNAME}
 
 RUN \
-  # Upgrade Alpine and base packages
-  apk --no-cache upgrade && \
   # Install packages
-  apk --no-cache --update add \
+  apk --update add \
+    # Bash shell for executing shell scripts
     bash \
+    # Download the latest ca certificates
     ca-certificates \
+    # cURL and Wget
     curl \
+    wget \
+    # Docker client
     docker \
+    # Build essentials
     g++ \
-    git \
-    gnupg \
-    inotify-tools \
-    iputils \
-    less \
-    openssh \
     make \
+    # Git, Neovim, Ag, tmux, ZSH
+    git \
     neovim \
+    the_silver_searcher \
+    tmux \
+    zsh \
+    # GNU tools
+    gnupg \
+    less \
+    # inotify interface for filesystem events
+    inotify-tools \
+    # ping, tracetoute, etc.
+    iputils \
+    # OpenSSH client and server
+    openssh \
+    # Python 2 and 3
     python2 \
     python2-dev \
     python3 \
     python3-dev \
     py-yaml \
     py2-pip \
+    # sudo for runtime everyday use only, do not use in build time
     sudo \
-    the_silver_searcher \
-    tmux \
-    tzdata \
-    wget \
-    zsh && \
+    # Timezone database
+    tzdata && \
   # Update ca certificates
   update-ca-certificates --fresh && \
   # Cleanup
