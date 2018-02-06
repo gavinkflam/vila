@@ -2,36 +2,31 @@
 
 # Fix ownership for binded Docker socket
 if [[
-  -e "/var/run/docker.sock" &&
-  "$( ls -ln1 /var/run/docker.sock | awk '{print $3}' )" != $UID
+  -e /var/run/docker.sock &&
+  "ls -ln1 /var/run/docker.sock | awk '{print $3}'" != $UID
 ]]; then
   sudo chown $UID:$GID /var/run/docker.sock
   echo -e 'Fixed ownership for docker.sock'
 fi
 
 # Generate fresh RSA key for sshd
-if [[ ! -f "/etc/ssh/host_keys/ssh_host_rsa_key" ]]; then
+if [ ! -f "/etc/ssh/host_keys/ssh_host_rsa_key" ]; then
 	sudo ssh-keygen -f /etc/ssh/host_keys/ssh_host_rsa_key -N '' -t rsa
   sudo chmod 0600 /etc/ssh/host_keys/ssh_host_rsa_key
   echo -e 'Generated fresh RSA key for sshd'
 fi
 
 # Generate fresh DSA key for sshd
-if [[ ! -f "/etc/ssh/host_keys/ssh_host_dsa_key" ]]; then
+if [ ! -f "/etc/ssh/host_keys/ssh_host_dsa_key" ]; then
 	sudo ssh-keygen -f /etc/ssh/host_keys/ssh_host_dsa_key -N '' -t dsa
   sudo chmod 0600 /etc/ssh/host_keys/ssh_host_dsa_key
   echo -e 'Generated fresh DSA key for sshd'
 fi
 
 # Prepare run directory for sshd
-if [[ ! -d "/var/run/sshd" ]]; then
+if [ ! -d "/var/run/sshd" ]; then
   sudo mkdir -p /var/run/sshd
   echo -e 'Created run directory for sshd'
 fi
-
-# Create symbolic link for each file inside .vila_persist
-for f in $HOME/.vila_persist/*; do
-  ln -sfn $f "$HOME/$( basename $f)"
-done
 
 exec "$@"
