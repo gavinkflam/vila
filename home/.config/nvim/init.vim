@@ -1,1 +1,1 @@
-source $VILA/config/.config/nvim/init.vim
+source $VILA/config/nvim/init.vim
