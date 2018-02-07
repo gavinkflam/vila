@@ -1,1 +1,1 @@
-. $VILA/config/.zprofile
+. $VILA/config/zsh/.zprofile

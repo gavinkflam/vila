@@ -61,7 +61,7 @@ setopt pushd_ignore_dups
 # Plugins and themes
 
 # Load zsh plugins via zgen
-. $VILA/config/.zplugins
+. $VILA/config/zsh/_plugins
 
 # Use base16-grayscale-dark theme
 . "$VILA/themes/base16-grayscale-dark.sh"

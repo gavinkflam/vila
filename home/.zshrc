@@ -1,1 +1,1 @@
-. $VILA/config/.zshrc
+. $VILA/config/zsh/.zshrc

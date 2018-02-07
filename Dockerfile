@@ -109,7 +109,7 @@ RUN \
   # Merge vila files to home directory
   cp -rf ${VILA}/home/. ${HOME} && \
   # Override sshd_config
-  cp ${VILA}/config/sshd_config /etc/ssh/sshd_config && \
+  cp ${VILA}/config/sshd/sshd_config /etc/ssh/sshd_config && \
   # Install plugins for neovim
   nvim \
     -u ${VILA}/config/.config/nvim/plugins_only.vim \

@@ -1,2 +1,2 @@
 export VILA=$HOME/.vila
-. $VILA/config/.zshenv
+. $VILA/config/zsh/.zshenv
