@@ -95,13 +95,13 @@ RUN \
     neovim && \
   pip2 install -U \
     neovim && \
-  # Install oh-my-zsh
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
+  # Install tpm
+  git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm && \
   # Install vim-plug
   curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
-  # Install tpm
-  git clone https://github.com/tmux-plugins/tpm ${HOME}/.tmux/plugins/tpm
+  # Install zgen
+  git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen
 
 ADD . ${VILA}
 
@@ -110,8 +110,6 @@ RUN \
   cp -rf ${VILA}/home/. ${HOME} && \
   # Override sshd_config
   cp ${VILA}/config/sshd_config /etc/ssh/sshd_config && \
-  # Install custom plugins for oh-my-zsh
-  ${VILA}/config/.oh-my-zsh/custom/plugins/install && \
   # Install plugins for neovim
   nvim \
     -u ${VILA}/config/.config/nvim/plugins_only.vim \

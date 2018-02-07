@@ -1,0 +1,17 @@
+source $HOME/.zgen/zgen.zsh
+
+if [[ ! $( zgen saved ) ]]; then
+  # Running asynchronous tasks in zsh
+  zgen load mafredri/zsh-async
+
+  # Fish-like autosuggestions for zsh
+  zgen load zsh-users/zsh-autosuggestions
+
+  # Additional completion definitions for Zsh
+  zgen load zsh-users/zsh-completions
+
+  # Pretty, minimal and fast ZSH prompt
+  zgen load sindresorhus/pure pure.zsh
+
+  zgen save
+fi
