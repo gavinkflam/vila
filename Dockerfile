@@ -109,7 +109,8 @@ RUN \
   # Merge vila files to home directory
   cp -rf ${VILA}/home/. ${HOME} && \
   # Download zsh plugins via zgen
-  zsh -c ". ${VILA}/config/zsh/_plugins" && \
+  zsh \
+    -c "ZGEN_AUTOLOAD_COMPINIT=0; . ${VILA}/config/zsh/_plugins" && \
   # Override sshd_config
   cp ${VILA}/config/sshd/sshd_config /etc/ssh/sshd_config && \
   # Install plugins for neovim
