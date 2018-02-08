@@ -57,6 +57,10 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 # Don’t push multiple copies of the same directory onto the directory stack
 setopt pushd_ignore_dups
 
+# Initialize new style completion
+autoload -Uz compinit
+compinit
+
 ########################################
 # Plugins and themes
 
