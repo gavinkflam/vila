@@ -108,10 +108,6 @@ map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
-" Use two commas for reverse fFtT mottions
-nmap ,, <Plug>Sneak_,
-vmap ,, <Plug>Sneak_,
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mattn/emmet-vim
 
