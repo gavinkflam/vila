@@ -1,17 +1,29 @@
+if [[ -s $HOME/.zgen/init.zsh ]]; then
+  # Load generated plugins initialization script
+  . "$HOME/.zgen/init.zsh"
+
+  # zgen shim to shed loading time
+  function zgen () {
+    source $HOME/.zgen/zgen.zsh
+    zgen "$@"
+  }
+
+  return
+fi
+
 source $HOME/.zgen/zgen.zsh
 
-if [[ ! $( zgen saved ) ]]; then
-  # Running asynchronous tasks in zsh
-  zgen load mafredri/zsh-async
+# Running asynchronous tasks in zsh
+zgen load mafredri/zsh-async
 
-  # Fish-like autosuggestions for zsh
-  zgen load zsh-users/zsh-autosuggestions
+# Fish-like autosuggestions for zsh
+zgen load zsh-users/zsh-autosuggestions
 
-  # Additional completion definitions for Zsh
-  zgen load zsh-users/zsh-completions
+# Additional completion definitions for Zsh
+zgen load zsh-users/zsh-completions
 
-  # Pretty, minimal and fast ZSH prompt
-  zgen load sindresorhus/pure pure.zsh
+# Pretty, minimal and fast ZSH prompt
+zgen load sindresorhus/pure pure.zsh
 
-  zgen save
-fi
+# Generate plugins initialization script
+zgen save
