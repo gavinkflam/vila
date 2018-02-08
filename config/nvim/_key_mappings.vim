@@ -59,6 +59,13 @@ nnoremap <silent> \h :noh<CR>
 nnoremap <silent> \t :tabclose<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" tmux
+
+inoremap <silent> <M-,> <C-O>:call TmuxExecuteAtNextPane(getline('.'))<CR>
+nnoremap <silent> ,, :call TmuxExecuteAtNextPane(getline('.'))<CR>
+vnoremap <silent> ,, :call TmuxExecuteAtNextPane(getline("'<", "'>"))<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual mode
 
 " Pressing * or # searches for the current selection
