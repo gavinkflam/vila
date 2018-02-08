@@ -6,6 +6,10 @@ source $VILA/config/nvim/_plugins.vim
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Snippet plugins
+source $VILA/config/nvim/plugins/vmux.vim
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " core.vim
 source $VILA/config/nvim/_core.vim
 

@@ -47,28 +47,6 @@ command! Gprevhunk GitGutterPrevHunk
 command! Gnexthunk GitGutterNextHunk
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" tmux
-function! TmuxExecuteAtNextPane(payload)
-  " Early exit if not in tmux session
-  if $TMUX == ''
-    echom 'You are not in a tmux session'
-    return
-  endif
-
-  " Early exit if there is only one pane
-  if system('tmux display-message -p -F "#{window_panes}"') == 1
-    echom 'There is only one pane in the current window'
-    return
-  endif
-
-  " Load argument into tmux buffer, then paste at next pane and send return
-  silent! call system('tmux loadb -', a:payload)
-  silent! call system('tmux pasteb -t +')
-  silent! call system('tmux send-keys -t + C-m')
-endfunction
-command! -nargs=1 TmuxExecuteAtNextPane call TmuxExecuteAtNextPane(<f-args>)
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vim profile
 command! Vreload source $MYVIMRC
 command! Vedit edit $MYVIMRC
