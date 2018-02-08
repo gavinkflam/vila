@@ -82,6 +82,13 @@ let g:deoplete#enable_at_startup = 1
 nnoremap <leader>f :CtrlSF<space>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" gavinkflam/vmux
+
+imap <M-,> <Plug>(Vmux_run)
+nmap ,, <Plug>(Vmux_run)
+xmap ,, <Plug>(Vmux_run)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/vim-easy-align
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)

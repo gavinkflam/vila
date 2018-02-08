@@ -1,5 +1,5 @@
 " Execute payload in the runner pane via the tmux buffer
-function! vmux#tmux_execute_at_runner_pane(payload)
+function! vmux#vmux_run(payload)
   " Early exit if not in tmux session
   if $TMUX == ''
     echom 'You are not in a tmux session'
@@ -20,7 +20,7 @@ endfunction
 
 " Get text under visual selection
 " https://github.com/erig0/nc2xclip/blob/master/get_visual_selection.vim
-function! vmux#get_visual_selection()
+function! s:get_visual_selection()
   let [lnum1, col1] = getpos("'<")[1:2]
   let [lnum2, col2] = getpos("'>")[1:2]
   let lines = getline(lnum1, lnum2)
@@ -29,10 +29,13 @@ function! vmux#get_visual_selection()
   return join(lines, "\n")
 endfunction
 
-" Command wrapper for runner pane execution
-command! -nargs=1 VmuxExecuteAtRunnerPane call vmux#tmux_execute_at_runner_pane(<f-args>)
+" Command wrapper for vmux_run
+command! -nargs=1 VmuxRun call vmux#vmux_run(<f-args>)
 
-" Key mappings
-inoremap <silent> <M-,> <C-O>:call vmux#tmux_execute_at_runner_pane(getline('.'))<CR>
-nnoremap <silent> ,, :call vmux#tmux_execute_at_runner_pane(getline('.'))<CR>
-vnoremap <silent> ,, :call vmux#tmux_execute_at_runner_pane(vmux#get_visual_selection())<CR>
+" Key mappings for Vmux_run
+inoremap <silent> <Plug>(Vmux_run)
+  \ <C-O>:call vmux#vmux_run(getline('.'))<CR>
+nnoremap <silent> <Plug>(Vmux_run)
+  \ :call vmux#vmux_run(getline('.'))<CR>
+xnoremap <silent> <Plug>(Vmux_run)
+  \ :call vmux#vmux_run(<SID>get_visual_selection())<CR>gv
