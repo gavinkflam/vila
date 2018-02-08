@@ -13,6 +13,9 @@ fi
 
 source $HOME/.zgen/zgen.zsh
 
+# ssh-agent management
+zgen load bobsoppe/zsh-ssh-agent
+
 # Running asynchronous tasks in zsh
 zgen load mafredri/zsh-async
 
