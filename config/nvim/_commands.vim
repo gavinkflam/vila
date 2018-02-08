@@ -55,6 +55,12 @@ function! TmuxExecuteAtNextPane(payload)
     return
   endif
 
+  " Early exit if there is only one pane
+  if system('tmux display-message -p -F "#{window_panes}"') == 1
+    echom 'There is only one pane in the current window'
+    return
+  endif
+
   " Load argument into tmux buffer, then paste at next pane and send return
   silent! call system('tmux loadb -', a:payload)
   silent! call system('tmux pasteb -t +')
