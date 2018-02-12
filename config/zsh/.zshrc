@@ -57,6 +57,9 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 # Don’t push multiple copies of the same directory onto the directory stack
 setopt pushd_ignore_dups
 
+# Do not beep
+setopt no_beep
+
 # Initialize new style completion
 autoload -Uz compinit
 compinit
