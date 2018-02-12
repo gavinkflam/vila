@@ -84,9 +84,9 @@ nnoremap <leader>f :CtrlSF<space>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gavinkflam/vmux
 
-imap <M-,> <Plug>(Vmux_run)
-nmap ,, <Plug>(Vmux_run)
-xmap ,, <Plug>(Vmux_run)
+imap <M-,> <Plug>(Vmux_dispatch)
+nmap ,, <Plug>(Vmux_dispatch)
+xmap ,, <Plug>(Vmux_dispatch)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/vim-easy-align

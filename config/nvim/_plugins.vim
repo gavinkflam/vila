@@ -99,6 +99,9 @@ Plug 'airblade/vim-gitgutter'
 " An ack.vim alternative mimics Ctrl-Shift-F on Sublime Text 2
 Plug 'dyng/ctrlsf.vim'
 
+" Frictionless REPL with vim and tmux
+Plug '~/dev/vmux'
+
 " A git commit browser
 Plug 'junegunn/gv.vim'
 
