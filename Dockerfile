@@ -58,9 +58,11 @@ RUN \
     # Git, Neovim, Ag, tmux, ZSH
     git \
     neovim \
+    neovim-doc \
     the_silver_searcher \
     tmux \
     zsh \
+    zsh-vcs \
     # GNU tools
     gnupg \
     less \
