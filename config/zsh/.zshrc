@@ -54,6 +54,10 @@ export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 ########################################
 # Misc
 
+# Parameter expansion, command substitution and arithmetic expansion are
+# performed in prompts
+setopt prompt_subst
+
 # Don’t push multiple copies of the same directory onto the directory stack
 setopt pushd_ignore_dups
 
@@ -66,6 +70,9 @@ compinit
 
 ########################################
 # Plugins and themes
+
+# Do not show tmux indicator for lean prompt
+PROMPT_LEAN_TMUX=""
 
 # Load zsh plugins via zgen
 . $VILA/config/zsh/_plugins
