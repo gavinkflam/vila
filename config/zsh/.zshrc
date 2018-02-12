@@ -74,6 +74,10 @@ compinit
 # Do not show tmux indicator for lean prompt
 PROMPT_LEAN_TMUX=""
 
+# Grayscale customization for lean
+PROMPT_LEAN_COLOR1="f7/f7/f7"
+PROMPT_LEAN_COLOR2="7c/7c/7c"
+
 # Load zsh plugins via zgen
 . $VILA/config/zsh/_plugins
 
