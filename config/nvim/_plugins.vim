@@ -142,6 +142,12 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Meta-vim
+
+" A simple Vimscript test framework
+Plug 'junegunn/vader.vim',  { 'on': 'Vader', 'for': 'vader' }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Themes
 
 " Base16 for Vim
