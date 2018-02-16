@@ -76,7 +76,7 @@ Plug 'sheerun/vim-polyglot'
 "----- Clojure -----
 
 " Clojure REPL support
-Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
 
 "----- Elixir -----
 
