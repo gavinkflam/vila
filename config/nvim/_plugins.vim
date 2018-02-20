@@ -102,6 +102,9 @@ Plug 'dyng/ctrlsf.vim'
 " Frictionless REPL with vim and tmux
 Plug '~/dev/vmux'
 
+" Frictionless REPL with vim and tmux
+Plug '$VILA/config/nvim/plugins/vmux-ftplugins'
+
 " A git commit browser
 Plug 'junegunn/gv.vim'
 
