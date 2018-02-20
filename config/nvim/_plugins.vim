@@ -100,7 +100,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'dyng/ctrlsf.vim'
 
 " Frictionless REPL with vim and tmux
-Plug '~/dev/vmux'
+Plug 'gavinkflam/vmux'
 
 " Frictionless REPL with vim and tmux
 Plug '$VILA/config/nvim/plugins/vmux-ftplugins'
