@@ -84,9 +84,15 @@ nnoremap <leader>f :CtrlSF<space>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " gavinkflam/vmux
 
+" Dispatch selection to companion pane (e.g. vipg,)
+xmap g,    <Plug>(Vmux_dispatch)
+
+" Start Vmux for a motion / text object (e.g. g,ip)
+nmap g,    <Plug>(Vmux_dispatch_op)
+
+" Dispatch current line to companion pane
 imap <M-,> <Plug>(Vmux_dispatch)
-nmap ,, <Plug>(Vmux_dispatch)
-xmap ,, <Plug>(Vmux_dispatch)
+nmap g,,   <Plug>(Vmux_dispatch)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/vim-easy-align
