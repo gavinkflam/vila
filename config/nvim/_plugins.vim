@@ -102,7 +102,7 @@ Plug 'dyng/ctrlsf.vim'
 " Frictionless REPL with vim and tmux
 Plug 'gavinkflam/vmux'
 
-" Frictionless REPL with vim and tmux
+" File type plugins for frictionless REPL with vmux
 Plug '$VILA/config/nvim/plugins/vmux-ftplugins'
 
 " A git commit browser
