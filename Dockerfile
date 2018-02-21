@@ -115,6 +115,8 @@ RUN \
     -c "ZGEN_AUTOLOAD_COMPINIT=0; . ${VILA}/config/zsh/_plugins" && \
   # Override sshd_config
   cp ${VILA}/config/sshd/sshd_config /etc/ssh/sshd_config && \
+  # Override message of the day
+  cp ${VILA}/config/sshd/motd /etc/motd && \
   # Install plugins for neovim
   nvim \
     -u ${VILA}/config/nvim/plugins_only.vim \
