@@ -15,7 +15,9 @@ let g:loaded_vmux_ftplugin_ruby = 1
 " Command wrapper for dispatching common Ruby commands via vmux
 command! -nargs=0 Pry         :VmuxDispatch pry
 command! -nargs=0 PryContinue :VmuxDispatch continue
+command! -nargs=0 PryLoad     :exec 'VmuxDispatch load ''' . @% . ''''
 command! -nargs=0 PryExit     :VmuxDispatch exit
+
 command! -nargs=0 PryRemote   :VmuxDispatch pry-remote
 
 command! -nargs=0 RakeConsole :VmuxDispatch rake c
