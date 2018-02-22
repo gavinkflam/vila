@@ -117,6 +117,8 @@ RUN \
   cp ${VILA}/config/sshd/sshd_config /etc/ssh/sshd_config && \
   # Override message of the day
   cp ${VILA}/config/sshd/motd /etc/motd && \
+  # Copy over sshd banner
+  cp ${VILA}/config/sshd/sshd_banner /etc/ssh/sshd_banner && \
   # Install plugins for neovim
   nvim \
     -u ${VILA}/config/nvim/plugins_only.vim \
