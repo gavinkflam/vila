@@ -1,15 +1,19 @@
 vila
 ====
 
-My dockerized portable development environment.
+My dockerized development and sandbox environment.
 
 Minimal
 -------
-Each project should be self-contained and containerized.
+Each development project should be containerized and carry their own
+dependencies in the corresponding container.
 
-Interactions are restricted through docker-cli and the binded Docker socket.
+Interactions should be done via docker-cli and Docker socket.
 
-Thus, allowing a clean and minimal core of the development environment.
+Otherwise, dependencies could be installed on-the-fly and won't persist after
+destroying the sandbox container.
+
+Thus allowing a clean and minimal core of the development environment.
 
 License
 -------
