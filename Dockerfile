@@ -49,23 +49,32 @@ RUN \
     ca-certificates \
     # cURL and Wget
     curl \
+    curl-doc \
     wget \
+    wget-doc \
     # Docker client
     docker \
+    docker-doc \
     # Build essentials
     g++ \
     make \
     # Git, Neovim, Ag, tmux, ZSH
     git \
+    git-doc \
     neovim \
     neovim-doc \
     the_silver_searcher \
+    the_silver_searcher-doc \
     tmux \
+    tmux-doc \
     zsh \
+    zsh-doc \
     zsh-vcs \
     # GNU tools
     gnupg \
+    gnupg-doc \
     less \
+    less-doc \
     # inotify interface for filesystem events
     inotify-tools \
     # ping, tracetoute, etc.
@@ -76,6 +85,7 @@ RUN \
     mdocml-apropos \
     # OpenSSH client and server
     openssh \
+    openssh-doc \
     # Python 2 and 3
     python2 \
     python2-dev \
@@ -85,6 +95,7 @@ RUN \
     py2-pip \
     # sudo for runtime everyday use only, do not use in build time
     sudo \
+    sudo-doc \
     # Timezone database
     tzdata && \
   # Update ca certificates
