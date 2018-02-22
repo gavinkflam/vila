@@ -3,6 +3,8 @@ vila
 
 My dockerized development and sandbox environment.
 
+![Vila project logo](vila-project-logo.png "Vila project")
+
 Minimal
 -------
 Each development project should be containerized and carry their own
