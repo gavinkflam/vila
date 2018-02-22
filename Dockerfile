@@ -70,6 +70,10 @@ RUN \
     inotify-tools \
     # ping, tracetoute, etc.
     iputils \
+    # man, mdocml and core man pages
+    man \
+    man-pages \
+    mdocml-apropos \
     # OpenSSH client and server
     openssh \
     # Python 2 and 3
