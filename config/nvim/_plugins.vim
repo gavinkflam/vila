@@ -86,6 +86,11 @@ Plug 'c-brenn/phoenix.vim', { 'for': 'elixir' }
 " Elixir Integration Into Vim
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 
+"----- Haskell -----
+
+" Completion plugin for Haskell, using ghc-mod
+Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+
 "----- Golang -----
 
 Plug 'fatih/vim-go', { 'for': 'go' }
