@@ -80,7 +80,7 @@ set showmatch
 set mat=2
 
 " Time to wait after typing to trigger plugin update
-set updatetime=750
+set updatetime=300
 
 " No annoying sound on errors
 set noerrorbells
