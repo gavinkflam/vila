@@ -42,7 +42,7 @@ RUN \
 
 RUN \
   # Install packages
-  apk --update add \
+  apk --update --no-cache add \
     # Bash shell for executing shell scripts
     bash \
     # Download the latest ca certificates
