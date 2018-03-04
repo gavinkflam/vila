@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# Docker
+echo -e 'creating symlinks for docker configuration files' && \
+  mkdir -p $HOME/.config/.docker && \
+  ln -sf $VILA/config/docker/config.json $HOME/.docker/config.json && \
+
+  # git
+  echo -e 'creating symlinks for git configuration files' && \
+  ln -sf $VILA/config/git/.gitconfig $HOME/.gitconfig && \
+
+  # Neovim
+  echo -e 'creating symlinks for neovim configuration files' && \
+  mkdir -p $HOME/.config/nvim && \
+  ln -sf $VILA/config/nvim/init.vim $HOME/.config/nvim/init.vim && \
+
+  # tmux
+  echo -e 'creating symlinks for tmux configuration files' && \
+  ln -sf $VILA/config/tmux/.tmux.conf $HOME/.tmux.conf && \
+
+  # zsh
+  echo -e 'creating symlinks for zsh configuration files' && \
+  ln -sf $VILA/config/zsh/.zprofile $HOME/.zprofile && \
+  ln -sf $VILA/config/zsh/.zshenv $HOME/.zshenv && \
+  ln -sf $VILA/config/zsh/.zshrc $HOME/.zshrc
