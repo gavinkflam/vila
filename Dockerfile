@@ -98,31 +98,29 @@ RUN \
     sudo-doc \
     # Timezone database
     tzdata && \
-  # Update ca certificates
-  update-ca-certificates --fresh && \
-  # Cleanup
-  rm -rf /var/cache/apk/*
-
-RUN \
   # Add user to sudoer in order to sudo without entering password
   echo "${UNAME} ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/${UNAME} && \
+  # Update ca certificates
+  update-ca-certificates --fresh && \
   # Install python packages
   pip3 install -U \
     docker-compose \
     neovim && \
   pip2 install -U \
     neovim && \
+  # Cleanup
+  rm -rf /var/cache/apk/*
+
+ADD . ${VILA}
+
+RUN \
   # Install tpm
   git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm && \
   # Install vim-plug
   curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
   # Install zgen
-  git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen
-
-ADD . ${VILA}
-
-RUN \
+  git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen && \
   # Create symlinks for configuration files
   ${VILA}/scripts/setup-config-symlinks && \
   # Download neovim plugins via vim plug
