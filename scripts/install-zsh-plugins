@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo -e 'installing zsh plugins via zgen' && \
+  zsh -c "ZGEN_AUTOLOAD_COMPINIT=0; . $VILA/config/zsh/_plugins"

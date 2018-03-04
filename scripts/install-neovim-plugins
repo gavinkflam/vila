@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo -e 'installing neovim plugins via vim plug' && \
+  nvim \
+    -u $VILA/config/nvim/plugins_only.vim \
+    -c ':PlugInstall' \
+    -c ':UpdateRemotePlugins' \
+    -c 'qa!' \
+    > /dev/null
