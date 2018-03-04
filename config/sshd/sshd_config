@@ -107,8 +107,8 @@ AllowUsers gavin
 #ChrootDirectory none
 #VersionAddendum none
 
-# banner path
-Banner /etc/sshd/sshd_banner
+# no banner
+#Banner none
 
 # override default of no subsystems
 Subsystem	sftp	/usr/lib/ssh/sftp-server
