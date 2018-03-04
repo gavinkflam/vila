@@ -123,24 +123,12 @@ RUN \
 ADD . ${VILA}
 
 RUN \
-  # Merge vila files to home directory
-  cp -rf ${VILA}/home/. ${HOME} && \
+  # Create symlinks for configuration files
+  ${VILA}/scripts/setup-config-symlinks && \
+  # Download neovim plugins via vim plug
+  ${VILA}/scripts/install-neovim-plugins && \
   # Download zsh plugins via zgen
-  zsh \
-    -c "ZGEN_AUTOLOAD_COMPINIT=0; . ${VILA}/config/zsh/_plugins" && \
-  # Override sshd_config
-  cp ${VILA}/config/sshd/sshd_config /etc/ssh/sshd_config && \
-  # Override message of the day
-  cp ${VILA}/config/sshd/motd /etc/motd && \
-  # Copy over sshd banner
-  cp ${VILA}/config/sshd/sshd_banner /etc/ssh/sshd_banner && \
-  # Install plugins for neovim
-  nvim \
-    -u ${VILA}/config/nvim/plugins_only.vim \
-    -c ':PlugInstall' \
-    -c ':UpdateRemotePlugins' \
-    -c 'qa!' \
-    > /dev/null && \
+  ${VILA}/scripts/install-zsh-plugins && \
   # Apply ownership for home folders properly
   chown -R ${UID}:${GID} ${HOME}
 
