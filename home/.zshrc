@@ -1,1 +1,0 @@
-. $VILA/config/zsh/.zshrc

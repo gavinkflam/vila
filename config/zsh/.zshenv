@@ -1,0 +1,1 @@
+export VILA=$HOME/.vila
