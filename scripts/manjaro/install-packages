@@ -1,0 +1,51 @@
+#!/bin/bash
+
+uname=${uname:-gavin}
+
+# Check if inside sudo
+if [[ "$EUID" -ne 0 ]]; then
+  echo -e 'you must run with sudo -E'
+  exit
+fi
+
+# Install packages
+echo -e 'installing packages' && \
+  pacman -Sy --noconfirm \
+    chromium \
+    docker \
+    docker-compose \
+    feh \
+    gnupg2 \
+    neovim \
+    nmap \
+    pass \
+    python2-neovim \
+    python-neovim \
+    st \
+    the_silver_searcher \
+    tmux \
+    unclutter \
+    zsh && \
+
+  # Docker accessibility
+  echo -e 'add user to docker group' && \
+  usermod -a -G docker $uname && \
+
+  # Default shell
+  echo -e 'set zsh as default shell for user' && \
+  chsh -s /bin/zsh $uname && \
+
+  # tpm
+  echo -e 'install tpm' && \
+  git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm && \
+
+  # vim plug
+  echo -e 'install vim plug' && \
+  curl -fLo \
+    $HOME/.config/nvim/autoload/plug.vim \
+    --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim && \
+
+  # zgen
+  echo -e 'install zgen' && \
+  git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen
