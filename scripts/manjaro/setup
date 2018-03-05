@@ -1,0 +1,16 @@
+#!/bin/bash
+
+__scripts=$( cd -P "$( dirname -- "$0" )/.." && pwd )
+
+# Run install and setup scripts with root right, while preserving environment
+# variables such as HOME
+sudo -E \
+  /bin/bash -c \
+    "$__scripts/manjaro/install-packages && \
+      $__scripts/setup-config-symlinks && \
+      $__scripts/install-neovim-plugins && \
+      $__scripts/install-zsh-plugins && \
+      $__scripts/generate-host-keys"
+
+# Cleanup
+unset __scripts

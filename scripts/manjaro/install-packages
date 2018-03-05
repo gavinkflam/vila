@@ -4,7 +4,7 @@ uname=${uname:-gavin}
 
 # Check if inside sudo
 if [[ "$EUID" -ne 0 ]]; then
-  echo -e 'you must run with sudo -E'
+  echo -e 'you must run with sudo'
   exit
 fi
 
@@ -49,3 +49,6 @@ echo -e 'installing packages' && \
   # zgen
   echo -e 'install zgen' && \
   git clone https://github.com/tarjoilija/zgen.git $HOME/.zgen
+
+# Cleanup
+unset uname
