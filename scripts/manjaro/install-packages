@@ -1,12 +1,12 @@
 #!/bin/bash
 
-uname=${uname:-gavin}
-
 # Check if inside sudo
 if [[ "$EUID" -ne 0 ]]; then
   echo -e 'you must run with sudo'
   exit
 fi
+
+uname=${uname:-gavin}
 
 # Install packages
 echo -e 'installing packages' && \
