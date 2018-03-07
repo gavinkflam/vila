@@ -10,7 +10,7 @@ uname=${uname:-gavin}
 
 # Install packages
 echo -e 'installing packages' && \
-  pacman -Sy --noconfirm \
+  pacman -Sy --noconfirm --needed \
     chromium \
     docker \
     docker-compose \
