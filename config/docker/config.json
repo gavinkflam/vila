@@ -1,3 +1,10 @@
 {
-  "detachKeys": "ctrl-q,q"
+	"auths": {
+		"https://index.docker.io/v1/": {}
+	},
+	"HttpHeaders": {
+		"User-Agent": "Docker-Client/18.02.0-ce (linux)"
+	},
+	"detachKeys": "ctrl-q,q",
+	"credsStore": "pass"
 }
