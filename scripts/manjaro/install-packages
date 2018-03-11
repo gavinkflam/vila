@@ -16,6 +16,7 @@ echo -e 'installing packages' && \
     docker-compose \
     feh \
     gnupg2 \
+    namcap \
     neovim \
     nmap \
     pass \
