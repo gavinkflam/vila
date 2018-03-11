@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# Check if inside sudo
+if [[ "$EUID" -ne 0 ]]; then
+  echo -e 'you must run with sudo'
+  exit
+fi
+
+# Install xl2tpd for l2tp and strongswan for IPSec support
+echo -e 'installing packages' && \
+  pacman -Sy --noconfirm --needed \
+    xl2tpd \
+    strongswan && \
+
+  # Import keyring for networkmanager-l2tp maintainer
+  gpg --recv-keys 49A7787EF8D3C039 && \
+
+  # Install networkmanager-l2tp
+  echo -e 'installing networkmanager-l2tp' && \
+  yaourt -S --noconfirm --needed \
+    networkmanager-l2tp
