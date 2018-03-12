@@ -10,12 +10,12 @@ fi
 echo -e 'installing packages' && \
   pacman -Sy --noconfirm --needed \
     xl2tpd \
-    strongswan && \
+    strongswan
 
-  # Import keyring for networkmanager-l2tp maintainer
-  gpg --recv-keys 49A7787EF8D3C039 && \
+# Import keyring for networkmanager-l2tp maintainer
+gpg --recv-keys 49A7787EF8D3C039
 
-  # Install networkmanager-l2tp
-  echo -e 'installing networkmanager-l2tp' && \
+# Install networkmanager-l2tp
+echo -e 'installing networkmanager-l2tp' && \
   yaourt -S --noconfirm --needed \
     networkmanager-l2tp
