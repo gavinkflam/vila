@@ -78,6 +78,12 @@ Plug 'sheerun/vim-polyglot'
 " Clojure REPL support
 Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
 
+" Vim plugin for Clojure's Kibit static code analyzer
+Plug 'humorless/vim-kibit', { 'for' : 'clojure' }
+
+" Vim plugin for cljfmt, the Clojure formatting tool
+Plug 'venantius/vim-cljfmt', { 'for' : 'clojure' }
+
 "----- Elixir -----
 
 " phoenix.vim: rails.vim inspired tools for Phoenix
