@@ -221,6 +221,12 @@ let g:neomake_elixir_enabled_makers = ['mix', 'credo', 'dogma']
 let g:neomake_haskell_enabled_makers = ['hlint', 'ghcmod', 'cabal']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" plasticboy/vim-markdown
+
+" Disable markdown conceal
+let g:vim_markdown_conceal = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 
 " Show hidden files in NERDTree
