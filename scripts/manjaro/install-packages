@@ -12,15 +12,17 @@ uname=${uname:-gavin}
 echo -e 'installing packages' && \
   pacman -Sy --noconfirm --needed \
     chromium \
+    connman \
     docker \
-    docker-compose \
     feh \
     gnupg2 \
     namcap \
     neovim \
     nmap \
+    openvpn \
     pass \
     python2-neovim \
+    python2-pip \
     python-neovim \
     st \
     the_silver_searcher \

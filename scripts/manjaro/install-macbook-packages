@@ -12,8 +12,10 @@ __linux_version=$(pacman -Q | grep '^linux[0-9]* ' | awk '{print $1}')
 # Install packages
 echo -e 'installing packages' && \
   pacman -Sy --noconfirm --needed \
-    blueman \
+    bluez \
+    bluez-utils \
     broadcom-wl-dkms \
+    wpa_supplicant \
     ${__linux_version}-headers
 
 # Cleanup
