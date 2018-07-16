@@ -6,7 +6,7 @@ __scripts=$( cd -P "$( dirname -- "$0" )/.." && pwd )
 # variables such as HOME
 sudo -E \
   /bin/bash -c \
-    "$__scripts/manjaro/install-packages && \
+    "$__scripts/install-packages && \
       $__scripts/setup-config-symlinks && \
       $__scripts/install-neovim-plugins && \
       $__scripts/install-zsh-plugins && \

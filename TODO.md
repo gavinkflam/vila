@@ -2,6 +2,7 @@
 
 ## Generic setup
 * download docker-credentials-pass
+* migrate to Ansible
 
 ## Manjaro setup
 * symlink i3 config
@@ -16,10 +17,6 @@
 ## Macbook setup
 * add keyboard mapping for Macbook keyboard
 * add tlp installation and configurations
-
-## Docker image setup
-* add only necessary setup script and profiles at early stage to reuse image
-  layer caches
 
 ## Repo
 * add logo and wallpaper copyrights
