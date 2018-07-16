@@ -30,6 +30,12 @@ echo -e 'installing packages' && \
     unclutter \
     zsh
 
+# Install Python packages
+echo -e 'installing Python packages' && \
+  pip2 install \
+    ansible \
+    docker-compose
+
 # Docker accessibility
 echo -e 'add user to docker group' && \
   usermod -a -G docker $uname
