@@ -1,0 +1,31 @@
+---
+- name: install neovim packages
+  pacman: "name={{ item }} state=present"
+  with_items:
+    - neovim
+    - the_silver_searcher
+  become: true
+
+# Install Python packages
+- name: install python2 packages for neovim
+  pip: "name={{ item }} state=present executable=pip2"
+  with_items:
+    - neovim
+  become: true
+
+- name: install python3 packages for neovim
+  pip: "name={{ item }} state=present executable=pip3"
+  with_items:
+    - neovim
+  become: true
+
+# Install vim plug
+- name: create nvim autoload directory
+  file:
+    path: "{{ ansible_env.HOME }}/.config/nvim/autoload"
+    state: directory
+
+- name: install vim plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: "{{ ansible_env.HOME }}/.config/nvim/autoload/plug.vim"

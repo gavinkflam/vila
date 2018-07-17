@@ -1,0 +1,19 @@
+---
+- name: install cli packages
+  pacman: "name={{ item }} state=present"
+  with_items:
+    - tmux
+    - zsh
+  become: true
+
+# tmux
+- name: install tpm
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+
+# Zsh
+- name: install zgen
+  git:
+    repo: https://github.com/tarjoilija/zgen.git
+    dest: "{{ ansible_env.HOME }}/.zgen"

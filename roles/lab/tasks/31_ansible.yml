@@ -1,0 +1,7 @@
+---
+- name: install python2 packages for ansible
+  pip: "name={{ item }} state=present executable=pip2"
+  with_items:
+    - ansible
+    - ansible-lint
+  become: true
