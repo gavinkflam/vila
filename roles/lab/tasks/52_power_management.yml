@@ -1,0 +1,15 @@
+---
+- name: install power management packages
+  pacman: "name={{ item }} state=present"
+  with_items:
+    - tlp
+    - ethtool
+    - smartmontools
+  become: true
+
+- name: install tlp configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/tlp/config
+      dest: /etc/default/tlp
+  become: true

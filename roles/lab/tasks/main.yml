@@ -1,4 +1,20 @@
 ---
+# Gather extra facts
+- name: register dmi product name
+  command: >
+    bash -c "dmidecode --type 1 | grep 'Product Name' | awk '{print $3}'"
+  register: dmi_product_name
+  become: true
+
+- set_fact: "dmi_product_name={{ dmi_product_name.stdout }}"
+
+- name: register linux version
+  command: uname -r
+  register: linux_version
+
+- set_fact: "linux_version={{ linux_version.stdout }}"
+
+# Refresh package list
 - name: refresh package list
   pacman:
     update_cache: yes
@@ -6,6 +22,7 @@
   tags:
     - refresh_package_list
 
+# Work on subtasks
 - name: configure essential packages
   import_tasks: 00_essential_packages.yml
 
@@ -54,11 +71,23 @@
   tags:
     - configure_vpn
 
-- name: configure macbook
-  import_tasks: 50_macbook.yml
+- name: configure wifi
+  import_tasks: 50_wifi.yml
   tags:
-    - configure_macbook
-  when: no
+    - configure_wifi
+  when: dmi_product_name is search('MacBook')
+
+- name: configure bluetooth
+  import_tasks: 51_bluetooth.yml
+  tags:
+    - configure_bluetooth
+  when: dmi_product_name is search('MacBook')
+
+- name: configure power management
+  import_tasks: 52_power_management.yml
+  tags:
+    - configure_power_management
+  when: dmi_product_name is search('MacBook')
 
 - name: configure gui apps
   import_tasks: 60_gui_apps.yml

@@ -1,0 +1,7 @@
+---
+- name: install bluetooth packages
+  pacman: "name={{ item }} state=present"
+  with_items:
+    - bluez
+    - bluez-utils
+  become: true
