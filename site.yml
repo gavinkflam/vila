@@ -1,0 +1,8 @@
+---
+- hosts: lab
+  roles:
+    - lab
+  vars_prompt:
+    - name: ansible_become_pass
+      prompt: '[ansible_become] password for remote user'
+      private: yes

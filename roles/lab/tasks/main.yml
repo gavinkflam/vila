@@ -1,0 +1,93 @@
+---
+- name: install packages
+  action: >
+    {{ ansible_pkg_mgr }} name={{ item }} state=present update_cache=yes
+  with_items:
+    # CLI
+    - tmux
+    - zsh
+    # Coding
+    - neovim
+    - the_silver_searcher
+    # Docker
+    - docker
+    # GUI
+    - feh
+    - unclutter
+    - st
+    # Internet
+    - chromium
+    # Network
+    - connman
+    - nmap
+    - openvpn
+    # Package management
+    - namcap
+    # Python
+    - python-pip
+    - python2-pip
+    # Security
+    - gnupg2
+    - pass
+    # Version control
+    - git
+  become: true
+
+# Python
+- name: install python2 packages
+  action: >
+    pip name={{ item }} state=present executable=pip2
+  with_items:
+    # Ansible
+    - ansible
+    - ansible-lint
+    # Docker
+    - docker-compose
+    # Neovim
+    - neovim
+  become: true
+
+- name: install python3 packages
+  action: >
+    pip name={{ item }} state=present executable=pip3
+  with_items:
+    # Neovim
+    - neovim
+  become: true
+
+# User configuration
+- name: change user shell to zsh
+  user:
+    name: '{{ ansible_user_id }}'
+    shell: /bin/zsh
+  become: true
+
+- name: add user to docker group
+  user:
+    name: '{{ ansible_user_id }}'
+    groups: docker
+    append: yes
+  become: true
+
+# tmux
+- name: install tpm
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: '{{ ansible_env.HOME }}/.tmux/plugins/tpm'
+
+# Neovim
+- name: create nvim autoload directory
+  file:
+    path: '{{ ansible_env.HOME }}/.config/nvim/autoload'
+    state: directory
+
+- name: install vim plug
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: '{{ ansible_env.HOME }}/.config/nvim/autoload/plug.vim'
+
+# Zsh
+- name: install zgen
+  git:
+    repo: https://github.com/tarjoilija/zgen.git
+    dest: '{{ ansible_env.HOME }}/.zgen'
