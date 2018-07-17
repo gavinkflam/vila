@@ -238,8 +238,8 @@ bar {
   position bottom
 
   # Disable wheel up and down
-	bindsym button4 nop
-	bindsym button5 nop
+  bindsym button4 nop
+  bindsym button5 nop
 
   colors {
     background $base00
