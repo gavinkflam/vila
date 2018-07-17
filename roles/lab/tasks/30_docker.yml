@@ -10,3 +10,14 @@
   with_items:
     - docker-compose
   become: true
+
+- name: create docker configuration directories
+  file: "path={{ item.path }} state=directory"
+  with_items:
+    - path: "{{ ansible_env.HOME }}/.docker"
+
+- name: install docker configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/docker/config.json
+      dest: "{{ ansible_env.HOME }}/.docker/config.json"

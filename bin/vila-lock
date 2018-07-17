@@ -1,4 +1,0 @@
-#!/bin/sh
-
-i3lock -n -c 000000
-exit 0

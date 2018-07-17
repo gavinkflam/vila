@@ -9,3 +9,27 @@
     # Internet
     - chromium
   become: true
+
+- name: create i3 configuration directories
+  file: "path={{ item.path }} state=directory"
+  with_items:
+    - path: "{{ ansible_env.HOME }}/.i3"
+
+- name: install i3 configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/i3/config
+      dest: "{{ ansible_env.HOME }}/.i3/config"
+
+- name: install wallpaper
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: wallpapers/grayscale-footbridge.jpg
+      dest: "{{ ansible_env.HOME }}/wallpaper.jpg"
+
+- name: install i3 helper scripts
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: bin/i3exit
+      dest: /usr/bin/i3exit
+  become: true

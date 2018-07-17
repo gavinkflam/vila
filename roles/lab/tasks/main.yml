@@ -3,30 +3,64 @@
   pacman:
     update_cache: yes
   become: true
+  tags:
+    - refresh_package_list
 
-- name: install essential packages
-  include_tasks: 00_essential_packages.yml
+- name: configure essential packages
+  import_tasks: 00_essential_packages.yml
 
 - name: configure user
-  include_tasks: 10_configure_user.yml
+  import_tasks: 10_configure_user.yml
+  tags:
+    - configure_user
+
+- name: configure git
+  import_tasks: 11_configure_git.yml
+  tags:
+    - configure_git
+
+- name: configure sshd
+  import_tasks: 12_configure_sshd.yml
+  tags:
+    - configure_sshd
 
 - name: configure cli
-  include_tasks: 20_cli.yml
+  import_tasks: 20_cli.yml
+  tags:
+    - configure_cli
 
 - name: configure neovim
-  include_tasks: 21_neovim.yml
+  import_tasks: 21_neovim.yml
+  tags:
+    - configure_neovim
 
 - name: configure docker
-  include_tasks: 30_docker.yml
+  import_tasks: 30_docker.yml
+  tags:
+    - configure_docker
 
 - name: configure ansible
-  include_tasks: 31_ansible.yml
+  import_tasks: 31_ansible.yml
+  tags:
+    - configure_ansible
 
 - name: configure pass
-  include_tasks: 40_pass.yml
+  import_tasks: 40_pass.yml
+  tags:
+    - configure_pass
 
-- name: configurea vpn
-  include_tasks: 41_vpn.yml
+- name: configure vpn
+  import_tasks: 41_vpn.yml
+  tags:
+    - configure_vpn
+
+- name: configure macbook
+  import_tasks: 50_macbook.yml
+  tags:
+    - configure_macbook
+  when: no
 
 - name: configure gui apps
-  include_tasks: 60_gui_apps.yml
+  import_tasks: 60_gui_apps.yml
+  tags:
+    - configure_gui_apps

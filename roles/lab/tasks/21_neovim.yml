@@ -19,13 +19,48 @@
     - neovim
   become: true
 
-# Install vim plug
-- name: create nvim autoload directory
-  file:
-    path: "{{ ansible_env.HOME }}/.config/nvim/autoload"
-    state: directory
+# Neovim configuration directories
+- name: create neovim configuration directories
+  file: "path={{ item.path }} state=directory"
+  with_items:
+    - path: "{{ ansible_env.HOME }}/.config/nvim/autoload"
+    - path: "{{ ansible_env.HOME }}/.config/nvim/plugins"
 
+# Install vim plug
 - name: install vim plug
   get_url:
     url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     dest: "{{ ansible_env.HOME }}/.config/nvim/autoload/plug.vim"
+
+# Neovim configuration files
+- name: install neovim configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    # Embeded plugins
+    - src: config/nvim/plugins/
+      dest: "{{ ansible_env.HOME }}/.config/nvim/plugins"
+    # Entry configuration files
+    - src: config/nvim/init.vim
+      dest: "{{ ansible_env.HOME }}/.config/nvim/init.vim"
+    - src: config/nvim/plugins_only.vim
+      dest: "{{ ansible_env.HOME }}/.config/nvim/plugins_only.vim"
+    # Partials
+    - src: config/nvim/_commands.vim
+      dest: "{{ ansible_env.HOME }}/.config/nvim/_commands.vim"
+    - src: config/nvim/_core.vim
+      dest: "{{ ansible_env.HOME }}/.config/nvim/_core.vim"
+    - src: config/nvim/_key_mappings.vim
+      dest: "{{ ansible_env.HOME }}/.config/nvim/_key_mappings.vim"
+    - src: config/nvim/_plugins.vim
+      dest: "{{ ansible_env.HOME }}/.config/nvim/_plugins.vim"
+    - src: config/nvim/_plugins_conf.vim
+      dest: "{{ ansible_env.HOME }}/.config/nvim/_plugins_conf.vim"
+
+- name: install neovim plugins
+  command: >
+    nvim \
+      -u {{ ansible_env.HOME }}/.config/nvim/plugins_only.vim \
+      -c ':PlugInstall' \
+      -c ':UpdateRemotePlugins' \
+      -c 'qa!' \
+      > /dev/null

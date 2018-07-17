@@ -1,0 +1,28 @@
+---
+- name: register linux version
+  command: >
+    pacman -Q | grep '^linux[0-9]* ' | awk '{print $1}'
+  register: linux_version
+
+- name: install macbook packages
+  pacman: "name={{ item }} state=present"
+  with_items:
+    # Bluetooth
+    - bluez
+    - bluez-utils
+    # Power management
+    - tlp
+    - ethtools
+    - smartmontools
+    # Wifi
+    - broadcom-wl-dkms
+    - wpa_supplicant
+    - "{{ linux_version }}-headers"
+  become: true
+
+- name: install tlp configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/tlp/config
+      dest: /etc/default/tlp
+  become: true

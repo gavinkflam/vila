@@ -69,7 +69,7 @@ autoload -Uz compinit
 compinit
 
 ########################################
-# Plugins and themes
+# Plugins and theme
 
 # Do not show tmux indicator for lean prompt
 PROMPT_LEAN_TMUX=""
@@ -79,10 +79,10 @@ PROMPT_LEAN_COLOR1="f7/f7/f7"
 PROMPT_LEAN_COLOR2="7c/7c/7c"
 
 # Load zsh plugins via zgen
-. $VILA/config/zsh/_plugins
+. "$HOME/.zsh_plugins"
 
 # Use base16-grayscale-dark theme
-. "$VILA/themes/base16-grayscale-dark.sh"
+. "$HOME/.zsh_theme"
 
 # Use cyan for zsh-autosuggestions text
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
