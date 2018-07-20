@@ -1,0 +1,27 @@
+---
+- name: install sway packages
+  pacman: "name={{ item }} state=present"
+  with_items:
+    # sway windows manager
+    - sway
+    # peripheral utilities
+    - dmenu
+    - i3status
+  become: true
+
+- name: create sway configuration directories
+  file: "path={{ item.path }} state=directory"
+  with_items:
+    - path: "{{ ansible_env.HOME }}/.config/sway"
+
+- name: install sway configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/sway/config
+      dest: "{{ ansible_env.HOME }}/.config/sway/config"
+
+- name: install wallpaper
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: wallpapers/grayscale-footbridge.jpg
+      dest: "{{ ansible_env.HOME }}/wallpaper.jpg"

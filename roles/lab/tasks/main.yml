@@ -93,3 +93,8 @@
   import_tasks: 60_gui_apps.yml
   tags:
     - configure_gui_apps
+
+- name: configure sway
+  import_tasks: 61_sway.yml
+  tags:
+    - configure_sway
