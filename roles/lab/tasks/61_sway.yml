@@ -9,16 +9,23 @@
     - i3status
   become: true
 
-- name: create sway configuration directories
+- name: create sway and i3status configuration directories
   file: "path={{ item.path }} state=directory"
   with_items:
     - path: "{{ ansible_env.HOME }}/.config/sway"
+    - path: "{{ ansible_env.HOME }}/.config/i3status"
 
 - name: install sway configuration files
   copy: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
     - src: config/sway/config
       dest: "{{ ansible_env.HOME }}/.config/sway/config"
+
+- name: install i3status configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/i3status/config
+      dest: "{{ ansible_env.HOME }}/.config/i3status/config"
 
 - name: install wallpaper
   copy: "src={{ item.src }} dest={{ item.dest }}"
