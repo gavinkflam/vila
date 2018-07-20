@@ -93,6 +93,12 @@
     - configure_power_management
   when: dmi_product_name is search('MacBook')
 
+- name: configure macbook keyboard remap
+  import_tasks: 53_macbook_keyboard_remap.yml
+  tags:
+    - configure_macbook_keyboard_remap
+  when: dmi_product_name is search('MacBook')
+
 - name: configure gui apps
   import_tasks: 60_gui_apps.yml
   tags:

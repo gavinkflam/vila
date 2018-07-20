@@ -1,0 +1,21 @@
+---
+- name: clone hid-apple-plugboard-git-dkms-custom
+  git:
+    repo: https://github.com/gavinkflam/hid-apple-plugboard-git-dkms-custom.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/hid-apple-plugboard-git-dkms-custom"
+
+- name: register hid-apple-plugboard-git-dkms package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/hid-apple-plugboard-git-dkms-custom"
+  register: package_path
+
+- name: build hid-apple-plugboard-git-dkms
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/hid-apple-plugboard-git-dkms-custom"
+    creates: "{{ package_path.stdout }}"
+
+- name: install hid-apple-plugboard-git-dkms
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true
