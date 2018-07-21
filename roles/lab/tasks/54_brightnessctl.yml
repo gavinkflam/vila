@@ -1,0 +1,21 @@
+---
+- name: clone brightnessctl-git
+  git:
+    repo: https://gitlab.com/gavinkflam/brightnessctl-git.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/brightnessctl-git"
+
+- name: register brightnessctl-git package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/brightnessctl-git"
+  register: package_path
+
+- name: build brightnessctl-git
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/brightnessctl-git"
+    creates: "{{ package_path.stdout }}"
+
+- name: install brightnessctl-git
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true

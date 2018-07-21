@@ -99,6 +99,12 @@
     - configure_macbook_keyboard_remap
   when: dmi_product_name is search('MacBook')
 
+- name: configure brightnessctl
+  import_tasks: 54_brightnessctl.yml
+  tags:
+    - configure_brightnessctl
+  when: dmi_product_name is search('MacBook')
+
 - name: configure gui apps
   import_tasks: 60_gui_apps.yml
   tags:
