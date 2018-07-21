@@ -11,28 +11,18 @@
   file: "path=/etc/ssh/host_keys state=directory"
   become: true
 
-# Generate RSA key
-- name: stat sshd rsa key
-  stat: "path=/etc/ssh/host_keys/ssh_host_rsa_key"
-  register: host_rsa_key_stat
-  become: true
-
 - name: generate fresh rsa key for sshd
   command: <
     ssh-keygen -f /etc/ssh/host_keys/ssh_host_rsa_key -N '' -t rsa && \
       chmod 600 /etc/ssh/host_keys/ssh_host_rsa_key
-  when: not host_rsa_key_stat.stat.exists
-  become: true
-
-# Generate DSA key
-- name: stat sshd dsa key
-  stat: "path=/etc/ssh/host_keys/ssh_host_dsa_key"
-  register: host_dsa_key_stat
+  args:
+    creates: /etc/ssh/host_keys/ssh_host_rsa_key
   become: true
 
 - name: generate fresh dsa key for sshd
   command: <
     ssh-keygen -f /etc/ssh/host_keys/ssh_host_dsa_key -N '' -t dsa && \
       chmod 600 /etc/ssh/host_keys/ssh_host_dsa_key
-  when: not host_rsa_key_stat.stat.exists
+  args:
+    creates: /etc/ssh/host_keys/ssh_host_dsa_key
   become: true
