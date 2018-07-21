@@ -1,33 +1,15 @@
 ---
-- name: install cli packages
+- name: install zsh packages
   pacman: "name={{ item }} state=present"
   with_items:
-    - tmux
     - zsh
   become: true
 
-# tmux
-- name: install tpm
-  git:
-    repo: https://github.com/tmux-plugins/tpm
-    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
-
-# zgen
 - name: install zgen
   git:
     repo: https://github.com/tarjoilija/zgen.git
     dest: "{{ ansible_env.HOME }}/.zgen"
 
-# tmux configuration files
-- name: install tmux configuration files
-  copy: "src={{ item.src }} dest={{ item.dest }}"
-  with_items:
-    - src: config/tmux/.tmux.conf
-      dest: "{{ ansible_env.HOME }}/.tmux.conf"
-    - src: themes/base16-grayscale-dark/tmux
-      dest: "{{ ansible_env.HOME }}/.tmux_theme"
-
-# Zsh configuration files
 - name: install zsh configuration files
   copy: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
@@ -42,7 +24,6 @@
     - src: themes/base16-grayscale-dark/zsh
       dest: "{{ ansible_env.HOME }}/.zsh_theme"
 
-# Install zsh plugins
 - name: install zsh plugins
   command: >
     /bin/zsh -c "ZGEN_AUTOLOAD_COMPINIT=0; . {{ ansible_env.HOME }}/.zsh_plugins"

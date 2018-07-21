@@ -45,13 +45,18 @@
   tags:
     - configure_sshd
 
-- name: configure cli
-  import_tasks: 20_cli.yml
+- name: configure zsh
+  import_tasks: 20_zsh.yml
   tags:
-    - configure_cli
+    - configure_zsh
+
+- name: configure tmux
+  import_tasks: 21_tmux.yml
+  tags:
+    - configure_tmux
 
 - name: configure neovim
-  import_tasks: 21_neovim.yml
+  import_tasks: 22_neovim.yml
   tags:
     - configure_neovim
 

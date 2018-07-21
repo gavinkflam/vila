@@ -1,0 +1,19 @@
+---
+- name: install tmux packages
+  pacman: "name={{ item }} state=present"
+  with_items:
+    - tmux
+  become: true
+
+- name: install tpm
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+
+- name: install tmux configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/tmux/.tmux.conf
+      dest: "{{ ansible_env.HOME }}/.tmux.conf"
+    - src: themes/base16-grayscale-dark/tmux
+      dest: "{{ ansible_env.HOME }}/.tmux_theme"
