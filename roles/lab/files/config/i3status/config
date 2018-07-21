@@ -15,7 +15,7 @@ order += "load"
 order += "cpu_usage"
 order += "disk /"
 order += "ethernet _first_"
-order += "wireless wlan0"
+order += "wireless _first_"
 order += "battery all"
 order += "tztime local"
 
@@ -43,9 +43,9 @@ ethernet _first_ {
   format_down = " no lan "
 }
 
-wireless wlan0 {
-  format_up   = " wlan0 (%quality at %essid) %ip "
-  format_down = " no wlan0 "
+wireless _first_ {
+  format_up   = " wlan %essid %ip "
+  format_down = " no wlan "
 }
 
 battery all {
