@@ -182,6 +182,14 @@ mode "$mode_brightnessctl" {
 bindsym $mod+minus mode "$mode_brightnessctl"
 
 ############################################################
+# Input devices
+
+input "1452:657:bcm" {
+  tap enabled
+  middle_emulation enabled
+}
+
+############################################################
 # swaybar
 
 bar {
