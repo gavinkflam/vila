@@ -153,13 +153,12 @@ bindsym $mod+r mode "resize"
 ############################################################
 # System mode
 
-set $mode_system (l)ock, e(x)it, reload_(c)onfig, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
+set $mode_system (l)ock, e(x)it, reload_(c)onfig, (s)uspend, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
   bindsym l       exec --no-startup-id swaylock -c 000000
   bindsym x       exec --no-startup-id pkill sway
   bindsym c       reload
-  bindsym s       exec --no-startup-id swaylock -c 000000 && systemctl suspend
-  bindsym h       exec --no-startup-id swaylock -c 000000 && systemctl hibernate
+  bindsym s       exec --no-startup-id systemctl suspend
   bindsym r       exec --no-startup-id systemctl reboot
   bindsym Shift+s exec --no-startup-id systemctl poweroff
   bindsym Escape  mode "default"
