@@ -7,6 +7,7 @@
     # peripheral utilities
     - dmenu
     - i3status
+    - xorg-xset
     - xss-lock
   become: true
 

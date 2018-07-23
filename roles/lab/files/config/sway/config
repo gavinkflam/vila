@@ -158,7 +158,7 @@ bindsym $mod+r mode "resize"
 
 set $mode_system (l)ock, e(x)it, reload_(c)onfig, (s)uspend, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-  bindsym l       exec --no-startup-id swaylock -c 000000
+  bindsym l       exec --no-startup-id xset s activate
   bindsym x       exec --no-startup-id pkill sway
   bindsym c       reload
   bindsym s       exec --no-startup-id systemctl suspend
