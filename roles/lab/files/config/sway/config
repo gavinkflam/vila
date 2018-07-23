@@ -193,7 +193,7 @@ input "1452:657:bcm" {
 # swaybar
 
 bar {
-  i3bar_command sway-bar
+  swaybar_command swaybar
   status_command i3status
   position bottom
 
