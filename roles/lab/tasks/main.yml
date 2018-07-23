@@ -45,6 +45,11 @@
   tags:
     - configure_sshd
 
+- name: configure systemd
+  import_tasks: 13_configure_systemd.yml
+  tags:
+    - configure_systemd
+
 - name: configure zsh
   import_tasks: 20_zsh.yml
   tags:
