@@ -10,6 +10,9 @@ focus_follows_mouse no
 # Do not hide borders
 hide_edge_borders both
 
+# Auto lock when idle and after suspend
+exec --no-startup-id xss-lock -- swaylock -fc000000
+
 # Auto hide cursor, should migrate to hideaway later
 # exec --no-startup-id unclutter
 
