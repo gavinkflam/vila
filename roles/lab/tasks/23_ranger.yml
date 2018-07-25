@@ -1,0 +1,14 @@
+---
+- name: install ranger via pip
+  pip: "name={{ item }} state=present executable=pip3"
+  with_items:
+    - ranger-fm
+  become: true
+
+- name: install utilities packages for ranger
+  pacman: "name={{ item }} state=present"
+  with_items:
+    - libarchive
+    - poppler
+    - w3m
+  become: true

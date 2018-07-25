@@ -65,6 +65,11 @@
   tags:
     - configure_neovim
 
+- name: configure ranger
+  import_tasks: 23_ranger.yml
+  tags:
+    - configure_ranger
+
 - name: configure docker
   import_tasks: 30_docker.yml
   tags:
