@@ -102,10 +102,10 @@
     - configure_bluetooth
   when: dmi_product_name is search('MacBook')
 
-- name: configure power management
-  import_tasks: 52_power_management.yml
+- name: configure tlp
+  import_tasks: 52_tlp.yml
   tags:
-    - configure_power_management
+    - configure_tlp
   when: dmi_product_name is search('MacBook')
 
 - name: configure macbook keyboard remap

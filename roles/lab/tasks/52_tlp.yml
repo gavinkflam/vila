@@ -1,10 +1,11 @@
 ---
-- name: install power management packages
+- name: install tlp packages
   pacman: "name={{ item }} state=present"
   with_items:
     - tlp
     - ethtool
     - smartmontools
+    - x86_energy_perf_policy
   become: true
 
 - name: install tlp configuration files
