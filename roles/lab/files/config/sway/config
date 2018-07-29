@@ -184,6 +184,27 @@ mode "$mode_brightnessctl" {
 bindsym $mod+minus mode "$mode_brightnessctl"
 
 ############################################################
+# Sound mode
+
+set $mode_sound (1)0%, (2)0%, (3)0%, (4)0%, (5)0%, (6)0%, (7)0%, (-)5%, (+)5%, (m)ute, (u)nmute
+mode "$mode_sound" {
+  bindsym 1           exec --no-startup-id amixer set Master 10%
+  bindsym 2           exec --no-startup-id amixer set Master 20%
+  bindsym 3           exec --no-startup-id amixer set Master 30%
+  bindsym 4           exec --no-startup-id amixer set Master 40%
+  bindsym 5           exec --no-startup-id amixer set Master 50%
+  bindsym 6           exec --no-startup-id amixer set Master 60%
+  bindsym 7           exec --no-startup-id amixer set Master 70%
+  bindsym minus       exec --no-startup-id amixer set Master 5%-
+  bindsym Shift+equal exec --no-startup-id amixer set Master 5%+
+  bindsym m           exec --no-startup-id amixer set Master mute
+  bindsym u           exec --no-startup-id amixer set Master unmute
+  bindsym Escape      mode "default"
+}
+
+bindsym $mod+equal mode "$mode_sound"
+
+############################################################
 # Input devices
 
 input "1452:657:bcm" {
