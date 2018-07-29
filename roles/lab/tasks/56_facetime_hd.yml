@@ -1,0 +1,50 @@
+---
+# bcwc-pcie-firmware
+- name: install bcwc-pcie-firmware build dependencies
+  pacman: "name={{ item }} state=present"
+  with_items:
+    - cpio
+  become: true
+
+- name: clone bcwc-pcie-firmware
+  git:
+    repo: https://gitlab.com/gavinkflam/bcwc-pcie-firmware.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/bcwc-pcie-firmware"
+
+- name: register bcwc-pcie-firmware package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/bcwc-pcie-firmware"
+  register: package_path
+
+- name: build bcwc-pcie-firmware
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/bcwc-pcie-firmware"
+    creates: "{{ package_path.stdout }}"
+
+- name: install bcwc-pcie-firmware
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true
+
+# bcwc-pcie-dkms
+- name: clone bcwc-pcie-dkms
+  git:
+    repo: https://gitlab.com/gavinkflam/bcwc-pcie-dkms.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/bcwc-pcie-dkms"
+
+- name: register bcwc-pcie-dkms package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/bcwc-pcie-dkms"
+  register: package_path
+
+- name: build bcwc-pcie-dkms
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/bcwc-pcie-dkms"
+    creates: "{{ package_path.stdout }}"
+
+- name: install bcwc-pcie-dkms
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true

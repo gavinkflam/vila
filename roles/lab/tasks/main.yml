@@ -126,6 +126,12 @@
     - configure_macbook_sound
   when: dmi_product_name is search('MacBook')
 
+- name: configure facetime hd
+  import_tasks: 56_facetime_hd.yml
+  tags:
+    - configure_facetime_hd
+  when: dmi_product_name is search('MacBook')
+
 - name: configure gui apps
   import_tasks: 60_gui_apps.yml
   tags:
