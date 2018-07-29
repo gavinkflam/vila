@@ -120,10 +120,10 @@
     - configure_brightnessctl
   when: dmi_product_name is search('MacBook')
 
-- name: configure macbook sound
-  import_tasks: 55_macbook_sound.yml
+- name: configure snd hda intel
+  import_tasks: 55_snd_hda_intel.yml
   tags:
-    - configure_macbook_sound
+    - configure_snd_hda_intel
   when: dmi_product_name is search('MacBook')
 
 - name: configure facetime hd
