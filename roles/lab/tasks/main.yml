@@ -132,6 +132,12 @@
     - configure_facetime_hd
   when: dmi_product_name is search('MacBook')
 
+- name: configure undervolt
+  import_tasks: 57_undervolt.yml
+  tags:
+    - configure_undervolt
+  when: dmi_product_name is search('MacBook')
+
 - name: configure gui apps
   import_tasks: 60_gui_apps.yml
   tags:

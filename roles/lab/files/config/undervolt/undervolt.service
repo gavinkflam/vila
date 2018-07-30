@@ -1,0 +1,6 @@
+[Unit]
+Description=Undervolt Intel CPUs under Linux
+
+[Service]
+Type=oneshot
+ExecStart=undervolt -v --core -75 --cache -75 --uncore -75 --gpu -65 --temp 95

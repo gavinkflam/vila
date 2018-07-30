@@ -1,0 +1,28 @@
+---
+- name: install undervolt via pip
+  pip: "name={{ item }} state=present executable=pip3"
+  with_items:
+    - undervolt
+  become: true
+
+- name: install undervolt services
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/undervolt/undervolt.service
+      dest: /etc/systemd/system/undervolt.service
+    - src: config/undervolt/undervolt.timer
+      dest: /etc/systemd/system/undervolt.timer
+  become: true
+
+- name: reload undervolt configurations
+  systemd: "daemon_reload=yes"
+  become: true
+
+- name: start undervolt services and enable undervolt timer
+  systemd: "name={{ item.name }} state=started enabled={{ item.enabled }}"
+  with_items:
+    - name: undervolt.service
+      enabled: no
+    - name: undervolt.timer
+      enabled: yes
+  become: true
