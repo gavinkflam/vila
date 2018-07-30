@@ -221,13 +221,16 @@ bindsym $mod+equal mode "$mode_sound"
 # i3bar
 
 bar {
-  i3bar_command i3bar
+  i3bar_command  i3bar
   status_command i3status
-  position bottom
+  position       bottom
 
   # Disable wheel up and down
   bindsym button4 nop
   bindsym button5 nop
+
+  # Disable system tray
+  tray_output none
 
   colors {
     background $base00

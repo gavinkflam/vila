@@ -7,7 +7,7 @@ general {
   color_good     = "#BBBBBB"
   color_bad      = "#CC1616"
   color_degraded = "#55858E"
-  interval       = 2
+  interval       = 8
 }
 
 order += "volume master"
@@ -20,10 +20,11 @@ order += "battery all"
 order += "tztime local"
 
 volume master {
-  format    = " vol %volume "
-  device    = "default"
-  mixer     = "Master"
-  mixer_idx = 0
+  format       = " vol %volume "
+  format_muted = " vol muted "
+  device       = "default"
+  mixer        = "Master"
+  mixer_idx    = 0
 }
 
 load {
@@ -44,7 +45,7 @@ ethernet _first_ {
 }
 
 wireless _first_ {
-  format_up   = " wlan %essid %ip "
+  format_up   = " wlan %essid "
   format_down = " no wlan "
 }
 
@@ -54,9 +55,9 @@ battery all {
   last_full_capacity       = true
   integer_battery_capacity = true
   status_chr               = ""
-  status_bat               = ""
+  status_bat               = "⚡"
   status_unk               = "?"
-  status_full              = "⚡"
+  status_full              = ""
   low_threshold            = 15
   threshold_type           = time
 }
