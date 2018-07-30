@@ -7,14 +7,11 @@ set $mod Mod4
 # Do not follow mouse
 focus_follows_mouse no
 
-# Do not hide borders
-hide_edge_borders both
-
 # Auto lock when idle and after suspend
-exec --no-startup-id xss-lock -- swaylock -fc000000 --indicator-radius 100
+exec --no-startup-id xss-lock -- physlock
 
 # Auto hide cursor, should migrate to hideaway later
-# exec --no-startup-id unclutter
+exec --no-startup-id unclutter
 
 ############################################################
 # Appearance
@@ -24,10 +21,10 @@ exec --no-startup-id xss-lock -- swaylock -fc000000 --indicator-radius 100
 font xft:Liberation Mono 11
 
 # Set wallpaper
-output "*"  background ~/wallpaper.jpg fill
+exec --no-startup-id feh --bg-fill ~/wallpaper.jpg
 
 # Configure border style
-new_window pixel 0
+new_window pixel 3
 new_float normal
 
 # Theme colors for base16 grayscale-dark
@@ -56,6 +53,22 @@ client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
 client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
+
+############################################################
+# i3-gaps patches
+
+# Configure inner and outer gaps
+gaps inner 20
+gaps outer 0
+
+# Draw no gaps for the only container on the workspace
+smart_gaps on
+
+# Draw no borders for the only container on the workspace
+smart_borders on
+
+# Draw no edge borders for the only container on the workspace
+hide_edge_borders smart_no_gaps
 
 ############################################################
 # Commands
@@ -159,7 +172,7 @@ bindsym $mod+r mode "resize"
 set $mode_system (l)ock, e(x)it, reload_(c)onfig, (s)uspend, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
   bindsym l       exec --no-startup-id xset s activate
-  bindsym x       exec --no-startup-id pkill sway
+  bindsym x       exec --no-startup-id pkill i3
   bindsym c       reload
   bindsym s       exec --no-startup-id systemctl suspend
   bindsym r       exec --no-startup-id systemctl reboot
@@ -205,18 +218,10 @@ mode "$mode_sound" {
 bindsym $mod+equal mode "$mode_sound"
 
 ############################################################
-# Input devices
-
-input "1452:657:bcm" {
-  tap enabled
-  middle_emulation enabled
-}
-
-############################################################
-# swaybar
+# i3bar
 
 bar {
-  swaybar_command swaybar
+  i3bar_command i3bar
   status_command i3status
   position bottom
 

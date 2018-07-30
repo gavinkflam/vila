@@ -1,33 +1,42 @@
 ---
-- name: install sway packages
+- name: install i3 gaps packages
   pacman: "name={{ item }} state=present"
   with_items:
-    # sway windows manager
-    - sway
+    # i3-gaps windows manager
+    - i3-gaps
     # peripheral utilities
     - dmenu
+    - feh
     - i3status
+    - unclutter
+    - xorg-xinit
     - xorg-xset
     - xss-lock
   become: true
 
-- name: create sway and i3status configuration directories
+- name: create i3 gaps and i3status configuration directories
   file: "path={{ item.path }} state=directory"
   with_items:
-    - path: "{{ ansible_env.HOME }}/.config/sway"
+    - path: "{{ ansible_env.HOME }}/.i3"
     - path: "{{ ansible_env.HOME }}/.config/i3status"
 
-- name: install sway configuration files
+- name: install i3 gaps configuration files
   copy: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
-    - src: config/sway/config
-      dest: "{{ ansible_env.HOME }}/.config/sway/config"
+    - src: config/i3-gaps/config
+      dest: "{{ ansible_env.HOME }}/.i3/config"
 
 - name: install i3status configuration files
   copy: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
     - src: config/i3status/config
       dest: "{{ ansible_env.HOME }}/.config/i3status/config"
+
+- name: install xorg configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/xorg/.xinitrc
+      dest: "{{ ansible_env.HOME }}/.xinitrc"
 
 - name: install wallpaper
   copy: "src={{ item.src }} dest={{ item.dest }}"

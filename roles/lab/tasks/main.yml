@@ -143,7 +143,7 @@
   tags:
     - configure_gui_apps
 
-- name: configure sway
-  import_tasks: 61_sway.yml
+- name: configure i3 gaps
+  import_tasks: 61_i3_gaps.yml
   tags:
-    - configure_sway
+    - configure_i3_gaps
