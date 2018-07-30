@@ -130,6 +130,12 @@ let g:user_emmet_settings = {
   \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RRethy/vim-illuminate
+
+" Delay 500 ms before illuminating
+let g:Illuminate_delay = 500
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " svermeulen/vim-easyclip
 
 " Use gs for substitute

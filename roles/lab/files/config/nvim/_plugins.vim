@@ -4,6 +4,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Code display
 
+" Selectively illuminating other uses of current word under the cursor
+Plug 'RRethy/vim-illuminate'
+
 " Always highlights the enclosing html/xml tags
 Plug 'Valloric/MatchTagAlways'
 
