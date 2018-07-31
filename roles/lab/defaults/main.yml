@@ -2,3 +2,7 @@
 # Git profile
 git_name: Gavin Lam
 git_email: me@gavin.hk
+
+# GnuPG
+gpg_key: ""
+gpg_email: me@gavin.hk

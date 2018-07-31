@@ -50,6 +50,11 @@
   tags:
     - configure_systemd
 
+- name: configure gnupg
+  import_tasks: 14_configure_gnupg.yml
+  tags:
+    - configure_gnupg
+
 - name: configure zsh
   import_tasks: 20_zsh.yml
   tags:
