@@ -8,6 +8,7 @@
     - dmenu
     - feh
     - i3status
+    - physlock
     - unclutter
     - xorg-xinit
     - xorg-xset
