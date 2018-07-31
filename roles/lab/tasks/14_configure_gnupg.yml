@@ -16,6 +16,8 @@
   with_items:
     - src: config/gnupg/gpg-agent.conf
       dest: "{{ ansible_env.HOME }}/.gnupg/gpg-agent.conf"
+    - src: config/gnupg/sshcontrol
+      dest: "{{ ansible_env.HOME }}/.gnupg/sshcontrol"
 
 - name: register private pgp key existence
   command: bash -c "gpg2 --list-keys | grep '{{ gpg_email }}'"

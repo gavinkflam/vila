@@ -88,6 +88,11 @@ PROMPT_LEAN_COLOR2="7c/7c/7c"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
 
 ########################################
+# GnuPG agent
+
+export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+
+########################################
 # Per deployment configurations
 
 # Interactive shell configurations per deployment
