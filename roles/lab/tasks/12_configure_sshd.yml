@@ -12,7 +12,7 @@
   become: true
 
 - name: generate fresh rsa key for sshd
-  command: <
+  command: >
     ssh-keygen -f /etc/ssh/host_keys/ssh_host_rsa_key -N '' -t rsa && \
       chmod 600 /etc/ssh/host_keys/ssh_host_rsa_key
   args:
@@ -20,7 +20,7 @@
   become: true
 
 - name: generate fresh dsa key for sshd
-  command: <
+  command: >
     ssh-keygen -f /etc/ssh/host_keys/ssh_host_dsa_key -N '' -t dsa && \
       chmod 600 /etc/ssh/host_keys/ssh_host_dsa_key
   args:
