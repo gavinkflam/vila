@@ -13,9 +13,6 @@ fi
 
 source $HOME/.zgen/zgen.zsh
 
-# ssh-agent management
-zgen load bobsoppe/zsh-ssh-agent
-
 # autoenv for zsh
 zgen load Tarrasch/zsh-autoenv
 
