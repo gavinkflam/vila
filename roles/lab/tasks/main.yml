@@ -29,6 +29,8 @@
 # Work on subtasks
 - name: configure essential packages
   import_tasks: 00_essential_packages.yml
+  tags:
+    - configure_essential_packages
 
 - name: configure user
   import_tasks: 10_configure_user.yml
@@ -94,6 +96,11 @@
   import_tasks: 41_vpn.yml
   tags:
     - configure_vpn
+
+- name: configure docker credential pass
+  import_tasks: 42_docker_credential_pass.yml
+  tags:
+    - configure_docker_credential_pass
 
 - name: configure wifi
   import_tasks: 50_wifi.yml
