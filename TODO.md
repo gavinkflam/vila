@@ -1,22 +1,15 @@
 # TODO
 
-## Generic setup
-* download docker-credentials-pass
-* migrate to Ansible
+## Configurations
+* add pass password store clone and update
+* add update mechanism for zsh, tmux and nvim plugins
+* generate configuration files for desktop or mac via template
+* standardize task names, implementations, includes and tags
+* introduce makepkg module
 
-## Manjaro setup
-* symlink i3 config
-* enable docker and sshd service via systemctl
-* remove unneccessary packages
-* symlink and install i3exit and vila-lock scripts
-* introduce vila-terminal script to control default shell
-* handle i3 exec children lifetime
-* migrate to base16 i3 themes
-* check home environment variable (not root) and hint for sudo -E
+## Utility
+* introduce utility scripts for configuration update
+* introduce utility scripts for first time setup
 
-## Macbook setup
-* add keyboard mapping for Macbook keyboard
-* add tlp installation and configurations
-
-## Repo
+## Meta
 * add logo and wallpaper copyrights
