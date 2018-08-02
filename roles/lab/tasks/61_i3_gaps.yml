@@ -28,9 +28,9 @@
       dest: "{{ ansible_env.HOME }}/.i3/config"
 
 - name: install i3status configuration files
-  copy: "src={{ item.src }} dest={{ item.dest }}"
+  template: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
-    - src: config/i3status/config
+    - src: config/i3status/config.j2
       dest: "{{ ansible_env.HOME }}/.config/i3status/config"
 
 - name: install xorg configuration files
