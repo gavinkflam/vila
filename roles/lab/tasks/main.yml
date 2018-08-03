@@ -57,6 +57,11 @@
   tags:
     - configure_gnupg
 
+- name: configure setterm
+  import_tasks: 15_setterm.yml
+  tags:
+    - configure_setterm
+
 - name: configure zsh
   import_tasks: 20_zsh.yml
   tags:
