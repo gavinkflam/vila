@@ -8,7 +8,8 @@ set $mod Mod4
 focus_follows_mouse no
 
 # Auto lock when idle and after suspend
-exec --no-startup-id xss-lock -- physlock
+exec --no-startup-id xset s 60 60
+exec --no-startup-id xss-lock -- physlock -ms
 
 # Auto hide cursor, should migrate to hideaway later
 exec --no-startup-id unclutter
@@ -172,7 +173,7 @@ bindsym $mod+r mode "resize"
 set $mode_system (l)ock, e(x)it, reload_(c)onfig, (s)uspend, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
   bindsym l       exec --no-startup-id xset s activate
-  bindsym x       exec --no-startup-id pkill i3
+  bindsym x       exec --no-startup-id i3-msg exit
   bindsym c       reload
   bindsym s       exec --no-startup-id systemctl suspend
   bindsym r       exec --no-startup-id systemctl reboot
