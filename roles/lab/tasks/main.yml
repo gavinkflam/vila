@@ -47,10 +47,10 @@
   tags:
     - configure_sshd
 
-- name: configure systemd
-  import_tasks: 13_configure_systemd.yml
+- name: configure logind
+  import_tasks: 13_configure_logind.yml
   tags:
-    - configure_systemd
+    - configure_logind
 
 - name: configure gnupg
   import_tasks: 14_configure_gnupg.yml
