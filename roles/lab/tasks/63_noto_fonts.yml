@@ -1,0 +1,16 @@
+---
+- name: install noto fonts packages
+  pacman: "name={{ item }} state=present"
+  with_items:
+    - noto-fonts
+    - noto-fonts-cjk
+    - noto-fonts-emoji
+    - noto-fonts-extra
+  become: true
+
+- name: install fonconfig configuration files for noto fonts
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/fontconfig/local.conf
+      dest: /etc/fonts/local.conf
+  become: true
