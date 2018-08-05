@@ -10,14 +10,6 @@
 - set_fact: "dmi_product_name={{ dmi_product_name.stdout }}"
   tags: always
 
-- name: register linux version
-  command: uname -r
-  register: linux_version
-  tags: always
-
-- set_fact: "linux_version={{ linux_version.stdout }}"
-  tags: always
-
 # Refresh package list
 - name: refresh package list
   pacman:
