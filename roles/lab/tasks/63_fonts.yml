@@ -1,11 +1,18 @@
 ---
-- name: install noto fonts packages
+- name: install fonts packages
   pacman: "name={{ item }} state=present"
   with_items:
+    # hack
+    - ttf-hack
+    # liberation fonts
+    - ttf-liberation
+    # noto fonts
     - noto-fonts
     - noto-fonts-cjk
     - noto-fonts-emoji
     - noto-fonts-extra
+    # roboto fonts
+    - ttf-roboto
   become: true
 
 - name: install fonconfig configuration files for noto fonts

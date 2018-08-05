@@ -157,7 +157,7 @@
   tags:
     - configure_chromium
 
-- name: configure noto fonts
-  import_tasks: 63_noto_fonts.yml
+- name: configure fonts
+  import_tasks: 63_fonts.yml
   tags:
-    - configure_noto_fonts
+    - configure_fonts
