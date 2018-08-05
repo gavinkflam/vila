@@ -14,8 +14,6 @@
     - "linux{{ linux_version.split('.')[:2] | join() }}-headers"
     # Security
     - gnupg2
-    # Shell
-    - bash
     # Version control
     - git
   become: true
