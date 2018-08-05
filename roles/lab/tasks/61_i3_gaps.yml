@@ -10,6 +10,7 @@
     - i3status
     - physlock
     - unclutter
+    - xorg-server
     - xorg-xinit
     - xorg-xset
     - xss-lock
