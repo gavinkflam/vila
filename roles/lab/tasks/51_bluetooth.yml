@@ -5,3 +5,10 @@
     - bluez
     - bluez-utils
   become: true
+
+- name: add user to lp group
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: lp
+    append: yes
+  become: true
