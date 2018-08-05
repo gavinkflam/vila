@@ -32,11 +32,6 @@
   tags:
     - configure_essential_packages
 
-- name: configure user
-  import_tasks: 10_configure_user.yml
-  tags:
-    - configure_user
-
 - name: configure git
   import_tasks: 11_configure_git.yml
   tags:

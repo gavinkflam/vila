@@ -27,3 +27,9 @@
 - name: install zsh plugins
   command: >
     /bin/zsh -c "ZGEN_AUTOLOAD_COMPINIT=0; . {{ ansible_env.HOME }}/.zsh_plugins"
+
+- name: change user shell to zsh
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+  become: true

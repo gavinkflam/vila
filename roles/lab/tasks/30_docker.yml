@@ -21,3 +21,10 @@
   with_items:
     - src: config/docker/config.json
       dest: "{{ ansible_env.HOME }}/.docker/config.json"
+
+- name: add user to docker group
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+    append: yes
+  become: true
