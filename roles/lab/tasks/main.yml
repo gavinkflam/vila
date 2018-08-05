@@ -142,12 +142,17 @@
     - configure_undervolt
   when: dmi_product_name is search('MacBook')
 
-- name: configure gui apps
-  import_tasks: 60_gui_apps.yml
+- name: configure st
+  import_tasks: 60_st.yml
   tags:
-    - configure_gui_apps
+    - configure_st
 
 - name: configure i3 gaps
   import_tasks: 61_i3_gaps.yml
   tags:
     - configure_i3_gaps
+
+- name: configure chromium
+  import_tasks: 62_chromium.yml
+  tags:
+    - configure_chromium

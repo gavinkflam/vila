@@ -1,7 +1,6 @@
 ---
-- name: install gui packages
+- name: install chromium packages
   pacman: "name={{ item }} state=present"
   with_items:
     - chromium
-    - st
   become: true

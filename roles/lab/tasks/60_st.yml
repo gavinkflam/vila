@@ -1,0 +1,27 @@
+---
+- name: install st dependencies packages
+  pacman: "name={{ item }} state=present"
+  with_items:
+    - xorg-fonts-misc
+  become: true
+
+- name: clone st
+  git:
+    repo: https://gitlab.com/gavinkflam/st.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/st"
+
+- name: register st package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/st"
+  register: package_path
+
+- name: build st
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/st"
+    creates: "{{ package_path.stdout }}"
+
+- name: install st
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true
