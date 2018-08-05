@@ -12,3 +12,14 @@
     groups: lp
     append: yes
   become: true
+
+- name: reload bluetooth configurations
+  systemd: "daemon_reload=yes"
+  become: true
+
+- name: start bluetooth services
+  systemd:
+    name: bluetooth.service
+    state: started
+    enabled: yes
+  become: true

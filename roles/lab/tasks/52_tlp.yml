@@ -14,3 +14,14 @@
     - src: config/tlp/config
       dest: /etc/default/tlp
   become: true
+
+- name: reload tlp configurations
+  systemd: "daemon_reload=yes"
+  become: true
+
+- name: start tlp services
+  systemd:
+    name: tlp.service
+    state: started
+    enabled: yes
+  become: true
