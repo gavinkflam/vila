@@ -17,6 +17,9 @@ set switchbuf=useopen
 " Always show tabline
 set stal=2
 
+" Allow the cursor to move just pass the end of the line
+set virtualedit=onemore
+
 " Exclude quickfix buffers from buffer list
 augroup qf
   autocmd!

@@ -14,8 +14,8 @@ nnoremap <silent> \B :Bonly<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Editing
 
-" Remap VIM 0 to first non-blank character
-map 0 ^
+" Remap $ to the last virtual character
+map $ g$
 
 " Map Ctrl-J to enter key for better plugin support
 imap <C-J> <CR>
