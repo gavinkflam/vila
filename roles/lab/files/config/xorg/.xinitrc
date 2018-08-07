@@ -4,7 +4,7 @@
 export QT_QPA_PLATFORMTHEME=gtk2
 
 # Auto lock when idle and after suspend
-xset s 60 60
+xset s 180 90
 xss-lock -- physlock -ms &
 
 # Auto hide cursor, should migrate to hideaway later
