@@ -75,7 +75,7 @@ hide_edge_borders smart_no_gaps
 # Commands
 
 # Start a terminal
-bindsym $mod+n exec st -f "Hack:size=12"
+bindsym $mod+n exec st
 
 # Start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
