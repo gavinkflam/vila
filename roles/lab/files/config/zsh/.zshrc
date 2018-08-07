@@ -1,9 +1,6 @@
 # Language environment
 export LANG=en_US.UTF-8
 
-# Set nvim as preferred editor
-export EDITOR='nvim'
-
 # Use 256 color
 if [[ -n ${TMUX} ]]; then
   export TERM="screen-256color"
