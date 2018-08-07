@@ -31,3 +31,13 @@
 - name: install xcursor breeze
   command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
   become: true
+
+- name: install gtk configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/gtk/gtk-2.0/.gtkrc-2.0
+      dest: "{{ ansible_env.HOME }}/.gtkrc-2.0"
+    - src: config/gtk/gtk-3.0/settings.ini
+      dest: "{{ ansible_env.HOME }}/.config/gtk-3.0/settings.ini"
+    - src: config/gtk/icons/index.theme
+      dest: "{{ ansible_env.HOME }}/.icons/default/index.theme"
