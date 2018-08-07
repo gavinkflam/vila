@@ -161,3 +161,13 @@
   import_tasks: 63_fonts.yml
   tags:
     - configure_fonts
+
+- name: configure gtk
+  import_tasks: 64_gtk.yml
+  tags:
+    - configure_gtk
+
+- name: configure qt
+  import_tasks: 65_qt.yml
+  tags:
+    - configure_qt

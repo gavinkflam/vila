@@ -1,0 +1,13 @@
+---
+- name: install qt packages
+  pacman: "name={{ item }} state=present"
+  with_items:
+    # QGtkStyle
+    - qt5-styleplugins
+  become: true
+
+- name: install qt4 configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/qt4/Trolltech.conf
+      dest: "{{ ansible_env.HOME }}/.config/Trolltech.conf"
