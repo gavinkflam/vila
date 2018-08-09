@@ -13,5 +13,8 @@ unclutter &
 # Set wallpaper
 feh --bg-fill ~/wallpaper.jpg
 
-# Start i3 windows manager
-exec i3
+# Status monitor for dwm
+slstatus &
+
+# Start dynamic windows manager
+exec dwm

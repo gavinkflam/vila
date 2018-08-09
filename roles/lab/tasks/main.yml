@@ -147,10 +147,10 @@
   tags:
     - configure_st
 
-- name: configure i3 gaps
-  import_tasks: 61_i3_gaps.yml
+- name: configure dwm
+  import_tasks: 61_dwm.yml
   tags:
-    - configure_i3_gaps
+    - configure_dwm
 
 - name: configure chromium
   import_tasks: 62_chromium.yml
