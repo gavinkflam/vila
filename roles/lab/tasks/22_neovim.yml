@@ -3,20 +3,11 @@
   pacman: "name={{ item }} state=present"
   with_items:
     - neovim
+    # Python client for plugins
+    - python-neovim
+    - python2-neovim
+    # Utility packages
     - the_silver_searcher
-  become: true
-
-# Install Python packages
-- name: install python2 packages for neovim
-  pip: "name={{ item }} state=present executable=pip2"
-  with_items:
-    - neovim
-  become: true
-
-- name: install python3 packages for neovim
-  pip: "name={{ item }} state=present executable=pip3"
-  with_items:
-    - neovim
   become: true
 
 # Neovim configuration directories

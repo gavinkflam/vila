@@ -3,11 +3,6 @@
   pacman: "name={{ item }} state=present"
   with_items:
     - docker
-  become: true
-
-- name: install python2 packages for docker
-  pip: "name={{ item }} state=present executable=pip2"
-  with_items:
     - docker-compose
   become: true
 

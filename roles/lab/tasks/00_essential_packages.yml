@@ -3,7 +3,9 @@
   pacman: "name={{ item }} state=present"
   with_items:
     # Archive
+    - atool
     - gzip
+    - libarchive
     - p7zip
     - unrar
     - unzip
@@ -12,12 +14,11 @@
     - file
     # Language
     - go
+    - python
+    - python2
     # Network
     - connman
     - nmap
-    # Python
-    - python-pip
-    - python2-pip
     # Linux headers
     - linux-headers
     # Security
