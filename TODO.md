@@ -6,9 +6,10 @@
 * add trackpad config for xorg
 * add ssh key to authorized keys
 * dmidecode needs to be installed before device type probing
-* generate configuration files for desktop or mac via template
 * standardize task names, implementations, includes and tags
 * introduce makepkg module
+* start fstrim.timer
+* install pcmanfm, qpdfview, etc. GUI apps
 
 ## Utility
 * introduce utility scripts for configuration update
