@@ -28,3 +28,14 @@
     groups: docker
     append: yes
   become: true
+
+- name: reload docker service
+  systemd: "daemon_reload=yes"
+  become: true
+
+- name: start docker service
+  systemd:
+    name: docker.service
+    state: started
+    enabled: yes
+  become: true
