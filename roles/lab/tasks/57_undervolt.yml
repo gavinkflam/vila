@@ -1,8 +1,23 @@
 ---
-- name: install undervolt via pip
-  pip: "name={{ item }} state=present executable=pip3"
-  with_items:
-    - undervolt
+- name: clone python undervolt
+  git:
+    repo: https://gitlab.com/gavinkflam/python-undervolt.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/python-undervolt"
+
+- name: register python undervolt package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/python-undervolt"
+  register: package_path
+
+- name: build python undervolt
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/python-undervolt"
+    creates: "{{ package_path.stdout }}"
+
+- name: install python undervolt
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
   become: true
 
 - name: install undervolt services
