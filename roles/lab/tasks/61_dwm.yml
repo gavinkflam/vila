@@ -2,6 +2,7 @@
 - name: install dwm peripheral packages
   pacman: "name={{ item }} state=present"
   with_items:
+    - alsa-lib
     - dmenu
     - feh
     - physlock

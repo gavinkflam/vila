@@ -2,6 +2,7 @@
 - name: install st dependencies packages
   pacman: "name={{ item }} state=present"
   with_items:
+    - libxft
     - xorg-fonts-misc
   become: true
 
