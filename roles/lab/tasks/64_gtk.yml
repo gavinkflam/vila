@@ -32,6 +32,12 @@
   command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
   become: true
 
+- name: create gtk configuration directories
+  file: "path={{ item.path }} state=directory"
+  with_items:
+    - path: "{{ ansible_env.HOME }}/.config/gtk-3.0"
+    - path: "{{ ansible_env.HOME }}/.icons/default"
+
 - name: install gtk configuration files
   copy: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
