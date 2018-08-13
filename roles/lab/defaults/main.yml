@@ -6,3 +6,6 @@ git_email: me@gavin.hk
 # GnuPG
 gpg_key: ""
 gpg_email: me@gavin.hk
+
+# Pass
+password_store_repository: ""

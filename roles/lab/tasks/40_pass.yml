@@ -4,3 +4,9 @@
   with_items:
     - pass
   become: true
+
+- name: clone password store
+  git:
+    repo: "{{ password_store_repository }}"
+    dest: "{{ ansible_env.HOME }}/.password-store"
+  when: password_store_repository != ""
