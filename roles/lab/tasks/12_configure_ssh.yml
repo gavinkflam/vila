@@ -1,4 +1,5 @@
 ---
+# SSH daemon configuraions
 - name: install sshd configuration file
   template: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
@@ -26,3 +27,10 @@
   args:
     creates: /etc/ssh/host_keys/ssh_host_dsa_key
   become: true
+
+# SSH client configurations
+- name: install ssh configuration file
+  file: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/ssh/config
+      dest: "{{ ansible_env.HOME }}/.ssh/config"

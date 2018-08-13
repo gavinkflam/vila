@@ -29,10 +29,10 @@
   tags:
     - configure_git
 
-- name: configure sshd
-  import_tasks: 12_configure_sshd.yml
+- name: configure ssh
+  import_tasks: 12_configure_ssh.yml
   tags:
-    - configure_sshd
+    - configure_ssh
 
 - name: configure logind
   import_tasks: 13_configure_logind.yml
