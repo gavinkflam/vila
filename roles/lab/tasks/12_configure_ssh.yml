@@ -28,6 +28,17 @@
     creates: /etc/ssh/host_keys/ssh_host_dsa_key
   become: true
 
+- name: reload sshd service
+  systemd: "daemon_reload=yes"
+  become: true
+
+- name: start sshd service
+  systemd:
+    name: sshd.service
+    state: started
+    enabled: yes
+  become: true
+
 # SSH client configurations
 - name: install ssh configuration file
   copy: "src={{ item.src }} dest={{ item.dest }}"
