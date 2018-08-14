@@ -7,12 +7,12 @@
   become: true
 
 - name: create gnupg configuration directories
-  file: "path={{ item.path }} state=directory"
+  file: "path={{ item.path }} state=directory mode=u=rwX,g=,o="
   with_items:
     - path: "{{ ansible_env.HOME }}/.gnupg"
 
 - name: install gnupg configuration files
-  copy: "src={{ item.src }} dest={{ item.dest }}"
+  copy: "src={{ item.src }} dest={{ item.dest }} mode=600"
   with_items:
     - src: config/gnupg/gpg-agent.conf
       dest: "{{ ansible_env.HOME }}/.gnupg/gpg-agent.conf"
