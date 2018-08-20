@@ -142,6 +142,12 @@
     - configure_undervolt
   when: dmi_product_name is search('MacBook')
 
+- name: configure touchpad
+  import_tasks: 58_touchpad.yml
+  tags:
+    - configure_touchpad
+  when: dmi_product_name is search('MacBook')
+
 - name: configure st
   import_tasks: 60_st.yml
   tags:
