@@ -3,7 +3,6 @@
   pacman: "name={{ item }} state=present"
   with_items:
     - alsa-lib
-    - dmenu
     - feh
     - physlock
     - unclutter
@@ -32,6 +31,28 @@
     creates: "{{ package_path.stdout }}"
 
 - name: install dwm
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true
+
+# dmenu
+- name: clone dmenu-git
+  git:
+    repo: https://gitlab.com/gavinkflam/dmenu-git.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/dmenu-git"
+
+- name: register dmenu-git package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/dmenu-git"
+  register: package_path
+
+- name: build dmenu-git
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/dmenu-git"
+    creates: "{{ package_path.stdout }}"
+
+- name: install dmenu-git
   command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
   become: true
 
