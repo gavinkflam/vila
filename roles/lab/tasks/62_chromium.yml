@@ -4,3 +4,24 @@
   with_items:
     - chromium
   become: true
+
+- name: clone chromium-widevine
+  git:
+    repo: https://gitlab.com/gavinkflam/chromium-widevine.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/chromium-widevine"
+
+- name: register chromium-widevine package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/chromium-widevine"
+  register: package_path
+
+- name: build chromium-widevine
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/chromium-widevine"
+    creates: "{{ package_path.stdout }}"
+
+- name: install chromium-widevine
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true
