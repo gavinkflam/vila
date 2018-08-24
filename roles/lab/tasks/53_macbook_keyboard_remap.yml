@@ -1,7 +1,7 @@
 ---
 - name: clone hid-apple-plugboard-git-dkms-custom
   git:
-    repo: https://github.com/gavinkflam/hid-apple-plugboard-git-dkms-custom.git
+    repo: https://gitlab.com/gavinkflam/hid-apple-plugboard-git-dkms-custom.git
     dest: "{{ ansible_env.HOME }}/.pkgs/hid-apple-plugboard-git-dkms-custom"
 
 - name: register hid-apple-plugboard-git-dkms package path
