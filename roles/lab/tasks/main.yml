@@ -148,6 +148,12 @@
     - configure_touchpad
   when: dmi_product_name is search('MacBook')
 
+- name: configure acpi wakeup
+  import_tasks: 59_acpi_wakeup.yml
+  tags:
+    - configure_acpi_wakeup
+  when: dmi_product_name is search('MacBook')
+
 - name: configure st
   import_tasks: 60_st.yml
   tags:

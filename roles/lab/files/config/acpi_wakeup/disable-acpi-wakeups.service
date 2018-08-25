@@ -1,0 +1,9 @@
+[Unit]
+Description=Disable ACPI Wakeups
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c "cat /proc/acpi/wakeup | grep '*enabled' | awk '{print $1}' | xargs -I {} echo {} > /proc/acpi/wakeup"
+
+[Install]
+WantedBy=multi-user.target
