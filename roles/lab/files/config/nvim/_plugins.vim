@@ -114,10 +114,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'dyng/ctrlsf.vim'
 
 " Frictionless REPL with vim and tmux
-Plug 'gavinkflam/vmux'
-
-" File type plugins for frictionless REPL with vmux
-Plug '$HOME/.config/nvim/plugins/vmux-ftplugins'
+if isdirectory(expand('$HOME/dev/vmux'))
+  Plug '$HOME/dev/vmux'
+else
+  Plug 'gavinkflam/vmux'
+endif
 
 " A git commit browser
 Plug 'junegunn/gv.vim'
