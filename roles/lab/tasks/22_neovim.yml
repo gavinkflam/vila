@@ -15,7 +15,6 @@
   file: "path={{ item.path }} state=directory"
   with_items:
     - path: "{{ ansible_env.HOME }}/.config/nvim/autoload"
-    - path: "{{ ansible_env.HOME }}/.config/nvim/plugins"
 
 # Install vim plug
 - name: install vim plug
@@ -27,9 +26,6 @@
 - name: install neovim configuration files
   copy: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
-    # Embeded plugins
-    - src: config/nvim/plugins/
-      dest: "{{ ansible_env.HOME }}/.config/nvim/plugins"
     # Entry configuration files
     - src: config/nvim/init.vim
       dest: "{{ ansible_env.HOME }}/.config/nvim/init.vim"
