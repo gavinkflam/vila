@@ -18,6 +18,7 @@
     - python2
     # Network
     - connman
+    - bind-tools
     - nmap
     # Linux headers
     - linux-headers
