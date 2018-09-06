@@ -49,6 +49,11 @@
   tags:
     - configure_setterm
 
+- name: configure networkmanager
+  import_tasks: 16_networkmanager.yml
+  tags:
+    - configure_networkmanager
+
 - name: configure zsh
   import_tasks: 20_zsh.yml
   tags:
