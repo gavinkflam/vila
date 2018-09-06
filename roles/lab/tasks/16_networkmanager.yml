@@ -1,0 +1,27 @@
+---
+- name: install networkmanager configurations
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/networkmanager/dhcp-client.conf
+      dest: /etc/NetworkManager/conf.d/dhcp-client.conf
+    - src: config/networkmanager/dns.conf
+      dest: /etc/NetworkManager/conf.d/dns.conf
+  become: true
+
+- name: reload networkmanager services configurations
+  systemd: "daemon_reload=yes"
+  become: true
+
+- name: start and enable systemd-resolved service
+  systemd:
+    name: systemd-resolved.service
+    state: started
+    enabled: yes
+  become: true
+
+- name: start and enable networkmanager service
+  systemd:
+    name: NetworkManager.service
+    state: started
+    enabled: yes
+  become: true

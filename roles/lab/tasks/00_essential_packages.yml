@@ -17,8 +17,9 @@
     - python
     - python2
     # Network
-    - connman
     - bind-tools
+    - dhcpcd
+    - networkmanager
     - nmap
     # Linux headers
     - linux-headers
