@@ -54,6 +54,11 @@
   tags:
     - configure_networkmanager
 
+- name: configure ntp
+  import_tasks: 17_ntp.yml
+  tags:
+    - configure_ntp
+
 - name: configure zsh
   import_tasks: 20_zsh.yml
   tags:
