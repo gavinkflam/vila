@@ -2,14 +2,23 @@
 - name: install dwm peripheral packages
   pacman: "name={{ item }} state=present"
   with_items:
+    # Alsa library to compile slstatus
     - alsa-lib
-    - feh
-    - physlock
+    # Hiding mouse cursor
     - unclutter
-    - xorg-server
-    - xorg-xinit
-    - xorg-xset
+    # Lock screen
+    - physlock
     - xss-lock
+    # Multihead
+    - xorg-xrandr
+    # Wallpaper
+    - feh
+    # X11
+    - xorg-server
+    # X initialization
+    - xorg-xinit
+    # X preference
+    - xorg-xset
   become: true
 
 # dwm
