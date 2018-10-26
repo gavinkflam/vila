@@ -124,6 +124,10 @@ map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 
+" Change color of sneak labels to grayscale
+autocmd ColorScheme * hi Sneak guifg=white guibg=darkgray ctermfg=white ctermbg=darkgray
+autocmd ColorScheme * hi SneakScope guifg=white guibg=darkgray ctermfg=white ctermbg=darkgray
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mattn/emmet-vim
 
