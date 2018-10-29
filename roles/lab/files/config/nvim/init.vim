@@ -12,6 +12,7 @@ source $HOME/.config/nvim/_core.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin configurations
 source $HOME/.config/nvim/_plugins_conf.vim
+source $HOME/.config/nvim/_color_scheme.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands

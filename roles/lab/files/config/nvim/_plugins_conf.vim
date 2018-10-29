@@ -44,12 +44,6 @@ let g:airline_section_error =
 call camelcasemotion#CreateMotionMappings(',')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" chriskempson/base16-vim
-
-let base16colorspace=256
-colorscheme base16-grayscale-dark
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp.vim
 
 " Change key mapping for invoking CtrlP
