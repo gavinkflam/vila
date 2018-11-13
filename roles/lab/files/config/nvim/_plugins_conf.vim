@@ -91,6 +91,32 @@ nmap g,,   <Plug>(Vmux_dispatch)
 " Leader shortcut for dispatching arbitary text
 nnoremap <leader>, :VmuxDispatch<space>
 
+" Haskell GHCi commands mappings
+augroup vmuxHaskellMappings
+  au!
+
+  " GHCi command
+  au FileType haskell nnoremap <leader>hg :VmuxGhci<space>
+
+  " Add, load and reload
+  au FileType haskell nnoremap <leader>af :VmuxGhciAddFile<CR>
+  au FileType haskell nnoremap <leader>lf :VmuxGhciLoadFile<CR>
+  au FileType haskell nnoremap <leader>r :VmuxGhciReload<CR>
+  au FileType haskell nnoremap <leader>wr :w \| :VmuxGhciReload<CR>
+
+  " Browse and info
+  au FileType haskell nnoremap <leader>hb :VmuxGhciBrowseWord<CR>
+  au FileType haskell nnoremap <leader>hi :VmuxGhciInfoWord<CR>
+
+  " Type commands
+  au FileType haskell nnoremap <leader>t :VmuxGhciTypeWord<CR>
+  au FileType haskell nnoremap <leader>T :VmuxGhciTypeIt<CR>
+
+  " Stack commands
+  au FileType haskell nnoremap <leader>sb :VmuxGhciStackBuild<CR>
+  au FileType haskell nnoremap <leader>st :VmuxGhciStackTest<CR>
+augroup END
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/vim-easy-align
 
