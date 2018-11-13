@@ -228,55 +228,6 @@ let g:neomake_elixir_enabled_makers = ['mix', 'credo', 'dogma']
 let g:neomake_haskell_enabled_makers = ['hlint', 'cabal']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" parsonsmatt/intero-neovim
-
-" Key mappings for intero
-" Restrict to Haskell buffers so the bindings don't collide
-augroup interoMaps
-  au!
-
-  " Background process and window management
-  au FileType haskell nnoremap <silent> <leader>is :InteroStart<CR>
-  au FileType haskell nnoremap <silent> <leader>ik :InteroKill<CR>
-
-  " Open intero/GHCi split
-  au FileType haskell nnoremap <silent> <leader>io :InteroOpen<CR>
-  au FileType haskell nnoremap <silent> <leader>ih :InteroHide<CR>
-
-  " Reload
-  au FileType haskell nnoremap <silent> <leader>r :InteroReload<CR>
-  " Save and reload
-  au FileType haskell nnoremap <silent> <leader>wr :w \| :InteroReload<CR>
-
-  " Load individual modules
-  au FileType haskell nnoremap <silent> <leader>il :InteroLoadCurrentModule<CR>
-  au FileType haskell nnoremap <silent> <leader>if :InteroLoadCurrentFile<CR>
-
-  " Type-related information
-  au FileType haskell map <silent> <leader>t <Plug>InteroGenericType
-  au FileType haskell map <silent> <leader>T <Plug>InteroType
-  au FileType haskell nnoremap <silent> <leader>it :InteroTypeInsert<CR>
-
-  " Navigation
-  au FileType haskell nnoremap <silent> <leader>jd :InteroGoToDef<CR>
-
-  " Prompt to set targets
-  au FileType haskell nnoremap <leader>ist :InteroSetTargets<CR>
-augroup END
-
-" Exclude intero buffers from buffer list
-augroup interoHide
-  autocmd!
-  autocmd FileType intero set nobuflisted
-augroup END
-
-" Prevent intero to start automatically
-let g:intero_start_immediately = 0
-
-" Change the intero window size
-let g:intero_window_size = 12
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plasticboy/vim-markdown
 
 " Disable markdown conceal

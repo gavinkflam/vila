@@ -95,11 +95,6 @@ Plug 'c-brenn/phoenix.vim', { 'for': 'elixir' }
 " Elixir Integration Into Vim
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 
-"----- Haskell -----
-
-" Complete interactive development program for Haskell
-Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell' }
-
 "----- Golang -----
 
 Plug 'fatih/vim-go', { 'for': 'go' }
