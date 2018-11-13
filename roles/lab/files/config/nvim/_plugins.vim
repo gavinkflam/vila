@@ -97,8 +97,8 @@ Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 
 "----- Haskell -----
 
-" Completion plugin for Haskell, using ghc-mod
-Plug 'eagletmt/neco-ghc', { 'for': 'haskell' }
+" Complete interactive development program for Haskell
+Plug 'parsonsmatt/intero-neovim', { 'for': 'haskell' }
 
 "----- Golang -----
 
