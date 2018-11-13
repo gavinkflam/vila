@@ -59,6 +59,15 @@ nnoremap <silent> \h :noh<CR>
 nnoremap <silent> \t :tabclose<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Terminal
+
+" Use Esc to exit terminal mode
+tnoremap <Esc> <C-\><C-n>
+
+" Simulate |i_CTRL-R| in terminal mode
+tnoremap <expr> <M-r> '<C-\><C-n>"'.nr2char(getchar()).'pi'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual mode
 
 " Pressing * or # searches for the current selection
