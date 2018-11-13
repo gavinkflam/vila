@@ -88,8 +88,11 @@ nmap g,    <Plug>(Vmux_dispatch_op)
 imap <M-,> <Plug>(Vmux_dispatch)
 nmap g,,   <Plug>(Vmux_dispatch)
 
-" Leader shortcut for dispatching arbitary text
+" Dispatch arbitary text
 nnoremap <leader>, :VmuxDispatch<space>
+
+" Clear companion pane
+nnoremap <leader>cl :VmuxClearPane<CR>
 
 " Haskell GHCi commands mappings
 augroup vmuxHaskellMappings
