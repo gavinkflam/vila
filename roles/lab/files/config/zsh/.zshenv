@@ -4,11 +4,6 @@ export EDITOR=/usr/bin/nvim
 export PAGER=/usr/bin/less
 export TERMINAL=/usr/bin/st
 
-# Add vila bin to PATH
-if [[ -d "${HOME}/.vila/bin" ]]; then
-  export PATH="${HOME}/.vila/bin:${PATH}"
-fi
-
 # Start xorg if running from tty1
 if [[ "$(tty)" = "/dev/tty1" ]]; then
   startx
