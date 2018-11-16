@@ -1,0 +1,5 @@
+-- hoogle command
+:def hoogle \str -> return $ ":! hoogle --count=15 '" ++ str ++ "'"
+
+-- haskell-docs command
+:def docs \str -> return $ ":! haskell-docs " ++ str

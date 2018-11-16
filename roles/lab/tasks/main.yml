@@ -193,3 +193,8 @@
   import_tasks: 65_qt.yml
   tags:
     - configure_qt
+
+- name: configure haskell
+  import_tasks: 70_haskell.yml
+  tags:
+    - configure_haskell
