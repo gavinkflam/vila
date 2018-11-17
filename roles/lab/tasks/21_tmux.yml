@@ -17,3 +17,15 @@
       dest: "{{ ansible_env.HOME }}/.tmux.conf"
     - src: themes/base16-grayscale-dark/tmux
       dest: "{{ ansible_env.HOME }}/.tmux_theme"
+
+# scripts
+- name: create home bin
+  file: "path={{ ansible_env.HOME }}/bin state=directory"
+
+- name: install scripts for tmux
+  copy: "src={{ item.src }} dest={{ item.dest }} mode=0755"
+  with_items:
+    - src: scripts/tmux/osc52
+      dest: "{{ ansible_env.HOME }}/bin/osc52"
+    - src: scripts/tmux/tmux-showb-osc52
+      dest: "{{ ansible_env.HOME }}/bin/tmux-showb-osc52"
