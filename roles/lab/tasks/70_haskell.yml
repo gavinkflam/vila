@@ -21,28 +21,6 @@
   command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
   become: true
 
-# haskell-docs-stack
-- name: clone haskell-docs-stack
-  git:
-    repo: https://gitlab.com/gavinkflam/haskell-docs-stack.git
-    dest: "{{ ansible_env.HOME }}/.pkgs/haskell-docs-stack"
-
-- name: register haskell-docs-stack package path
-  command: makepkg --packagelist
-  args:
-    chdir: "{{ ansible_env.HOME }}/.pkgs/haskell-docs-stack"
-  register: package_path
-
-- name: build haskell-docs-stack
-  command: makepkg
-  args:
-    chdir: "{{ ansible_env.HOME }}/.pkgs/haskell-docs-stack"
-    creates: "{{ package_path.stdout }}"
-
-- name: install haskell-docs-stack
-  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
-  become: true
-
 # scripts
 - name: create home bin
   file: "path={{ ansible_env.HOME }}/bin state=directory"
