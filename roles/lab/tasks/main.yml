@@ -198,3 +198,8 @@
   import_tasks: 70_haskell.yml
   tags:
     - configure_haskell
+
+- name: configure ruby
+  import_tasks: 71_ruby.yml
+  tags:
+    - configure_ruby

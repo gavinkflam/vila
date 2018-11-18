@@ -1,0 +1,44 @@
+---
+# chruby
+- name: clone chruby
+  git:
+    repo: https://aur.archlinux.org/chruby.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/chruby"
+
+- name: register chruby package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/chruby"
+  register: package_path
+
+- name: build chruby
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/chruby"
+    creates: "{{ package_path.stdout }}"
+
+- name: install chruby
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true
+
+# ruby-install
+- name: clone ruby-install
+  git:
+    repo: https://aur.archlinux.org/ruby-install.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/ruby-install"
+
+- name: register ruby-install package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/ruby-install"
+  register: package_path
+
+- name: build ruby-install
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/ruby-install"
+    creates: "{{ package_path.stdout }}"
+
+- name: install ruby-install
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true
