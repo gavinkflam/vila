@@ -8,7 +8,7 @@
 
 - name: clone bcwc-pcie-firmware
   git:
-    repo: https://gitlab.com/gavinkflam/bcwc-pcie-firmware.git
+    repo: https://aur.archlinux.org/bcwc-pcie-firmware.git
     dest: "{{ ansible_env.HOME }}/.pkgs/bcwc-pcie-firmware"
 
 - name: register bcwc-pcie-firmware package path
@@ -30,7 +30,7 @@
 # bcwc-pcie-dkms
 - name: clone bcwc-pcie-dkms
   git:
-    repo: https://gitlab.com/gavinkflam/bcwc-pcie-dkms.git
+    repo: https://aur.archlinux.org/bcwc-pcie-dkms.git
     dest: "{{ ansible_env.HOME }}/.pkgs/bcwc-pcie-dkms"
 
 - name: register bcwc-pcie-dkms package path

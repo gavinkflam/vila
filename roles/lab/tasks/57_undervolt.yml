@@ -1,7 +1,7 @@
 ---
 - name: clone python undervolt
   git:
-    repo: https://gitlab.com/gavinkflam/python-undervolt.git
+    repo: https://aur.archlinux.org/python-undervolt.git
     dest: "{{ ansible_env.HOME }}/.pkgs/python-undervolt"
 
 - name: register python undervolt package path

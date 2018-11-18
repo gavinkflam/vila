@@ -13,7 +13,7 @@
 
 - name: clone xcursor breeze
   git:
-    repo: https://gitlab.com/gavinkflam/xcursor-breeze.git
+    repo: https://aur.archlinux.org/xcursor-breeze.git
     dest: "{{ ansible_env.HOME }}/.pkgs/xcursor-breeze"
 
 - name: register xcursor breeze package path

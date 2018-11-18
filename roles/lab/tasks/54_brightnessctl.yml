@@ -1,7 +1,7 @@
 ---
 - name: clone brightnessctl-git
   git:
-    repo: https://gitlab.com/gavinkflam/brightnessctl-git.git
+    repo: https://aur.archlinux.org/brightnessctl-git.git
     dest: "{{ ansible_env.HOME }}/.pkgs/brightnessctl-git"
 
 - name: register brightnessctl-git package path

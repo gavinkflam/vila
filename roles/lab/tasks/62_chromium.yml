@@ -7,7 +7,7 @@
 
 - name: clone chromium-widevine
   git:
-    repo: https://gitlab.com/gavinkflam/chromium-widevine.git
+    repo: https://aur.archlinux.org/chromium-widevine.git
     dest: "{{ ansible_env.HOME }}/.pkgs/chromium-widevine"
 
 - name: register chromium-widevine package path
