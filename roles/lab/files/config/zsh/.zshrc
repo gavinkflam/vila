@@ -97,6 +97,13 @@ export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye > /dev/null
 
 ########################################
+# chruby
+
+if [[ -f '/usr/share/chruby/chruby.sh' ]]; then
+  source /usr/share/chruby/chruby.sh
+fi
+
+########################################
 # Per deployment configurations
 
 # Interactive shell configurations per deployment
