@@ -1,22 +1,22 @@
 ---
-- name: clone brightnessctl-git
+- name: clone brightnessctl
   git:
-    repo: https://aur.archlinux.org/brightnessctl-git.git
-    dest: "{{ ansible_env.HOME }}/.pkgs/brightnessctl-git"
+    repo: https://aur.archlinux.org/brightnessctl.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/brightnessctl"
 
-- name: register brightnessctl-git package path
+- name: register brightnessctl package path
   command: makepkg --packagelist
   args:
-    chdir: "{{ ansible_env.HOME }}/.pkgs/brightnessctl-git"
+    chdir: "{{ ansible_env.HOME }}/.pkgs/brightnessctl"
   register: package_path
 
-- name: build brightnessctl-git
+- name: build brightnessctl
   command: makepkg
   args:
-    chdir: "{{ ansible_env.HOME }}/.pkgs/brightnessctl-git"
+    chdir: "{{ ansible_env.HOME }}/.pkgs/brightnessctl"
     creates: "{{ package_path.stdout }}"
 
-- name: install brightnessctl-git
+- name: install brightnessctl
   command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
   become: true
 
