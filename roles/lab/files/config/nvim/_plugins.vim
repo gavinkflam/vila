@@ -149,7 +149,11 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
 
 " Heuristically set buffer options
-Plug 'tpope/vim-sleuth'
+if isdirectory(expand('$HOME/dev/vim-sleuth'))
+  Plug '$HOME/dev/vim-sleuth'
+else
+  Plug 'gavinkflam/vim-sleuth'
+endif
 
 " Lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
