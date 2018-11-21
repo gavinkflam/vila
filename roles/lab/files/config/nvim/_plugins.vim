@@ -148,6 +148,9 @@ Plug 'majutsushi/tagbar'
 " Tree explorer plugin for vim
 Plug 'scrooloose/nerdtree'
 
+" Heuristically set buffer options
+Plug 'tpope/vim-sleuth'
+
 " Lean & mean status/tabline for vim that's light as air
 Plug 'vim-airline/vim-airline'
 
