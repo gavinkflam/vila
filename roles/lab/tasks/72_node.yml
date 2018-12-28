@@ -1,0 +1,22 @@
+---
+# nvm
+- name: clone nvm
+  git:
+    repo: https://aur.archlinux.org/nvm.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/nvm"
+
+- name: register nvm package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/nvm"
+  register: package_path
+
+- name: build nvm
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/nvm"
+    creates: "{{ package_path.stdout }}"
+
+- name: install nvm
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true

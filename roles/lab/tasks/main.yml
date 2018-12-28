@@ -203,3 +203,8 @@
   import_tasks: 71_ruby.yml
   tags:
     - configure_ruby
+
+- name: configure node
+  import_tasks: 72_node.yml
+  tags:
+    - configure_node

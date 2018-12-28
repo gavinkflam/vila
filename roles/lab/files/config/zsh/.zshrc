@@ -104,6 +104,13 @@ if [[ -f '/usr/share/chruby/chruby.sh' ]]; then
 fi
 
 ########################################
+# nvm
+
+if [[ -f '/usr/share/nvm/init-nvm.sh' ]]; then
+  source /usr/share/nvm/init-nvm.sh
+fi
+
+########################################
 # Per deployment configurations
 
 # Interactive shell configurations per deployment
