@@ -99,6 +99,10 @@ Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 
 Plug 'fatih/vim-go', { 'for': 'go' }
 
+"----- JavaScript (Flow) -----
+
+Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Integrations
 
