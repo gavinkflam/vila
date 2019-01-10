@@ -160,6 +160,12 @@ let g:user_emmet_settings = {
   \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" pangloss/vim-javascript
+
+" Enable syntax highlighting for Flow
+let g:javascript_plugin_flow = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RRethy/vim-illuminate
 
 " Delay 500 ms before illuminating
