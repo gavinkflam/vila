@@ -200,22 +200,19 @@ function! Gstash()
 endfunction
 
 command! -nargs=* Gaddall silent execute "!git add --all" <q-args>
-command! -nargs=* Ggraph  execute "Git log --graph" <q-args>
-command! -nargs=* Greset  execute "!git reset" <q-args>
 command!          Gstash  call Gstash()
 
 nnoremap <leader>gA :Gaddall<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gC :Gaddall<CR>:Gcommit<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gg :Ggraph --oneline --decorate<CR>
-nnoremap <leader>gl :Git log<CR>
+nnoremap <leader>gd :Git diff<CR>
+nnoremap <leader>gD :Git diff --cached<CR>
+nnoremap <leader>gg :Git log --oneline --graph --decorate<CR>
+nnoremap <leader>gl :Git log --pretty=format:'%h%x09%an%x09%ad%x09%s'<CR>
 nnoremap <leader>gP :Gpush origin HEAD<CR>
 nnoremap <leader>gp :Gpull --rebase<CR>
-nnoremap <leader>gr :Greset --mixed<CR>
 nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>g- :Greset --mixed HEAD~1<CR>
 nnoremap <leader>g+ :Gstash<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
