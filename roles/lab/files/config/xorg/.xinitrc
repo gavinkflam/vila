@@ -3,6 +3,10 @@
 # Apply QGtkStyle for Qt5
 export QT_QPA_PLATFORMTHEME=gtk2
 
+# Configure pinentry to use the current tty
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye > /dev/null
+
 # Auto lock when idle and after suspend
 xset s 180 90
 xss-lock -- physlock -ms &
