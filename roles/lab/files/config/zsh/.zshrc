@@ -110,8 +110,22 @@ fi
 # nvm
 
 if [[ -f '/usr/share/nvm/init-nvm.sh' ]]; then
+  # Hook to add npm bin to the PATH
+  function npm_chpwd_hook () {
+    if [[ -n "${PRENPMPATH+x}" ]]; then
+      PATH=$PRENPMPATH
+      unset PRENPMPATH
+    fi
+    if [[ -f 'package.json' ]]; then
+      PRENPMPATH=$PATH
+      PATH=$(npm bin):$PATH
+    fi
+  }
+
   function nvm () {
     source /usr/share/nvm/init-nvm.sh
+    add-zsh-hook preexec npm_chpwd_hook
+
     nvm "$@"
   }
 fi
