@@ -256,6 +256,9 @@ let g:neomake_elixir_enabled_makers = ['mix', 'credo', 'dogma']
 " Configure linters for haskell
 let g:neomake_haskell_enabled_makers = ['hlint', 'cabal']
 
+" Configure linters for javascript
+let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " plasticboy/vim-markdown
 
