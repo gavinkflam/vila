@@ -100,14 +100,20 @@ gpg-connect-agent updatestartuptty /bye > /dev/null
 # chruby
 
 if [[ -f '/usr/share/chruby/chruby.sh' ]]; then
-  source /usr/share/chruby/chruby.sh
+  function chruby () {
+    source /usr/share/chruby/chruby.sh
+    chruby "$@"
+  }
 fi
 
 ########################################
 # nvm
 
 if [[ -f '/usr/share/nvm/init-nvm.sh' ]]; then
-  source /usr/share/nvm/init-nvm.sh
+  function nvm () {
+    source /usr/share/nvm/init-nvm.sh
+    nvm "$@"
+  }
 fi
 
 ########################################
