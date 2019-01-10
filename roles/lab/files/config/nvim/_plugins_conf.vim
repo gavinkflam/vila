@@ -195,23 +195,19 @@ nmap <M-n> <plug>EasyClipSwapPasteBackwards
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tpope/fugitive
 
-function! Gstash()
-  execute "!git add --all && git commit -m 'Stash'"
-endfunction
-
 command! -nargs=* Gaddall silent execute "!git add --all" <q-args>
-command!          Gstash  call Gstash()
+command!          Gstash  execute "!git add --all && git commit -m 'Stash'"
 
 nnoremap <leader>gA :Gaddall<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gc :Gcommit<CR>
 nnoremap <leader>gC :Gaddall<CR>:Gcommit<CR>
-nnoremap <leader>gd :Git diff<CR>
-nnoremap <leader>gD :Git diff --cached<CR>
-nnoremap <leader>gg :Git log --oneline --graph --decorate<CR>
-nnoremap <leader>gl :Git log --pretty=format:'%h%x09%an%x09%ad%x09%s'<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gl :Glog --oneline --graph --decorate<CR>
+nnoremap <leader>gL :Glog --oneline --graph --decorate --<CR>
 nnoremap <leader>gP :Gpush origin HEAD<CR>
 nnoremap <leader>gp :Gpull --rebase<CR>
+nnoremap <leader>gr :Git reset<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>g+ :Gstash<CR>
 
