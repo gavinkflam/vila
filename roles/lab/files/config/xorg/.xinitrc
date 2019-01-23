@@ -21,4 +21,4 @@ feh --bg-fill ~/wallpaper.jpg
 slstatus &
 
 # Start dynamic windows manager
-exec dwm
+dbus-launch --sh-syntax --exit-with-session dwm
