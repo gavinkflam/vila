@@ -24,6 +24,11 @@
   tags:
     - configure_essential_packages
 
+- name: configure pacman mirrors refresh timer
+  import_tasks: 01_pacman_mirrors_refresh_timer.yml
+  tags:
+    - configure_pacman_mirrors_refresh_timer
+
 - name: configure git
   import_tasks: 11_configure_git.yml
   tags:
