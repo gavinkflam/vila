@@ -27,5 +27,3 @@
   with_items:
     - src: scripts/tmux/osc52
       dest: "{{ ansible_env.HOME }}/bin/osc52"
-    - src: scripts/tmux/tmux-buffer-to-clipboard
-      dest: "{{ ansible_env.HOME }}/bin/tmux-buffer-to-clipboard"
