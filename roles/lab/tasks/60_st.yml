@@ -8,7 +8,7 @@
 
 - name: clone st
   git:
-    repo: https://gitlab.com/gavinkflam/st.git
+    repo: https://github.com/gavinkflam/st.git
     dest: "{{ ansible_env.HOME }}/.pkgs/st"
 
 - name: register st package path

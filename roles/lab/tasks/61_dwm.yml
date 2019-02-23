@@ -24,7 +24,7 @@
 # dwm
 - name: clone dwm
   git:
-    repo: https://gitlab.com/gavinkflam/dwm.git
+    repo: https://github.com/gavinkflam/dwm.git
     dest: "{{ ansible_env.HOME }}/.pkgs/dwm"
 
 - name: register dwm package path
@@ -46,7 +46,7 @@
 # dmenu
 - name: clone dmenu-git
   git:
-    repo: https://gitlab.com/gavinkflam/dmenu-git.git
+    repo: https://github.com/gavinkflam/dmenu-git.git
     dest: "{{ ansible_env.HOME }}/.pkgs/dmenu-git"
 
 - name: register dmenu-git package path
@@ -68,7 +68,7 @@
 # slstatus
 - name: clone slstatus
   git:
-    repo: https://gitlab.com/gavinkflam/slstatus-git.git
+    repo: https://github.com/gavinkflam/slstatus-git.git
     dest: "{{ ansible_env.HOME }}/.pkgs/slstatus-git"
 
 - name: register slstatus package path

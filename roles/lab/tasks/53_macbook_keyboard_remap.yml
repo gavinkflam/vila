@@ -1,7 +1,7 @@
 ---
 - name: clone hid-apple-plugboard-git-dkms-kestrel
   git:
-    repo: https://gitlab.com/gavinkflam/hid-apple-plugboard-git-dkms-kestrel.git
+    repo: https://github.com/gavinkflam/hid-apple-plugboard-git-dkms-kestrel.git
     dest: "{{ ansible_env.HOME }}/.pkgs/hid-apple-plugboard-git-dkms-kestrel"
 
 - name: register hid-apple-plugboard-git-dkms-kestrel package path
