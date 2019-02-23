@@ -199,6 +199,11 @@
   tags:
     - configure_qt
 
+- name: configure flameshot
+  import_tasks: 66_flameshot.yml
+  tags:
+    - configure_flameshot
+
 - name: configure haskell
   import_tasks: 70_haskell.yml
   tags:
