@@ -1,0 +1,22 @@
+---
+# kubectl
+- name: clone kubectl-bin
+  git:
+    repo: https://aur.archlinux.org/kubectl-bin.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/kubectl-bin"
+
+- name: register kubectl-bin package path
+  command: makepkg --packagelist
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/kubectl-bin"
+  register: package_path
+
+- name: build kubectl-bin
+  command: makepkg
+  args:
+    chdir: "{{ ansible_env.HOME }}/.pkgs/kubectl-bin"
+    creates: "{{ package_path.stdout }}"
+
+- name: install kubectl-bin
+  command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
+  become: true

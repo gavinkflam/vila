@@ -213,3 +213,8 @@
   import_tasks: 72_node.yml
   tags:
     - configure_node
+
+- name: configure kubectl
+  import_tasks: 73_kubectl.yml
+  tags:
+    - configure_kubectl
