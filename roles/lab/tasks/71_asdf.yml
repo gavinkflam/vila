@@ -24,10 +24,17 @@
 - name: install asdf-vm configuration files
   copy: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
+    # Profile and global versions
     - src: config/asdf/.asdfrc
       dest: "{{ ansible_env.HOME }}/.asdfrc"
     - src: config/asdf/.tools-version
       dest: "{{ ansible_env.HOME }}/.tools-version"
+    # Ruby
+    - src: config/asdf/.default-gems
+      dest: "{{ ansible_env.HOME }}/.default-gems"
+    # Nodejs
+    - src: config/asdf/.default-npm-packages
+      dest: "{{ ansible_env.HOME }}/.default-npm-packages"
 
 # Remember path for asdf command
 - set_fact: "asdf_cmd={{ ansible_env.HOME }}/.asdf/bin/asdf"
