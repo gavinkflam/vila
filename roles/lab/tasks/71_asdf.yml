@@ -56,6 +56,10 @@
     bash -c "{{ asdf_cmd }} plugin-list | grep nodejs || \
              {{ asdf_cmd }} plugin-add nodejs"
 
+- name: import nodejs release keys
+  command: >
+    bash {{ ansible_env.HOME }}/.asdf/plugins/nodejs/bin/import-release-team-keyring
+
 - name: install global nodejs
   command: >
     bash -c "{{ asdf_cmd }} install nodejs \
