@@ -6,7 +6,7 @@
 
 " Use ag instead of ack
 if executable('ag')
-  let g:ackprg = 'ag --nogroup --nocolor --column --hidden'
+  let g:ackprg = 'ag --vimgrep --hidden --ignore .git/'
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -61,7 +61,7 @@ let g:ctrlp_prompt_mappings = {
 
 if executable('ag')
   " Use ag in CtrlP for listing files
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 --hidden -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 --hidden --ignore .git/ -g ""'
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
