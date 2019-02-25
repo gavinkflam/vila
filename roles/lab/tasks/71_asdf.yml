@@ -31,12 +31,18 @@
 
 # Install asdf-java plugin
 - name: install asdf-java plugin
-  command: "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add java"
+  command: >
+    bash -c "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-list | grep java || \
+             {{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add java"
 
 # Install asdf-nodejs plugin
 - name: install asdf-nodejs plugin
-  command: "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add nodejs"
+  command: >
+    bash -c "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-list | grep nodejs || \
+             {{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add nodejs"
 
 # Install asdf-ruby plugin
 - name: install asdf-ruby plugin
-  command: "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add ruby"
+  command: >
+    bash -c "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-list | grep ruby || \
+             {{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add ruby"
