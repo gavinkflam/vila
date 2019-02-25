@@ -209,6 +209,11 @@
   tags:
     - configure_flameshot
 
+- name: configure gui tools
+  import_tasks: 67_gui_tools.yml
+  tags:
+    - configure_gui_tools
+
 - name: configure haskell
   import_tasks: 70_haskell.yml
   tags:
