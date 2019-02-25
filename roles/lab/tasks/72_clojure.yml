@@ -1,0 +1,17 @@
+---
+# Download leiningen script and self-install package
+- name: download leiningen script
+  get_url:
+    url: https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+    dest: "{{ ansible_env.HOME }}/bin/lein"
+    mode: 0755
+
+- name: download leiningen self-install package
+  command: bash -c "{{ ansible_env.HOME }}/bin/lein -v"
+
+# Leiningen profile
+- name: install leiningen profile
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/clojure/profiles.clj
+      dest: "{{ ansible_env.HOME }}/.lein/profiles.clj"
