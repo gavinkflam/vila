@@ -29,10 +29,14 @@
     - src: config/asdf/.tools-version
       dest: "{{ ansible_env.HOME }}/.tools-version"
 
-# Install asdf-ruby plugin
-- name: install asdf-ruby plugin
-  command: "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add ruby"
+# Install asdf-java plugin
+- name: install asdf-java plugin
+  command: "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add java"
 
 # Install asdf-nodejs plugin
 - name: install asdf-nodejs plugin
   command: "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add nodejs"
+
+# Install asdf-ruby plugin
+- name: install asdf-ruby plugin
+  command: "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add ruby"
