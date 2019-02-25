@@ -28,6 +28,9 @@ Plug 'justinmk/vim-sneak'
 " Multiple empty lines and trailing white spaces cleaner for Vim
 Plug 'KuoE0/vim-janitor'
 
+" Defines a new text object representing lines of code at the same indent level
+Plug 'michaeljsmith/vim-indent-object'
+
 " Interactive command execution in Vim
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
@@ -36,6 +39,9 @@ Plug 'skywind3000/asyncrun.vim'
 
 " Simplified clipboard functionality for Vim
 Plug 'svermeulen/vim-easyclip'
+
+" Vim motions to the start and end of the current indentation-delimited block.
+Plug 'tmhedberg/indent-motion'
 
 " Easily search for, substitute, and abbreviate multiple variants of a word
 Plug 'tpope/tpope-vim-abolish'
