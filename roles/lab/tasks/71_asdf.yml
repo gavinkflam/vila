@@ -20,6 +20,15 @@
     dest: "{{ ansible_env.HOME }}/.asdf"
     version: "{{ asdf_vm_latest_version }}"
 
+# Install configuration files
+- name: install asdf-vm configuration files
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/asdf/.asdfrc
+      dest: "{{ ansible_env.HOME }}/.asdfrc"
+    - src: config/asdf/.tools-version
+      dest: "{{ ansible_env.HOME }}/.tools-version"
+
 # Install asdf-ruby plugin
 - name: install asdf-ruby plugin
   command: "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add ruby"
