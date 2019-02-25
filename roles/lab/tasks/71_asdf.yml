@@ -27,8 +27,8 @@
     # Profile and global versions
     - src: config/asdf/.asdfrc
       dest: "{{ ansible_env.HOME }}/.asdfrc"
-    - src: config/asdf/.tools-version
-      dest: "{{ ansible_env.HOME }}/.tools-version"
+	  - src: config/asdf/.tool-versions
+      dest: "{{ ansible_env.HOME }}/.tool-versions"
     # Ruby
     - src: config/asdf/.default-gems
       dest: "{{ ansible_env.HOME }}/.default-gems"
@@ -48,7 +48,7 @@
 - name: install global java
   command: >
     zsh -c "{{ asdf_cmd }} install java \
-              $(cat {{ ansible_env.HOME }}/.tools-version | grep java | awk '{print $2}')"
+              $({{ asdf_cmd }} current java | awk '{print $1}')"
 
 # Install asdf-nodejs plugin and global nodejs
 - name: install asdf-nodejs plugin
@@ -63,7 +63,7 @@
 - name: install global nodejs
   command: >
     zsh -c "{{ asdf_cmd }} install nodejs \
-              $(cat {{ ansible_env.HOME }}/.tools-version | grep nodejs | awk '{print $2}')"
+	            $({{ asdf_cmd }} current nodejs | awk '{print $1}')"
 
 # Install asdf-ruby plugin and global ruby
 - name: install asdf-ruby plugin
@@ -74,4 +74,4 @@
 - name: install global ruby
   command: >
     zsh -c "{{ asdf_cmd }} install ruby \
-              $(cat {{ ansible_env.HOME }}/.tools-version | grep ruby | awk '{print $2}')"
+              $({{ asdf_cmd }} current ruby | awk '{print $1}')"
