@@ -94,6 +94,11 @@
   tags:
     - configure_ansible
 
+- name: configure kubectl
+  import_tasks: 32_kubectl.yml
+  tags:
+    - configure_kubectl
+
 - name: configure pass
   import_tasks: 40_pass.yml
   tags:
@@ -209,17 +214,7 @@
   tags:
     - configure_haskell
 
-- name: configure ruby
-  import_tasks: 71_ruby.yml
+- name: configure asdf
+  import_tasks: 71_asdf.yml
   tags:
-    - configure_ruby
-
-- name: configure node
-  import_tasks: 72_node.yml
-  tags:
-    - configure_node
-
-- name: configure kubectl
-  import_tasks: 73_kubectl.yml
-  tags:
-    - configure_kubectl
+    - configure_asdf

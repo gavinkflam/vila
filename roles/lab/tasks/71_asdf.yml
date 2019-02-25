@@ -1,0 +1,29 @@
+---
+# Clone asdf-vm repository
+- name: clone asdf-vm
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: "{{ ansible_env.HOME }}/.asdf"
+
+# Find and checkout latest version
+- name: find latest asdf-vm version
+  command: "git describe --abbrev=0 --tags"
+  args:
+    chdir: "{{ ansible_env.HOME }}/.asdf"
+  register: asdf_vm_latest_version
+
+- set_fact: "asdf_vm_latest_version={{ asdf_vm_latest_version.stdout }}"
+
+- name: checkout latest version for asdf-vm
+  git:
+    repo: https://github.com/asdf-vm/asdf.git
+    dest: "{{ ansible_env.HOME }}/.asdf"
+    version: "{{ asdf_vm_latest_version }}"
+
+# Install asdf-ruby plugin
+- name: install asdf-ruby plugin
+  command: "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add ruby"
+
+# Install asdf-nodejs plugin
+- name: install asdf-nodejs plugin
+  command: "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add nodejs"
