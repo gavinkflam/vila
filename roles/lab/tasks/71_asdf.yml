@@ -29,20 +29,38 @@
     - src: config/asdf/.tools-version
       dest: "{{ ansible_env.HOME }}/.tools-version"
 
-# Install asdf-java plugin
+# Remember path for asdf command
+- set_fact: "asdf_cmd={{ ansible_env.HOME }}/.asdf/bin/asdf"
+
+# Install asdf-java plugin and global java
 - name: install asdf-java plugin
   command: >
-    bash -c "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-list | grep java || \
-             {{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add java"
+    bash -c "{{ asdf_cmd }} plugin-list | grep java || \
+             {{ asdf_cmd }} plugin-add java"
 
-# Install asdf-nodejs plugin
+- name: install global java
+  command: >
+    bash -c "{{ asdf_cmd }} install java \
+               $({{ asdf_cmd }} current java | awk '{print $1}')"
+
+# Install asdf-nodejs plugin and global nodejs
 - name: install asdf-nodejs plugin
   command: >
-    bash -c "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-list | grep nodejs || \
-             {{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add nodejs"
+    bash -c "{{ asdf_cmd }} plugin-list | grep nodejs || \
+             {{ asdf_cmd }} plugin-add nodejs"
 
-# Install asdf-ruby plugin
+- name: install global nodejs
+  command: >
+    bash -c "{{ asdf_cmd }} install nodejs \
+               $({{ asdf_cmd }} current nodejs | awk '{print $1}')"
+
+# Install asdf-ruby plugin and global ruby
 - name: install asdf-ruby plugin
   command: >
-    bash -c "{{ ansible_env.HOME }}/.asdf/bin/asdf plugin-list | grep ruby || \
-             {{ ansible_env.HOME }}/.asdf/bin/asdf plugin-add ruby"
+    bash -c "{{ asdf_cmd }} plugin-list | grep ruby || \
+             {{ asdf_cmd }} plugin-add ruby"
+
+- name: install global ruby
+  command: >
+    bash -c "{{ asdf_cmd }} install ruby \
+               $({{ asdf_cmd }} current ruby | awk '{print $1}')"
