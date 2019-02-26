@@ -27,7 +27,7 @@
     # Profile and global versions
     - src: config/asdf/.asdfrc
       dest: "{{ ansible_env.HOME }}/.asdfrc"
-	  - src: config/asdf/.tool-versions
+    - src: config/asdf/.tool-versions
       dest: "{{ ansible_env.HOME }}/.tool-versions"
     # Ruby
     - src: config/asdf/.default-gems
@@ -63,7 +63,7 @@
 - name: install global nodejs
   command: >
     zsh -c "{{ asdf_cmd }} install nodejs \
-	            $({{ asdf_cmd }} current nodejs | awk '{print $1}')"
+              $({{ asdf_cmd }} current nodejs | awk '{print $1}')"
 
 # Install asdf-ruby plugin and global ruby
 - name: install asdf-ruby plugin

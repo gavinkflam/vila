@@ -223,3 +223,8 @@
   import_tasks: 71_asdf.yml
   tags:
     - configure_asdf
+
+- name: configure clojure
+  import_tasks: 72_clojure.yml
+  tags:
+    - configure_clojure

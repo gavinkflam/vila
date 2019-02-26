@@ -1,15 +1,24 @@
 ---
-# Download leiningen script and self-install package
+# Download leiningen script
 - name: download leiningen script
   get_url:
     url: https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
     dest: "{{ ansible_env.HOME }}/bin/lein"
     mode: 0755
 
-- name: download leiningen self-install package
-  command: bash -c "{{ ansible_env.HOME }}/bin/lein -v"
+# Find java path
+- name: find java path
+  command: "{{ ansible_env.HOME }}/.asdf/bin/asdf which java"
+  register: java_cmd
 
-# Leiningen profile
+- set_fact: "java_cmd={{ java_cmd.stdout }}"
+
+# Download leiningen self-install package
+- name: download leiningen self-install package
+  command: >
+    zsh -c "JAVA_CMD={{ java_cmd }} {{ ansible_env.HOME }}/bin/lein -v"
+
+# Install Leiningen profile
 - name: install leiningen profile
   copy: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
