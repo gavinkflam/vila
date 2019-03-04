@@ -20,5 +20,8 @@ feh --bg-fill ~/wallpaper.jpg
 # Status monitor for dwm
 slstatus &
 
+# Mount devices automatically
+udiskie &
+
 # Start dynamic windows manager
 dbus-launch --sh-syntax --exit-with-session dwm

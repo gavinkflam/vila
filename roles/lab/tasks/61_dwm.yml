@@ -4,6 +4,8 @@
   with_items:
     # Alsa library to compile slstatus
     - alsa-lib
+    # Devices mounting
+    - udiskie
     # Hiding mouse cursor
     - unclutter
     # Lock screen
