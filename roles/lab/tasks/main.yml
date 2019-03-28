@@ -214,6 +214,11 @@
   tags:
     - configure_gui_tools
 
+- name: configure office utility
+  import_tasks: 68_office_utility.yml
+  tags:
+    - configure_office_utility
+
 - name: configure haskell
   import_tasks: 70_haskell.yml
   tags:
