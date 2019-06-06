@@ -1,3 +1,4 @@
 java openjdk-11.0.1
 nodejs 11.10.0
 ruby 2.6.1
+sbt 1.2.8
