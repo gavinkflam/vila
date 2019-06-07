@@ -233,8 +233,3 @@
   import_tasks: 72_clojure.yml
   tags:
     - configure_clojure
-
-- name: configure fsharp
-  import_tasks: 73_fsharp.yml
-  tags:
-    - configure_fsharp
