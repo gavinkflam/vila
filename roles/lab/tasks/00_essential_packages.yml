@@ -19,8 +19,10 @@
     # Network
     - bind-tools
     - dhcpcd
+    - network-manager-applet
     - networkmanager
     - nmap
+    - stalonetray
     # Linux headers
     - linux-headers
     # Security

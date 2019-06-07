@@ -25,3 +25,13 @@
     state: started
     enabled: yes
   become: true
+
+# scripts
+- name: create home bin
+  file: "path={{ ansible_env.HOME }}/bin state=directory"
+
+- name: install scripts for networkmanager
+  copy: "src={{ item.src }} dest={{ item.dest }} mode=0755"
+  with_items:
+    - src: scripts/networkmanager/nmgui
+      dest: "{{ ansible_env.HOME }}/bin/nmgui"
