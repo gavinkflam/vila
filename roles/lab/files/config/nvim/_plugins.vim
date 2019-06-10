@@ -82,6 +82,9 @@ Plug 'tpope/vim-surround'
 " A collection of language packs for Vim
 Plug 'sheerun/vim-polyglot'
 
+" Intellisense engine for vim8 & neovim
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+
 "----- Clojure -----
 
 " Clojure REPL support
