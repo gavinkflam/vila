@@ -76,6 +76,12 @@
     zsh -c "{{ asdf_cmd }} install ruby \
               $({{ asdf_cmd }} current ruby | awk '{print $1}')"
 
+# Install asdf-python plugin
+- name: install asdf-python plugin
+  command: >
+    bash -c "{{ asdf_cmd }} plugin-list | grep python || \
+             {{ asdf_cmd }} plugin-add python"
+
 # Install asdf-sbt plugin and global sbt
 - name: install asdf-sbt plugin
   command: >
