@@ -44,7 +44,7 @@ Plug 'svermeulen/vim-easyclip'
 Plug 'tmhedberg/indent-motion'
 
 " Easily search for, substitute, and abbreviate multiple variants of a word
-Plug 'tpope/tpope-vim-abolish'
+Plug 'tpope/vim-abolish'
 
 " Software capslock
 Plug 'tpope/vim-capslock'
