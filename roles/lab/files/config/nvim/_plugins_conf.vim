@@ -25,15 +25,6 @@ command! -nargs=* -complete=file LAgpAdd LAckAdd <args>
 nnoremap <leader>ag :Ag<space>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" airblade/vim-gitgutter
-
-" Use key binds to navigate and stage hunks
-nnoremap <silent> [g :GitGutterPrevHunk<CR>
-nnoremap <silent> ]g :GitGutterNextHunk<CR>
-
-nnoremap <leader>sh :GitGutterStageHunk<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ap/vim-buftabline
 
 " Display ordinal numbering on buftabline
