@@ -6,7 +6,7 @@ source $HOME/.config/nvim/_plugins.vim
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" core.vim
+" Core editor configurations
 source $HOME/.config/nvim/_core.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

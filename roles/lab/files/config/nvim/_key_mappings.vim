@@ -1,10 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ag
-nnoremap <leader>ag :Ag<space>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Buffer
 
@@ -25,21 +21,6 @@ nmap <leader>w :w!<cr>
 
 " Disable Ex mode
 nnoremap Q <Nop>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" GitGutter
-
-nnoremap <silent> [g :Gprevhunk<CR>
-nnoremap <silent> ]g :Gnexthunk<CR>
-
-nnoremap <leader>sh :GitGutterStageHunk<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" gv.vim
-
-nnoremap <leader>gv :GV!<CR>
-nnoremap <leader>gV :GV<CR>
-xnoremap <leader>gv :GV<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quickfix

@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Core configurations
+" Core editor configurations
 "
 " Modified from basic.vim 6.0
 "   https://github.com/amix/vimrc

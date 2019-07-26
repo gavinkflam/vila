@@ -2,12 +2,36 @@
 " Configurations for plugins
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ack.vim
+" mileszs/ack.vim
 
 " Use ag instead of ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep --hidden --ignore .git/'
 endif
+
+" Ag commands with autocomplete
+command! -nargs=* -complete=file Ag Ack -Q <q-args>
+command! -nargs=* -complete=file Agp Ack <args>
+
+command! -nargs=* -complete=file AgAdd AckAdd -Q <q-args>
+command! -nargs=* -complete=file AgpAdd AckAdd <args>
+
+command! -nargs=* -complete=file LAg LAck -Q <q-args>
+command! -nargs=* -complete=file LAgp LAck <args>
+
+command! -nargs=* -complete=file LAgAdd LAckAdd -Q <q-args>
+command! -nargs=* -complete=file LAgpAdd LAckAdd <args>
+
+nnoremap <leader>ag :Ag<space>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" airblade/vim-gitgutter
+
+" Use key binds to navigate and stage hunks
+nnoremap <silent> [g :GitGutterPrevHunk<CR>
+nnoremap <silent> ]g :GitGutterNextHunk<CR>
+
+nnoremap <leader>sh :GitGutterStageHunk<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ap/vim-buftabline
@@ -28,7 +52,14 @@ nmap <M-9> <Plug>BufTabLine.Go(9)
 nmap <M-0> <Plug>BufTabLine.Go(10)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" asyncrun.vim
+" junegunn/gv.vim
+
+nnoremap <leader>gv :GV!<CR>
+nnoremap <leader>gV :GV<CR>
+xnoremap <leader>gv :GV<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" skywind3000/asyncrun.vim
 
 " Asyncrun fugitive commands
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
@@ -44,7 +75,7 @@ let g:airline_section_error =
 call camelcasemotion#CreateMotionMappings(',')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ctrlp.vim
+" ctrlpvim/ctrlp.vim
 
 " Change key mapping for invoking CtrlP
 let g:ctrlp_map = '<leader>p'
@@ -65,7 +96,7 @@ if executable('ag')
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" deoplete.vim
+" Shougo/deoplete.nvim
 
 " Enable deoplete at startup
 let g:deoplete#enable_at_startup = 1
@@ -233,7 +264,7 @@ augroup filetype_graphqls
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-airline
+" vim-airline/vim-airline
 
 " Display statusline all the time
 set laststatus=2
@@ -242,7 +273,7 @@ set laststatus=2
 let g:airline_theme='base16'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" neomake
+" neomake/neomake
 
 " Run Neomake on save
 augroup neomake_auto_make
@@ -265,7 +296,7 @@ let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
 let g:vim_markdown_conceal = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" NERDTree
+" scrooloose/nerdtree
 
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
