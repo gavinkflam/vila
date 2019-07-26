@@ -13,9 +13,6 @@ fi
 
 source $HOME/.zgen/zgen.zsh
 
-# autoenv for zsh
-zgen load Tarrasch/zsh-autoenv
-
 # Fish-like autosuggestions for zsh
 zgen load zsh-users/zsh-autosuggestions
 
