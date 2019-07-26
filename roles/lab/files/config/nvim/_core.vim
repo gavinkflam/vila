@@ -199,3 +199,11 @@ set tw=80
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Spelling
+
+" Turn on spell check for English and prevent CJK characters from marked as
+" spelling errors
+set spelllang=en,ckj
+set spell
