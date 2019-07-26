@@ -203,7 +203,6 @@ set whichwrap+=<,>,h,l
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spelling
 
-" Turn on spell check for English and prevent CJK characters from marked as
-" spelling errors
-set spelllang=en,ckj
+" Turn on spell check for English
+set spelllang=en
 set spell
