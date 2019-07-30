@@ -72,8 +72,8 @@ compinit
 PROMPT_LEAN_TMUX=""
 
 # Grayscale customization for lean
-PROMPT_LEAN_COLOR1="f7/f7/f7"
-PROMPT_LEAN_COLOR2="7c/7c/7c"
+PROMPT_LEAN_COLOR1="255"
+PROMPT_LEAN_COLOR2="244"
 
 # Load zsh plugins via zgen
 . "$HOME/.zsh_plugins"
