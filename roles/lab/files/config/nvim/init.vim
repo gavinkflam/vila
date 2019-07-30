@@ -21,3 +21,9 @@ source $HOME/.config/nvim/_commands.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key mappings
 source $HOME/.config/nvim/_key_mappings.vim
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Per deployment configurations
+if filereadable(expand('$HOME/.vimrc'))
+  source $HOME/.vimrc
+endif
