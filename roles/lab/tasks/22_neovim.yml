@@ -44,8 +44,8 @@
       dest: "{{ ansible_env.HOME }}/.config/nvim/_plugins_conf.vim"
     - src: config/nvim/_color_scheme.vim
       dest: "{{ ansible_env.HOME }}/.config/nvim/_color_scheme.vim"
-    - src: config/nvim/coc-setting.vim
-      dest: "{{ ansible_env.HOME }}/.config/nvim/coc-setting.vim"
+    - src: config/nvim/coc-settings.vim
+      dest: "{{ ansible_env.HOME }}/.config/nvim/coc-settings.vim"
 
 - name: install neovim plugins
   command: >
