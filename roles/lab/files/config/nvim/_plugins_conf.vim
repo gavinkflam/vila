@@ -86,12 +86,6 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 --hidden --ignore .git/ -g ""'
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Shougo/deoplete.nvim
-
-" Enable deoplete at startup
-let g:deoplete#enable_at_startup = 1
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " dyng/ctrlsf.vim
 
@@ -180,6 +174,36 @@ autocmd ColorScheme * hi SneakScope guifg=white guibg=darkgray ctermfg=white cte
 let g:user_emmet_settings = {
   \ 'indentation' : ' '
   \}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" neoclide/coc.nvim
+
+" Rename
+nmap <leader>rn <Plug>(coc-rename)
+
+" Gotos
+nmap <silent> [d <Plug>(coc-definition)
+nmap <silent> <leader>gt <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
+
+" Diagnostics
+nmap <silent> [q <Plug>(coc-diagnostic-prev)
+nmap <silent> ]q <Plug>(coc-diagnostic-next)
+
+" Organize import
+nmap <leader>oi :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
+
+" Documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " pangloss/vim-javascript
@@ -286,6 +310,11 @@ let g:neomake_javascript_enabled_makers = ['eslint', 'flow']
 " Disable markdown conceal
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_conceal_code_blocks = 0
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" prettier/vim-prettier
+
+nmap <leader>op <Plug>(Prettier)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " scrooloose/nerdtree
