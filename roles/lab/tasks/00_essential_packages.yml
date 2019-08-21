@@ -23,6 +23,7 @@
     - networkmanager
     - nmap
     - stalonetray
+    - wget
     # Linux headers
     - linux-headers
     # Security
