@@ -86,6 +86,12 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 --hidden --ignore .git/ -g ""'
 endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Shougo/deoplete.nvim
+
+" Enable deoplete at startup
+let g:deoplete#enable_at_startup = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " dyng/ctrlsf.vim
 
@@ -176,34 +182,17 @@ let g:user_emmet_settings = {
   \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" neoclide/coc.nvim
+" autozimu/LanguageClient-neovim
 
-" Rename
-nmap <leader>rn <Plug>(coc-rename)
-
-" Gotos
-nmap <silent> [d <Plug>(coc-definition)
-nmap <silent> <leader>gt <Plug>(coc-type-definition)
-nmap <silent> <leader>gi <Plug>(coc-implementation)
-nmap <silent> <leader>gr <Plug>(coc-references)
-
-" Diagnostics
-nmap <silent> [q <Plug>(coc-diagnostic-prev)
-nmap <silent> ]q <Plug>(coc-diagnostic-next)
-
-" Organize import
-nmap <leader>oi :call CocAction('runCommand', 'editor.action.organizeImport')<CR>
-
-" Documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
+function LC_maps()
+  if has_key(g:LanguageClient_serverCommands, &filetype)
+    nnoremap <silent> K :call LanguageClient#textDocument_hover()<cr>
+    nnoremap <silent> [d :call LanguageClient#textDocument_definition()<CR>
+    nnoremap <silent> <leader>rn :call LanguageClient#textDocument_rename()<CR>
   endif
 endfunction
+
+autocmd FileType * call LC_maps()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " pangloss/vim-javascript

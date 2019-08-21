@@ -60,7 +60,7 @@ let &colorcolumn=join(range(81,200),",")
 set cursorline
 
 " Height of the command bar
-set cmdheight=2
+set cmdheight=1
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7

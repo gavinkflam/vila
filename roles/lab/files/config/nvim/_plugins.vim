@@ -67,6 +67,9 @@ Plug 'tpope/vim-unimpaired'
 " Provides support for expanding abbreviations similar to emmet
 Plug 'mattn/emmet-vim'
 
+" Dark powered asynchronous completion framework for neovim
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
 " Wisely add 'end'
 Plug 'tpope/vim-endwise'
 
@@ -79,10 +82,16 @@ Plug 'tpope/vim-surround'
 " A collection of language packs for Vim
 Plug 'sheerun/vim-polyglot'
 
-" Intellisense engine for vim8 & neovim
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+" LSP client for vim and neovim
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': 'bash install.sh',
+  \ }
 
 "----- Clojure -----
+
+" Clojure REPL support
+Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
 
 " Vim plugin for Clojure's Kibit static code analyzer
 Plug 'humorless/vim-kibit', { 'for' : 'clojure' }
@@ -107,8 +116,6 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-
-Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Integrations
