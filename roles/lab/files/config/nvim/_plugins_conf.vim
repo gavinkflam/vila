@@ -184,6 +184,9 @@ let g:user_emmet_settings = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " autozimu/LanguageClient-neovim
 
+let g:LanguageClient_serverCommands = {
+  \ }
+
 function LC_maps()
   if has_key(g:LanguageClient_serverCommands, &filetype)
     nnoremap <silent> K :call LanguageClient#textDocument_hover()<cr>
