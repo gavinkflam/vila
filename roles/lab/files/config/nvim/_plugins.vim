@@ -88,16 +88,18 @@ Plug 'autozimu/LanguageClient-neovim', {
   \ 'do': 'bash install.sh',
   \ }
 
+"----- Lisp -----
+
+" Precision Editing for S-expressions
+Plug 'guns/vim-sexp', { 'for': 'clojure' }
+
+" vim-sexp mappings for regular people
+Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
+
 "----- Clojure -----
 
-" Clojure REPL support
-Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
-
-" Vim plugin for Clojure's Kibit static code analyzer
-Plug 'humorless/vim-kibit', { 'for' : 'clojure' }
-
-" Vim plugin for cljfmt, the Clojure formatting tool
-Plug 'venantius/vim-cljfmt', { 'for' : 'clojure' }
+" Clojure interactive development environment
+Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
 
 "----- Elixir -----
 

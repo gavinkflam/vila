@@ -24,3 +24,10 @@
   with_items:
     - src: config/clojure/profiles.clj
       dest: "{{ ansible_env.HOME }}/.lein/profiles.clj"
+
+# Install shadow-cljs profile
+- name: install shadow-cljs profile
+  copy: "src={{ item.src }} dest={{ item.dest }}"
+  with_items:
+    - src: config/clojure/shadow-cljs-config.edn
+      dest: "{{ ansible_env.HOME }}/.shadow-cljs/config.edn"
