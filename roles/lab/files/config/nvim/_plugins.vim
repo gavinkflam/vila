@@ -98,8 +98,8 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 
 "----- Clojure -----
 
-" Clojure interactive development environment
-Plug 'liquidz/vim-iced', { 'for' : 'clojure' }
+" Clojure REPL support
+Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
 
 "----- Elixir -----
 

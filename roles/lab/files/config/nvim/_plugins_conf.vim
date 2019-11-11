@@ -174,48 +174,6 @@ autocmd ColorScheme * hi Sneak guifg=white guibg=darkgray ctermfg=white ctermbg=
 autocmd ColorScheme * hi SneakScope guifg=white guibg=darkgray ctermfg=white ctermbg=darkgray
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" liquidz/vim-iced
-
-" Automatic clj/cljs session switching
-let g:iced#nrepl#auto#does_switch_session = v:true
-
-" Customize signs
-let g:iced_sign = {'error': 'E', 'trace': 'T', 'lint': 'L'}
-
-augroup vim_iced_key_mappings
-  au!
-  " Browsing
-  au FileType clojure nmap K          <Plug>(iced_popup_document_open)
-  au FileType clojure nmap ,bn        <Plug>(iced_browse_related_namespace)
-  au FileType clojure nmap ,bs        <Plug>(iced_browse_spec)
-  au FileType clojure nmap ,bt        <Plug>(iced_browse_test_under_cursor)
-  au FileType clojure nmap ,br        <Plug>(iced_browse_references)
-  au FileType clojure nmap ,bd        <Plug>(iced_browse_dependencies)
-
-  " Editing
-  au FileType clojure nmap gd         <Plug>(iced_def_jump)
-  au FileType clojure nmap gD         <Plug>(iced_def_back)
-  au FileType clojure nmap ,gt        <Plug>(iced_toggle_src_and_test)
-  au FileType clojure nmap ]s         <Plug>(iced_jump_to_next_sign)
-  au FileType clojure nmap [s         <Plug>(iced_jump_to_prev_sign)
-  au FileType clojure nmap <leader>op <Plug>(iced_format)
-  au FileType clojure nmap <leader>oP <Plug>(iced_format_all)
-
-  " Eval
-  au FileType clojure nmap ,ee        <Plug>(iced_eval)
-  au FileType clojure nmap ,er        <Plug>(iced_require)
-
-  " Testing
-  au FileType clojure nmap ,tt        <Plug>(iced_test_under_cursor)
-  au FileType clojure nmap ,tl        <Plug>(iced_test_rerun_last)
-  au FileType clojure nmap ,ts        <Plug>(iced_test_spec_check)
-  au FileType clojure nmap ,to        <Plug>(iced_test_buffer_open)
-  au FileType clojure nmap ,tn        <Plug>(iced_test_ns)
-  au FileType clojure nmap ,tp        <Plug>(iced_test_all)
-  au FileType clojure nmap ,tr        <Plug>(iced_test_redo)
-augroup END
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mattn/emmet-vim
 
 " Use space for indentation
