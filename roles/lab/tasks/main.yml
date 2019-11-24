@@ -219,6 +219,11 @@
   tags:
     - configure_office_utility
 
+- name: configure media tools
+  import_tasks: 69_media_tools.yml
+  tags:
+    - configure_media_tools
+
 - name: configure haskell
   import_tasks: 70_haskell.yml
   tags:
