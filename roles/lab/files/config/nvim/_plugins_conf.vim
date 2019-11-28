@@ -10,16 +10,16 @@ if executable('ag')
 endif
 
 " Ag commands with autocomplete
-command! -nargs=* -complete=file Ag Ack -Q <q-args>
+command! -nargs=* -complete=file Ag Ack -Q -- <q-args>
 command! -nargs=* -complete=file Agp Ack <args>
 
-command! -nargs=* -complete=file AgAdd AckAdd -Q <q-args>
+command! -nargs=* -complete=file AgAdd AckAdd -Q -- <q-args>
 command! -nargs=* -complete=file AgpAdd AckAdd <args>
 
-command! -nargs=* -complete=file LAg LAck -Q <q-args>
+command! -nargs=* -complete=file LAg LAck -Q -- <q-args>
 command! -nargs=* -complete=file LAgp LAck <args>
 
-command! -nargs=* -complete=file LAgAdd LAckAdd -Q <q-args>
+command! -nargs=* -complete=file LAgAdd LAckAdd -Q -- <q-args>
 command! -nargs=* -complete=file LAgpAdd LAckAdd <args>
 
 nnoremap <leader>ag :Ag<space>
