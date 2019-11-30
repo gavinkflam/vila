@@ -98,6 +98,9 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 
 "----- Clojure -----
 
+" A bag of goodies for working with a Clojure REPL
+Plug 'SevereOverfl0w/vim-replant', { 'do': ':UpdateRemotePlugins' }
+
 " Clojure REPL support
 Plug 'tpope/vim-fireplace', { 'for' : 'clojure' }
 
