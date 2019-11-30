@@ -32,8 +32,8 @@
   become: true
 
 - name: start intel-undervolt service
-  systemd: "name={{ item.name }} state=started enabled={{ item.enabled }}"
-  with_items:
-    - name: intel-undervolt.service
-      enabled: yes
+  systemd:
+    name: intel-undervolt.service
+    state: started
+    enabled: yes
   become: true
