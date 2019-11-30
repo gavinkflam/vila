@@ -4,8 +4,7 @@
   with_items:
     - neovim
     # Python client for plugins
-    - python-neovim
-    - python2-neovim
+    - python-pynvim
     # Utility packages
     - the_silver_searcher
   become: true
