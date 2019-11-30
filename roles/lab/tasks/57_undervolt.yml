@@ -1,43 +1,39 @@
 ---
-- name: clone python undervolt
+- name: clone intel-undervolt
   git:
-    repo: https://aur.archlinux.org/python-undervolt.git
-    dest: "{{ ansible_env.HOME }}/.pkgs/python-undervolt"
+    repo: https://aur.archlinux.org/intel-undervolt.git
+    dest: "{{ ansible_env.HOME }}/.pkgs/intel-undervolt"
 
-- name: register python undervolt package path
+- name: register intel-undervolt package path
   command: makepkg --packagelist
   args:
-    chdir: "{{ ansible_env.HOME }}/.pkgs/python-undervolt"
+    chdir: "{{ ansible_env.HOME }}/.pkgs/intel-undervolt"
   register: package_path
 
-- name: build python undervolt
+- name: build intel-undervolt
   command: makepkg
   args:
-    chdir: "{{ ansible_env.HOME }}/.pkgs/python-undervolt"
+    chdir: "{{ ansible_env.HOME }}/.pkgs/intel-undervolt"
     creates: "{{ package_path.stdout }}"
 
-- name: install python undervolt
+- name: install intel-undervolt
   command: "pacman --needed --noconfirm -U {{ package_path.stdout }}"
   become: true
 
-- name: install undervolt services
+- name: install intel-undervolt configurations
   copy: "src={{ item.src }} dest={{ item.dest }}"
   with_items:
-    - src: config/undervolt/undervolt.service
-      dest: /etc/systemd/system/undervolt.service
-    - src: config/undervolt/undervolt.timer
-      dest: /etc/systemd/system/undervolt.timer
+    - src: config/undervolt/intel-undervolt.conf
+      dest: /etc/intel-undervolt.conf
   become: true
 
-- name: reload undervolt configurations
+- name: reload intel-undervolt configurations
   systemd: "daemon_reload=yes"
   become: true
 
-- name: start undervolt services and enable undervolt timer
+- name: start intel-undervolt service
   systemd: "name={{ item.name }} state=started enabled={{ item.enabled }}"
   with_items:
-    - name: undervolt.service
-      enabled: no
-    - name: undervolt.timer
+    - name: intel-undervolt.service
       enabled: yes
   become: true
