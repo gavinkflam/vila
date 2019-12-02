@@ -2,16 +2,16 @@
 - name: install essential packages
   pacman: "name={{ item }} state=present"
   with_items:
-    # Archive
+    # File system
     - atool
+    - file
     - gzip
     - libarchive
     - p7zip
+    - rsync
     - unrar
     - unzip
     - zip
-    # File
-    - file
     # Language
     - go
     - python
@@ -24,10 +24,11 @@
     - nmap
     - stalonetray
     - wget
-    # Linux headers
-    - linux-headers
     # Security
     - gnupg
+    # System tools
+    - acpi
+    - linux-headers
     # Version control
     - git
   become: true
