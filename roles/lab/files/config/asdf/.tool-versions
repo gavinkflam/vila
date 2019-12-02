@@ -1,5 +1,7 @@
 java openjdk-11.0.1
 nodejs 11.10.0
+ocaml 4.09.0
+opam 2.0.5
 ruby 2.6.1
 sbt 1.2.8
 python 3.8.0 2.7.17

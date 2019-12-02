@@ -65,6 +65,46 @@
     zsh -c "{{ asdf_cmd }} install nodejs \
               $({{ asdf_cmd }} current nodejs | awk '{print $1}')"
 
+# Install asdf-ocaml plugin and global ocaml
+- name: install asdf-ocaml plugin
+  command: >
+    bash -c "{{ asdf_cmd }} plugin-list | grep ocaml || \
+             {{ asdf_cmd }} plugin-add ocaml"
+
+- name: install global ocaml
+  command: >
+    zsh -c "{{ asdf_cmd }} install ocaml \
+              $({{ asdf_cmd }} current ocaml | awk '{print $1}')"
+
+# Install asdf-opam plugin and global opam
+- name: install asdf-opam plugin
+  command: >
+    bash -c "{{ asdf_cmd }} plugin-list | grep opam || \
+             {{ asdf_cmd }} plugin-add opam"
+
+- name: install global opam
+  command: >
+    zsh -c "{{ asdf_cmd }} install opam \
+              $({{ asdf_cmd }} current opam | awk '{print $1}')"
+
+# Initialize opam
+
+- name: install opam dependencies
+  pacman: "name={{ item }} state=present"
+  with_items:
+    - bubblewrap
+  become: true
+
+- name: find opam path
+  command: "{{ ansible_env.HOME }}/.asdf/bin/asdf which opam"
+  register: opam_cmd
+
+- set_fact: "opam_cmd={{ opam_cmd.stdout }}"
+
+- name: initialize opam
+  command: >
+    bash -c "{{ opam_cmd }} init --disable-shell-hook"
+
 # Install asdf-ruby plugin and global ruby
 - name: install asdf-ruby plugin
   command: >
