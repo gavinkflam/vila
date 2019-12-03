@@ -82,12 +82,6 @@ Plug 'tpope/vim-surround'
 " A collection of language packs for Vim
 Plug 'sheerun/vim-polyglot'
 
-" LSP client for vim and neovim
-Plug 'autozimu/LanguageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': 'bash install.sh',
-  \ }
-
 "----- Lisp -----
 
 " Precision Editing for S-expressions

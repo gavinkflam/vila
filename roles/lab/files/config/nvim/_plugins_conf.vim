@@ -182,22 +182,6 @@ let g:user_emmet_settings = {
   \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" autozimu/LanguageClient-neovim
-
-let g:LanguageClient_serverCommands = {
-  \ }
-
-function! LC_maps()
-  if has_key(g:LanguageClient_serverCommands, &filetype)
-    nnoremap <silent> K :call LanguageClient#textDocument_hover()<cr>
-    nnoremap <silent> [d :call LanguageClient#textDocument_definition()<CR>
-    nnoremap <silent> <leader>rn :call LanguageClient#textDocument_rename()<CR>
-  endif
-endfunction
-
-autocmd FileType * call LC_maps()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " pangloss/vim-javascript
 
 " Enable syntax highlighting for Flow
