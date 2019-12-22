@@ -1,4 +1,0 @@
----
-- hosts: lab
-  roles:
-    - lab

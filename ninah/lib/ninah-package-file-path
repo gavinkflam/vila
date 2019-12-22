@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -eEuo pipefail
+shopt -s lastpipe
+
+source "$(dirname $(cd $(dirname "$0") && pwd))/common.bash"
+
+function NinahPackageFilePath() {
+  cd "$makepkg_dir/$1" && makepkg --packagelist
+}
+
+NinahPackageFilePath "$@"

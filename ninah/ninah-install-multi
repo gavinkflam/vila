@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -eEuo pipefail
+shopt -s lastpipe
+
+source "$(cd $(dirname "$0") && pwd)/common.bash"
+
+function NinahInstallMulti() {
+  echo -e "====> Ninah [Install]: Install $(echo "$@" | wc -l) packages"
+  packages="$(echo "$@" | \
+    xargs -n1 -P20 $ninah_root/lib/ninah-package-file-path | \
+    tr '\n' ' ')"
+  sudo bash -c "pacman -U --needed --noconfirm $packages"
+}
+
+NinahInstallMulti "$@"

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -eEuo pipefail
+shopt -s lastpipe
+
+usercfg_root="$(cd $(dirname "$0") && pwd)"
+files="$(cd "$usercfg_root" && ls -1 *.bash | xargs -n1 realpath)"
+
+for f in $files; do
+  source "$f"
+done

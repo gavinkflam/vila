@@ -1,6 +1,0 @@
----
-- name: install flameshot packages
-  pacman: "name={{ item }} state=present"
-  with_items:
-    - flameshot
-  become: true

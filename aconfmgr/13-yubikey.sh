@@ -1,0 +1,2 @@
+AddPackage yubikey-personalization
+AddPackage yubikey-manager

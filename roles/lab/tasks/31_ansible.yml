@@ -1,7 +1,0 @@
----
-- name: install ansible packages
-  pacman: "name={{ item }} state=present"
-  with_items:
-    - ansible
-    - ansible-lint
-  become: true

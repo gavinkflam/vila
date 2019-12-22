@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -eEuo pipefail
+shopt -s lastpipe
+
+function NinahRepoDirName() {
+  basename "$1" .git
+}
+
+NinahRepoDirName "$@"

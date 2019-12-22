@@ -1,6 +1,0 @@
----
-- name: install git configuration file
-  template: "src={{ item.src }} dest={{ item.dest }}"
-  with_items:
-    - src: config/git/.gitconfig.j2
-      dest: "{{ ansible_env.HOME }}/.gitconfig"
