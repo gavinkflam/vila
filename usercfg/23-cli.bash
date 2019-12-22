@@ -1,3 +1,8 @@
+# Bash
+LinkFile '.bash_logout'
+LinkFile '.bash_profile'
+LinkFile '.bashrc'
+
 # Docker
 LinkFile '.docker/config.json'
 
