@@ -3,6 +3,7 @@ AddPackage arandr
 AddPackage brightnessctl
 AddPackage chromium
 IgnorePackage --foreign chromium-widevine
+AddPackage firefox
 AddPackage flameshot
 AddPackage network-manager-applet
 AddPackage notepadqq
