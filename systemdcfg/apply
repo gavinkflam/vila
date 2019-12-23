@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -eEuo pipefail
+shopt -s lastpipe
+
+systemdcfg_root="$(cd "$(dirname "$0")" && pwd)"
+
+# shellcheck source=lib.bash
+source "$systemdcfg_root/lib.bash"
+
+EnableService 'bluetooth.service'
+EnableService 'docker.service'
+EnableService 'NetworkManager.service'
+EnableService 'ntpd.service'
+EnableService 'tlp.service'
+
+EnableService 'fstrim.timer'
+EnableService 'pacman-mirrors-refresh.timer'
+
+DisableService 'sshd.service'

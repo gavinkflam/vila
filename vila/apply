@@ -22,5 +22,8 @@ cd "$aconfmgr_path" && ./aconfmgr -c "$vila_root/aconfmgr" apply
 echo -e '====> Vila: Apply ninah'
 "$vila_root/ninah/apply"
 
+echo -e '====> Vila: Apply systemdcfg'
+"$vila_root/systemdcfg/apply"
+
 echo -e '====> Vila: Apply usercfg'
 "$vila_root/usercfg/apply"
