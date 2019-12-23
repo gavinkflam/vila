@@ -20,7 +20,7 @@ fi
 
 asdf_latest_version="$(cd "$asdf_path" && \
   git describe --abbrev=0 --tags origin/master)"
-UserCfgLog 'asdf' 'Checkout latest version $asdf_latest_version'
+UserCfgLog 'asdf' "Checkout latest version $asdf_latest_version"
 cd "$asdf_path" && git checkout "$asdf_latest_version"
 
 asdf_exe="$asdf_path/bin/asdf"

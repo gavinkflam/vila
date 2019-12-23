@@ -3,10 +3,11 @@
 set -eEuo pipefail
 shopt -s lastpipe
 
-source "$(cd $(dirname "$0") && pwd)/common.bash"
+# shellcheck source=common.bash
+source "$(cd "$(dirname "$0")" && pwd)/common.bash"
 
 function NinahSyncRepo() {
-  dir_name="$($ninah_root/lib/ninah-repo-dir-name "$1")"
+  dir_name="$("$ninah_root/lib/ninah-repo-dir-name" "$1")"
 
   if [[ -d "$makepkg_dir/$dir_name" ]]; then
     echo -e "====> Ninah [Sync $1]: Repository is already cloned, pulling updates"

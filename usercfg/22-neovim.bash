@@ -14,19 +14,19 @@ plug_url=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 if [[ ! -f "$plug_path" ]]; then
   UserCfgLog 'Neovim' 'Download vim-plug'
-  mkdir -p "$(dirname $plug_path)" && \
-    wget -O $plug_path $plug_url
+  mkdir -p "$(dirname "$plug_path")" && \
+    wget -O "$plug_path" "$plug_url"
 
   UserCfgLog 'Neovim' 'Install vim plugins'
   nvim \
-    -u $HOME/.config/nvim/plugins_only.vim \
+    -u "$HOME/.config/nvim/plugins_only.vim" \
     -c ':PlugInstall' \
     -c ':UpdateRemotePlugins' \
     -c 'qa!'
 else
   UserCfgLog 'Neovim' 'Update vim-plug and vim plugins'
   nvim \
-    -u $HOME/.config/nvim/plugins_only.vim \
+    -u "$HOME/.config/nvim/plugins_only.vim" \
     -c ':PlugUpgrade' \
     -c ':PlugUpdate' \
     -c ':UpdateRemotePlugins' \

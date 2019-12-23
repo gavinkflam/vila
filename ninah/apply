@@ -3,7 +3,8 @@
 set -eEuo pipefail
 shopt -s lastpipe
 
-source "$(cd $(dirname "$0") && pwd)/common.bash"
+# shellcheck source=common.bash
+source "$(cd "$(dirname "$0")" && pwd)/common.bash"
 
 declare -a repositories
 repositories=(
@@ -20,7 +21,7 @@ repositories=(
 )
 
 function Main() {
-  dir_names="$(echo "$@" | xargs -n1 $ninah_root/lib/ninah-repo-dir-name)"
+  dir_names="$(echo "$@" | xargs -n1 "$ninah_root/lib/ninah-repo-dir-name")"
 
   "$ninah_root/ninah-init"
 
@@ -28,7 +29,7 @@ function Main() {
   echo "$@" | xargs -n1 -P10 "$ninah_root/ninah-sync-repo"
 
   # Build packages
-  echo "$dir_names" | xargs -n1 -P$(nproc) "$ninah_root/ninah-make"
+  echo "$dir_names" | xargs -n1 -P"$(nproc)" "$ninah_root/ninah-make"
 
   # Install or upgrade packages
   "$ninah_root/ninah-install-multi" "$dir_names"

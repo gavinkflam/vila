@@ -3,9 +3,10 @@
 set -eEuo pipefail
 shopt -s lastpipe
 
-usercfg_root="$(cd $(dirname "$0") && pwd)"
-files="$(cd "$usercfg_root" && ls -1 *.bash | xargs -n1 realpath)"
+usercfg_root="$(cd "$(dirname "$0")" && pwd)"
+files="$(cd "$usercfg_root" && find . -name '*.bash' -exec realpath {} \;)"
 
 for f in $files; do
+  # shellcheck source=/dev/null
   source "$f"
 done

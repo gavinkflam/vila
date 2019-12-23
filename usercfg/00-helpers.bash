@@ -1,4 +1,4 @@
-usercfg_root="$(cd $(dirname "$0") && pwd)"
+usercfg_root="$(cd "$(dirname "$0")" && pwd)"
 
 function UserCfgLog() {
   echo -e "====> UserCfg [$1]: $2"
@@ -10,9 +10,9 @@ function LinkFile() {
     return 0
   fi
 
-  target_dir="$(dirname $HOME/$1)"
+  target_dir="$(dirname "$HOME/$1")"
   if [[ ! -d "$target_dir" ]]; then
-    UserCfgLog 'LinkFile' 'Create parent directories for $1'
+    UserCfgLog 'LinkFile' "Create parent directories for $1"
     mkdir -p "$target_dir"
   fi
 

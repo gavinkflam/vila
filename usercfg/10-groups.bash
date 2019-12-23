@@ -16,7 +16,7 @@ declare -a groups_to_add
 groups_to_add=()
 
 username="$(whoami)"
-current_groups="$(id -nG $username)"
+current_groups="$(id -nG "$username")"
 
 for g in "${groups[@]}"; do
   found="$(echo "$current_groups" | grep -q "\\b$g\\b" || echo 'no')"
@@ -26,7 +26,7 @@ for g in "${groups[@]}"; do
 done
 
 if [[ $(echo "${groups_to_add[@]}" | wc -w) -gt 0 ]]; then
-  UserCfgLog 'UserGroups' "Add $(echo $groups_to_add | wc -w) groups to user $username"
+  UserCfgLog 'UserGroups' "Add $(echo "${groups_to_add[@]}" | wc -w) groups to user $username"
   groups_expr="$(echo "${groups_to_add[@]}" | tr ' ' ',')"
   sudo usermod -aG "$groups_expr" "$username"
 else
