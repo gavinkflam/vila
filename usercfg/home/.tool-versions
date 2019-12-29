@@ -1,6 +1,6 @@
 clojure 1.10.1
 haskell 8.6.3
-java openjdk-11.0.1
+java adopt-openjdk-11+28
 nodejs 11.10.0
 ocaml 4.09.0
 opam 2.0.5

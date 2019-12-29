@@ -9,7 +9,7 @@ LinkFile '.config/nvim/init.vim'
 LinkFile '.config/nvim/plugins_only.vim'
 
 # vim-plug
-plug_path="$HOME/.config/nvim/autoload/plug.vim"
+plug_path="$HOME/.local/share/nvim/site/autoload/plug.vim"
 plug_url=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 if [[ ! -f "$plug_path" ]]; then

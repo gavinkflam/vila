@@ -4,7 +4,7 @@ set -eEuo pipefail
 shopt -s lastpipe
 
 usercfg_root="$(cd "$(dirname "$0")" && pwd)"
-files="$(cd "$usercfg_root" && find . -name '*.bash' -exec realpath {} \;)"
+files="$(cd "$usercfg_root" && find . -name '*.bash' -print0 | sort -zn | xargs -0 -i realpath {})"
 
 for f in $files; do
   # shellcheck source=/dev/null

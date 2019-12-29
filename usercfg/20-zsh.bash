@@ -15,7 +15,7 @@ else
 fi
 
 UserCfgLog 'zsh' 'Install ZSH plugins'
-rm "$HOME/.zgen/init.zsh"
+rm -f "$HOME/.zgen/init.zsh"
 /bin/zsh -c "ZGEN_AUTOLOAD_COMPINIT=0; . $HOME/.zsh_plugins"
 
 # Change shell

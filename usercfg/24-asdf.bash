@@ -36,6 +36,11 @@ function UserCfgAsdfAddPlugin() {
   fi
 }
 
+function UserCfgAsdfInstallTool() {
+  tool_version="$(grep "$1" "$HOME/.tool-versions" | awk '{print $2}')"
+  "$asdf_exe" install "$1" "$tool_version"
+}
+
 UserCfgAsdfAddPlugin 'clojure'
 UserCfgAsdfAddPlugin 'haskell'
 UserCfgAsdfAddPlugin 'java'
@@ -50,6 +55,8 @@ UserCfgLog 'asdf' 'Import NodeJS release key'
 "$asdf_path/plugins/nodejs/bin/import-release-team-keyring"
 
 UserCfgLog 'asdf' 'Install tools'
+UserCfgAsdfInstallTool 'java'
+UserCfgAsdfInstallTool 'ocaml'
 "$asdf_exe" install
 
 UserCfgLog 'asdf' 'Initialize Opam'
