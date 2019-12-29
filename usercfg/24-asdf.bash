@@ -42,6 +42,7 @@ function UserCfgAsdfInstallTool() {
 }
 
 UserCfgAsdfAddPlugin 'clojure'
+UserCfgAsdfAddPlugin 'direnv'
 UserCfgAsdfAddPlugin 'haskell'
 UserCfgAsdfAddPlugin 'java'
 UserCfgAsdfAddPlugin 'nodejs'
@@ -55,9 +56,17 @@ UserCfgLog 'asdf' 'Import NodeJS release key'
 "$asdf_path/plugins/nodejs/bin/import-release-team-keyring"
 
 UserCfgLog 'asdf' 'Install tools'
-UserCfgAsdfInstallTool 'java'
-UserCfgAsdfInstallTool 'ocaml'
-"$asdf_exe" install
+
+opam_version='2.0.5'
+
+UserCfgAsdfInstallTool 'direnv'
+"$asdf_exe" install java adopt-openjdk-11+28
+"$asdf_exe" install clojure 1.10.1
+"$asdf_exe" install ocaml 4.09.0
+"$asdf_exe" install opam "$opam_version"
+"$asdf_exe" install haskell 8.6.3
+"$asdf_exe" install nodejs 12.14.0
+"$asdf_exe" install ruby 2.6.1
 
 UserCfgLog 'asdf' 'Initialize Opam'
-"$("$asdf_exe" which opam)" init --disable-shell-hook
+"$HOME/.asdf/installs/opam/$opam_version/bin/opam" init --disable-shell-hook

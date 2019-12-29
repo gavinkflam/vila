@@ -96,11 +96,8 @@ fi
 # asdf version manager
 
 if [[ -d "$HOME/.asdf" ]]; then
-  function asdf () {
-    source "$HOME/.asdf/asdf.sh"
-    source "$HOME/.asdf/completions/asdf.bash"
-    asdf "$@"
-  }
+  export PATH="$HOME/.asdf/bin:$PATH"
+  eval "$("$HOME/.asdf/bin/asdf" exec direnv hook zsh)"
 fi
 
 ########################################
