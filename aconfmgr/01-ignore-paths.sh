@@ -27,7 +27,7 @@ IgnoreDir '/var/lib/pacman/sync'
 IgnorePath '*.pacnew'
 IgnorePath '*.pacsave'
 IgnorePath '/etc/pacman.d'
-IgnorePath /etc/pacman.d/mirrorlist
+IgnorePath '/etc/pacman.d/mirrorlist'
 
 # SSH
 IgnorePath '/etc/ssh/*.pub'
@@ -36,6 +36,7 @@ IgnorePath '/etc/ssh/host_keys/*.pub'
 IgnorePath '/etc/ssh/host_keys/*_key'
 
 # System - Auth
+IgnoreDir '/var/yubico'
 IgnorePath '/etc/.pwd.lock'
 IgnorePath '/etc/group'
 IgnorePath '/etc/group-'
@@ -46,8 +47,20 @@ IgnorePath '/etc/passwd-'
 IgnorePath '/etc/shadow'
 IgnorePath '/etc/shadow-'
 IgnorePath '/etc/shells'
+IgnorePath '/etc/pam.d/system-auth'
 IgnorePath '/usr/bin/newgidmap'
 IgnorePath '/usr/bin/newuidmap'
+
+# System - Boot and Disks
+IgnoreDir '/boot'
+IgnoreDir '/etc/lvm'
+IgnoreDir '/etc/mkinitcpio.d'
+IgnorePath '/crypto_keyfile.bin'
+IgnorePath '/etc/crypttab'
+IgnorePath '/etc/default/grub'
+IgnorePath '/etc/fstab'
+IgnorePath '/etc/mkinitcpio.conf'
+IgnorePath '/etc/ykfde.conf'
 
 # System - Time
 IgnorePath '/etc/adjtime'
@@ -55,8 +68,6 @@ IgnorePath '/etc/localtime'
 IgnorePath '/var/lib/ntp/ntp.drift'
 
 # System - Misc
-IgnoreDir '/boot'
-IgnoreDir '/etc/lvm'
 IgnoreDir '/lost+found'
 IgnoreDir '/usr/include'
 IgnoreDir '/usr/lib/modules'
@@ -65,9 +76,8 @@ IgnoreDir '/usr/share/fonts'
 IgnoreDir '/usr/share/mime'
 IgnoreDir '/var/db'
 IgnoreDir '/var/lib/dkms'
-IgnoreDir '/var/lib/ghc-8.6.5'
+IgnoreDir '/usr/lib/ghc-8.6.5'
 IgnoreDir '/var/tmp'
-IgnorePath '/etc/fstab'
 IgnorePath '/etc/os-release'
 IgnorePath '/etc/xml/catalog'
 IgnorePath '/usr/lib/locale/locale-archive'

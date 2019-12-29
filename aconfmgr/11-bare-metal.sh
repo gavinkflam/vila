@@ -1,3 +1,6 @@
+# Boot Manager
+AddPackage grub
+
 # File System Utilities
 AddPackage e2fsprogs
 AddPackage jfsutils

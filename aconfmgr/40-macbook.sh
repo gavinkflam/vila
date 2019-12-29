@@ -4,8 +4,6 @@ CopyFile /etc/systemd/system/disable-acpi-wakeups.service
 
 # Boot
 AddPackage intel-ucode
-CopyFile /etc/mkinitcpio.conf
-CopyFile /etc/mkinitcpio.d/linux.preset
 
 # Keyboard
 IgnorePackage --foreign hid-apple-plugboard-git-dkms
