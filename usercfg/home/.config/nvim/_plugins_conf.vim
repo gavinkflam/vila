@@ -43,6 +43,17 @@ nmap <M-9> <Plug>BufTabLine.Go(9)
 nmap <M-0> <Plug>BufTabLine.Go(10)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" autozimu/LanguageClient-neovim
+
+let g:LanguageClient_serverCommands = {
+  \ 'reason': [expand('$HOME/.lsp/reason-language-server')]
+  \ }
+
+nnoremap <silent> K    :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd   :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/gv.vim
 
 nnoremap <leader>gv :GV!<CR>
@@ -180,6 +191,21 @@ autocmd ColorScheme * hi SneakScope guifg=white guibg=darkgray ctermfg=white cte
 let g:user_emmet_settings = {
   \ 'indentation' : ' '
   \}
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ocaml/merlin
+
+" TODO: Resolve conflict between Merlin and BuckleScript
+
+" if isdirectory(expand('$HOME/.opam/default/share/merlin/vim'))
+"   execute "set rtp+=" . expand('$HOME/.opam/default/share/merlin/vim')
+" endif
+
+" function! MerlinRefreshDocs()
+"   execute "helptags " . expand('$HOME/.opam/default/share/merlin/vim/doc')
+" endfunction
+
+" command! MerlinRefreshDocs call MerlinRefreshDocs()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " pangloss/vim-javascript

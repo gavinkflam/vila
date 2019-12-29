@@ -70,3 +70,26 @@ UserCfgAsdfInstallTool 'direnv'
 
 UserCfgLog 'asdf' 'Initialize Opam'
 "$HOME/.asdf/installs/opam/$opam_version/bin/opam" init --disable-shell-hook
+
+# Language server path
+lsp_path="$HOME/.lsp"
+mkdir -p "$lsp_path"
+
+# ReasonML language server
+rlsp_version='1.7.4'
+
+if [ -f "$lsp_path/reason-language-server" ] && \
+  [ -f "$lsp_path/reason-language-server-version" ] && \
+  [ "$(cat "$lsp_path/reason-language-server-version")" = "$rlsp_version" ]; then
+  UserCfgLog 'asdf' 'ReasonML LSP is already up to date, skipping'
+else
+  UserCfgLog 'asdf' 'Install ReasonML LSP'
+
+  rm -f "$lsp_path/reason-language-server"
+  wget -O "$lsp_path/rls-linux.zip" \
+    "https://github.com/jaredly/reason-language-server/releases/download/$rlsp_version/rls-linux.zip"
+  unzip -j "$lsp_path/rls-linux.zip" rls-linux/reason-language-server -d "$lsp_path"
+
+  echo "$rlsp_version" > "$lsp_path/reason-language-server-version"
+  rm -f "$lsp_path/rls-linux.zip"
+fi

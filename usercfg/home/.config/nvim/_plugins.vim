@@ -82,6 +82,17 @@ Plug 'tpope/vim-surround'
 " A collection of language packs for Vim
 Plug 'sheerun/vim-polyglot'
 
+"----- BuckleScript -----
+
+" Language server for reason
+Plug 'autozimu/LanguageClient-neovim', {
+  \ 'branch': 'next',
+  \ 'do': 'bash install.sh',
+  \ }
+
+" Reason Vim editor integration
+Plug 'reasonml-editor/vim-reason-plus'
+
 "----- Lisp -----
 
 " Precision Editing for S-expressions
