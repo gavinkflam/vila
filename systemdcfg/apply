@@ -9,12 +9,13 @@ systemdcfg_root="$(cd "$(dirname "$0")" && pwd)"
 source "$systemdcfg_root/lib.bash"
 
 EnableService 'bluetooth.service'
+EnableService 'disable-acpi-wakeups.service'
 EnableService 'docker.service'
 EnableService 'NetworkManager.service'
 EnableService 'ntpd.service'
+EnableService 'setterm.service'
 EnableService 'systemd-resolved.service'
 EnableService 'tlp.service'
-EnableService 'udisks2.service'
 
 EnableService 'fstrim.timer'
 EnableService 'pacman-mirrors-refresh.timer'
