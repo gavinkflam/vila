@@ -22,6 +22,7 @@ AddPackage tlp
 AddPackage x86_energy_perf_policy
 
 CopyFile /etc/default/tlp
+CopyFile /etc/modprobe.d/disable_webcam.conf
 CopyFile /etc/modprobe.d/snd_hda_intel.conf
 
 # Sound
