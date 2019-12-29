@@ -5,15 +5,8 @@ shopt -s lastpipe
 
 vila_root="$(dirname "$(cd "$(dirname "$0")" && pwd)")"
 
-# Install aconfmgr
-aconfmgr_path="$HOME/.aconfmgr"
-if [[ -d "$aconfmgr_path" ]]; then
-  echo -e '====> Vila: aconfmgr is present, pulling updates'
-  cd "$aconfmgr_path" && git pull
-else
-  echo -e '====> Vila: Clone aconfmgr'
-  git clone https://github.com/CyberShadow/aconfmgr.git "$aconfmgr_path"
-fi
+# shellcheck source=scripts/install_aconfmgr
+source "$vila_root/vila/scripts/install_aconfmgr"
 
 # Apply configurations
 echo -e '====> Vila: Apply aconfmgr'

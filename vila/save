@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -eEuo pipefail
+shopt -s lastpipe
+
+vila_root="$(dirname "$(cd "$(dirname "$0")" && pwd)")"
+
+# shellcheck source=scripts/install_aconfmgr
+source "$vila_root/vila/scripts/install_aconfmgr"
+
+# Save configurations
+echo -e '====> Vila: Save aconfmgr configurations'
+cd "$aconfmgr_path" && ./aconfmgr -c "$vila_root/aconfmgr" save -v
