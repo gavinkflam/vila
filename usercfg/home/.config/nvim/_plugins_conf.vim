@@ -153,6 +153,14 @@ augroup vmuxHaskellMappings
   au FileType haskell nnoremap <leader>st :VmuxGhciStackTest<CR>
 augroup END
 
+" jacquesbh/vim-showmarks
+
+" Display marks for all buffer by default
+augroup showmarks
+  au!
+  au VimEnter * DoShowMarks!
+augroup END
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " junegunn/vim-easy-align
 
