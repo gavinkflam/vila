@@ -21,3 +21,5 @@ EnableService 'fstrim.timer'
 EnableService 'pacman-mirrors-refresh.timer'
 
 DisableService 'sshd.service'
+
+EnableService 'libvirtd.service'

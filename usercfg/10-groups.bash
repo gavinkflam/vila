@@ -8,6 +8,8 @@ groups=(
   # Brightnessctl
   video
   input
+  # Libvirt
+  libvirt
   # Sudo
   wheel
 )
