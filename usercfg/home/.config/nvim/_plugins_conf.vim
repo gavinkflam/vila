@@ -201,21 +201,6 @@ let g:user_emmet_settings = {
   \}
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ocaml/merlin
-
-" TODO: Resolve conflict between Merlin and BuckleScript
-
-" if isdirectory(expand('$HOME/.opam/default/share/merlin/vim'))
-"   execute "set rtp+=" . expand('$HOME/.opam/default/share/merlin/vim')
-" endif
-
-" function! MerlinRefreshDocs()
-"   execute "helptags " . expand('$HOME/.opam/default/share/merlin/vim/doc')
-" endfunction
-
-" command! MerlinRefreshDocs call MerlinRefreshDocs()
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " pangloss/vim-javascript
 
 " Enable syntax highlighting for Flow

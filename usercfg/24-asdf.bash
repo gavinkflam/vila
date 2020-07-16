@@ -46,50 +46,17 @@ UserCfgAsdfAddPlugin 'direnv'
 UserCfgAsdfAddPlugin 'haskell'
 UserCfgAsdfAddPlugin 'java'
 UserCfgAsdfAddPlugin 'nodejs'
-UserCfgAsdfAddPlugin 'ocaml'
-UserCfgAsdfAddPlugin 'opam'
 UserCfgAsdfAddPlugin 'python'
 UserCfgAsdfAddPlugin 'ruby'
-UserCfgAsdfAddPlugin 'sbt'
 
 UserCfgLog 'asdf' 'Import NodeJS release key'
 "$asdf_path/plugins/nodejs/bin/import-release-team-keyring"
 
 UserCfgLog 'asdf' 'Install tools'
 
-opam_version='2.0.5'
-
 UserCfgAsdfInstallTool 'direnv'
 "$asdf_exe" install java adopt-openjdk-11+28
 "$asdf_exe" install clojure 1.10.1
-"$asdf_exe" install ocaml 4.09.0
-"$asdf_exe" install opam "$opam_version"
 "$asdf_exe" install haskell 8.6.3
 "$asdf_exe" install nodejs 12.14.0
 "$asdf_exe" install ruby 2.6.1
-
-UserCfgLog 'asdf' 'Initialize Opam'
-"$HOME/.asdf/installs/opam/$opam_version/bin/opam" init --disable-shell-hook
-
-# Language server path
-lsp_path="$HOME/.lsp"
-mkdir -p "$lsp_path"
-
-# ReasonML language server
-rlsp_version='1.7.4'
-
-if [ -f "$lsp_path/reason-language-server" ] && \
-  [ -f "$lsp_path/reason-language-server-version" ] && \
-  [ "$(cat "$lsp_path/reason-language-server-version")" = "$rlsp_version" ]; then
-  UserCfgLog 'asdf' 'ReasonML LSP is already up to date, skipping'
-else
-  UserCfgLog 'asdf' 'Install ReasonML LSP'
-
-  rm -f "$lsp_path/reason-language-server"
-  wget -O "$lsp_path/rls-linux.zip" \
-    "https://github.com/jaredly/reason-language-server/releases/download/$rlsp_version/rls-linux.zip"
-  unzip -j "$lsp_path/rls-linux.zip" rls-linux/reason-language-server -d "$lsp_path"
-
-  echo "$rlsp_version" > "$lsp_path/reason-language-server-version"
-  rm -f "$lsp_path/rls-linux.zip"
-fi
