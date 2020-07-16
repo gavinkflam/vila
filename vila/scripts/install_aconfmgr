@@ -6,7 +6,7 @@ shopt -s lastpipe
 aconfmgr_path="$HOME/.aconfmgr"
 if [[ -d "$aconfmgr_path" ]]; then
   echo -e '====> Vila: aconfmgr is present, pulling updates'
-  cd "$aconfmgr_path" && git pull
+  cd "$aconfmgr_path" && git pull --rebase
 else
   echo -e '====> Vila: Clone aconfmgr'
   git clone https://github.com/CyberShadow/aconfmgr.git "$aconfmgr_path"

@@ -2,6 +2,9 @@
 AddPackage go
 AddPackage python
 
+# Build Utilities
+AddPackage cmake
+
 # File Utilities
 AddPackage atool
 AddPackage git

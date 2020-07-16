@@ -26,7 +26,7 @@ AddPackage networkmanager
 
 CopyFile /etc/NetworkManager/conf.d/dhcp-client.conf
 CopyFile /etc/NetworkManager/conf.d/dns.conf
-CopyFile /etc/systemd/system/resolved.conf
+CopyFile /etc/systemd/resolved.conf
 
 # Pacman
 AddPackage pacman-contrib

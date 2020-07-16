@@ -11,7 +11,7 @@ function NinahSyncRepo() {
 
   if [[ -d "$makepkg_dir/$dir_name" ]]; then
     echo -e "====> Ninah [Sync $1]: Repository is already cloned, pulling updates"
-    cd "$makepkg_dir/$dir_name" && git pull
+    cd "$makepkg_dir/$dir_name" && git pull --rebase
   else
     echo -e "====> Ninah [Sync $1]: Clone repository"
     cd "$makepkg_dir" && git clone "$1"

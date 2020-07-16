@@ -24,7 +24,7 @@ CopyFile /etc/fonts/local.conf
 # Theming
 AddPackage arc-solid-gtk-theme
 AddPackage breeze-icons
-AddPackage qt5-styleplugins
+IgnorePackage --foreign qt5-styleplugins
 IgnorePackage --foreign xcursor-breeze
 
 # Windows Manager and Tools

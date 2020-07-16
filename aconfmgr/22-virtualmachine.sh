@@ -1,9 +1,12 @@
-# QEMU, libvirt, virtual network
-AddPackage bridge-utils
+# QEMU
+AddPackage qemu-headless
+
+# Audio
+IgnorePackage --foreign apulse
+
+# Virtual Network
 AddPackage dnsmasq
 AddPackage ebtables
-AddPackage libvirt
-AddPackage qemu-headless
 
 # GUI
 AddPackage virt-manager
