@@ -203,6 +203,5 @@ set whichwrap+=<,>,h,l
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spelling
 
-" Turn on spell check for English
 set spelllang=en
-set spell
+set nospell
