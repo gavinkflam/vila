@@ -25,7 +25,7 @@ AddPackage man-db
 AddPackage man-pages
 
 # Network Utilities
-AddPackage bind-tools
+AddPackage bind
 AddPackage inetutils
 AddPackage nmap
 AddPackage wget
