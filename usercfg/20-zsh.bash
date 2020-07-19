@@ -1,14 +1,15 @@
 # Install configurations
 LinkFile '.zprofile'
 LinkFile '.zsh_plugins'
-LinkFile '.zsh_theme'
+LinkFile '.zsh_themes/eighties'
+LinkFile '.zsh_themes/grayscale_dark'
 LinkFile '.zshenv'
 LinkFile '.zshrc'
 
 # zgen
 if [[ -d "$HOME/.zgen" ]]; then
   UserCfgLog 'zsh' 'zgen is present, pulling updates'
-  cd "$HOME/.zgen" && git pull
+  cd "$HOME/.zgen" && git pull --rebase
 else
   UserCfgLog 'zsh' 'Clone zgen'
   git clone https://github.com/tarjoilija/zgen.git "$HOME/.zgen"

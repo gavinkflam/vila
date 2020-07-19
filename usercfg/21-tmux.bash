@@ -7,7 +7,7 @@ tpm_path="$HOME/.tmux/plugins/tpm"
 
 if [[ -d "$tpm_path" ]]; then
   UserCfgLog 'tmux' 'tpm is present, pulling updates'
-  cd "$tpm_path" && git pull
+  cd "$tpm_path" && git pull --rebase
 else
   UserCfgLog 'tmux' 'Clone tpm'
   mkdir -p "$(dirname "$tpm_path")" && \

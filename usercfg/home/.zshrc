@@ -78,8 +78,12 @@ PROMPT_LEAN_COLOR2="244"
 # Load zsh plugins via zgen
 . "$HOME/.zsh_plugins"
 
-# Use base16-grayscale-dark theme
-. "$HOME/.zsh_theme"
+# Theme
+set_zsh_theme() {
+  export ZSH_THEME="$1"
+  . "$HOME/.zsh_themes/${ZSH_THEME-grayscale_dark}"
+}
+. "$HOME/.zsh_themes/${ZSH_THEME-grayscale_dark}"
 
 # Use cyan for zsh-autosuggestions text
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=cyan'
