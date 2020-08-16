@@ -1,4 +1,5 @@
-# Boot Manager
+# Boot Manager - GRUB
+AddPackage efibootmgr
 AddPackage grub
 
 # File System Utilities
