@@ -16,13 +16,12 @@ AddPackage lvm2
 AddPackage dmidecode
 
 # Kernel
-AddPackage linux
+AddPackage linux-lts
 AddPackage linux-firmware
-AddPackage linux-headers
+AddPackage linux-lts-headers
 
 # Network
 AddPackage dhcpcd
-AddPackage netctl
 AddPackage networkmanager
 
 CopyFile /etc/NetworkManager/conf.d/dhcp-client.conf
