@@ -8,18 +8,29 @@ systemdcfg_root="$(cd "$(dirname "$0")" && pwd)"
 # shellcheck source=lib.bash
 source "$systemdcfg_root/lib.bash"
 
+# Connectivity
 EnableService 'bluetooth.service'
-EnableService 'disable-acpi-wakeups.service'
-EnableService 'docker.service'
 EnableService 'NetworkManager.service'
-EnableService 'ntpd.service'
-EnableService 'setterm.service'
 EnableService 'systemd-resolved.service'
-EnableService 'tlp.service'
 
-EnableService 'fstrim.timer'
-EnableService 'pacman-mirrors-refresh.timer'
+# GUI
+EnableService 'setterm.service'
 
+# Security
 DisableService 'sshd.service'
 
+# Time
+EnableService 'ntpd.service'
+
+# Virtualization
+EnableService 'docker.service'
 EnableService 'libvirtd.service'
+
+# MacBook
+EnableService 'disable-acpi-wakeups.service'
+EnableService 'intel-undervolt.service'
+EnableService 'tlp.service'
+
+# Timer
+EnableService 'fstrim.timer'
+EnableService 'pacman-mirrors-refresh.timer'
