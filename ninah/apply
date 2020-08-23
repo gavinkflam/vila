@@ -16,7 +16,6 @@ repositories=(
   https://aur.archlinux.org/xcursor-breeze.git
   https://github.com/gavinkflam/dmenu-git.git
   https://github.com/gavinkflam/dwm.git
-  https://github.com/gavinkflam/hid-apple-plugboard-git-dkms-kestrel.git
   https://github.com/gavinkflam/slstatus-git.git
   https://github.com/gavinkflam/st.git
 )
