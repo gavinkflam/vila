@@ -13,6 +13,9 @@ LinkFile '.gitconfig'
 LinkFile '.gnupg/gpg-agent.conf'
 LinkFile '.gnupg/sshcontrol'
 
+find ~/.gnupg -type f -exec chmod 600 {} \;
+find ~/.gnupg -type d -exec chmod 700 {} \;
+
 # Scripts
 LinkFile 'bin/nmgui'
 LinkFile 'bin/osc52'
