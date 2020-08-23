@@ -3,6 +3,8 @@ IgnoreDir '/etc/ca-certificates'
 IgnoreDir '/etc/ssl/certs'
 
 # Docker
+IgnoreDir '/var/lib/containerd'
+IgnorePath '/etc/cni/net.d'
 IgnorePath '/etc/docker/key.json'
 IgnorePath '/var/lib/docker'
 
@@ -115,6 +117,7 @@ IgnorePath '/etc/systemd/system/dbus-org.bluez.service'
 IgnorePath '/etc/systemd/system/dbus-org.freedesktop.NetworkManager.service'
 IgnorePath '/etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service'
 IgnorePath '/etc/systemd/system/dbus-org.freedesktop.resolve1.service'
+IgnorePath '/etc/systemd/pstore'
 IgnorePath '/var/.updated'
 IgnorePath '/var/lib/systemd/catalog/database'
 IgnorePath '/var/lib/systemd/random-seed'

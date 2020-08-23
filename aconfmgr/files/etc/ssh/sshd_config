@@ -1,9 +1,9 @@
-#     $OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
-# This sshd was compiled with PATH=/bin:/usr/bin:/sbin:/usr/sbin
+#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
+
 # This is the sshd server system-wide configuration file.  See
 # sshd_config(5) for more information.
 
-# This sshd was compiled with PATH=/bin:/usr/bin:/sbin:/usr/sbin
+# This sshd was compiled with PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
 
 # The strategy used for options in the default sshd_config shipped with
 # OpenSSH is to specify options with their default value where
@@ -28,17 +28,17 @@
 
 # Authentication:
 
-LoginGraceTime 1m
-PermitRootLogin no
-StrictModes yes
-MaxAuthTries 6
-MaxSessions 2
+#LoginGraceTime 2m
+#PermitRootLogin prohibit-password
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
 
 PubkeyAuthentication yes
 
 # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
 # but this is overridden so installations will only check .ssh/authorized_keys
-AuthorizedKeysFile %h/.ssh/authorized_keys
+AuthorizedKeysFile	%h/.ssh/authorized_keys
 
 #AuthorizedPrincipalsFile none
 
@@ -60,8 +60,8 @@ PermitEmptyPasswords no
 # Change to no to disable s/key passwords
 ChallengeResponseAuthentication no
 
-# Allow only the users below to login
-AllowUsers gavin
+# Allow only users with ssh group to login
+AllowUserGroups ssh
 
 # Kerberos options
 #KerberosAuthentication no
@@ -82,7 +82,7 @@ AllowUsers gavin
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-UsePAM no
+UsePAM yes
 
 #AllowAgentForwarding yes
 #AllowTcpForwarding yes
@@ -91,7 +91,7 @@ UsePAM no
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
-#PrintMotd yes
+PrintMotd no # pam does that
 #PrintLastLog yes
 #TCPKeepAlive yes
 #PermitUserEnvironment no
@@ -109,31 +109,11 @@ UsePAM no
 #Banner none
 
 # override default of no subsystems
-Subsystem sftp /usr/lib/ssh/sftp-server
-
-# the following are HPN related configuration options
-# tcp receive buffer polling. disable in non autotuning kernels
-#TcpRcvBufPoll yes
-
-# disable hpn performance boosts
-#HPNDisabled no
-
-# buffer size for hpn to non-hpn connections
-#HPNBufferSize 2048
-
-# the following are HPN related configuration options
-# tcp receive buffer polling. disable in non autotuning kernels
-#TcpRcvBufPoll yes
-
-# disable hpn performance boosts
-#HPNDisabled no
-
-# buffer size for hpn to non-hpn connections
-#HPNBufferSize 2048
+Subsystem	sftp	/usr/lib/ssh/sftp-server
 
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
-#     X11Forwarding no
-#     AllowTcpForwarding no
-#     PermitTTY no
-#     ForceCommand cvs server
+#	X11Forwarding no
+#	AllowTcpForwarding no
+#	PermitTTY no
+#	ForceCommand cvs server
