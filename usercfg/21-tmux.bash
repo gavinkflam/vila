@@ -15,10 +15,10 @@ else
 fi
 
 UserCfgLog 'tmux' 'Installing new tmux plugins'
-TMUX_PLUGIN_MANAGER_PATH="$tpm_path" "$tpm_path/bin/install_plugins"
+"$tpm_path/bin/install_plugins"
 
 UserCfgLog 'tmux' 'Updating tmux plugins'
-TMUX_PLUGIN_MANAGER_PATH="$tpm_path" "$tpm_path/bin/update_plugins" all
+"$tpm_path/bin/update_plugins" all
 
 UserCfgLog 'tmux' 'Clean up unused tmux plugins'
-TMUX_PLUGIN_MANAGER_PATH="$tpm_path" "$tpm_path/bin/clean_plugins"
+"$tpm_path/bin/clean_plugins"
