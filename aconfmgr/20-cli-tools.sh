@@ -6,7 +6,6 @@ AddPackage w3m
 AddPackage docker
 AddPackage docker-compose
 IgnorePackage --foreign docker-credential-pass-bin
-IgnorePackage --foreign kubectl-bin
 
 # Editor and Development Tools
 AddPackage neovim

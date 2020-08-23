@@ -12,7 +12,7 @@ IgnorePackage --foreign hid-apple-plugboard-git-dkms
 CopyFile /etc/systemd/logind.conf
 
 # Intel Undervolt
-IgnorePackage --foreign intel-undervolt
+AddPackage intel-undervolt
 CopyFile /etc/intel-undervolt.conf
 
 # Power Saving
