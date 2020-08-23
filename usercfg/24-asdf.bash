@@ -55,8 +55,4 @@ UserCfgLog 'asdf' 'Import NodeJS release key'
 UserCfgLog 'asdf' 'Install tools'
 
 UserCfgAsdfInstallTool 'direnv'
-"$asdf_exe" install java adopt-openjdk-11+28
-"$asdf_exe" install clojure 1.10.1
-"$asdf_exe" install haskell 8.6.3
-"$asdf_exe" install nodejs 12.14.0
-"$asdf_exe" install ruby 2.6.1
+"$asdf_exe" reshim direnv
