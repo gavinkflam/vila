@@ -55,4 +55,5 @@ UserCfgLog 'asdf' 'Import NodeJS release key'
 UserCfgLog 'asdf' 'Install tools'
 
 UserCfgAsdfInstallTool 'direnv'
+LinkFile '.config/direnv/direnvrc'
 "$asdf_exe" reshim direnv
