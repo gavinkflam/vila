@@ -1,0 +1,24 @@
+*filter
+
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+
+# Allow pings from local network
+-A INPUT -p icmp -s 192.168.0.0/16 -j ACCEPT 
+
+# Allow established and related incoming connections
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT 
+
+# Allow loopback
+-A INPUT -i lo -j ACCEPT 
+
+# Allow SSH connections from local network
+-A INPUT -p tcp -s 192.168.0.0/16 --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
+
+# Reject unmatched inputs
+-A INPUT -p tcp -j REJECT --reject-with tcp-reset 
+-A INPUT -p udp -j REJECT --reject-with icmp-port-unreachable 
+-A INPUT -j REJECT --reject-with icmp-proto-unreachable 
+
+COMMIT

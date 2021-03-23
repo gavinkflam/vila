@@ -1,0 +1,22 @@
+#
+# Arch Linux repository mirrorlist
+# Filtered by mirror score from mirror status page
+# Generated on 2021-02-05
+#
+# https://archlinux.org/mirrorlist/?country=HK&country=JP&protocol=https&ip_version=4&use_mirror_status=on
+#
+
+# Hong Kong
+Server = https://mirror-hk.koddos.net/archlinux/$repo/os/$arch
+# Japan
+Server = https://ftp.jaist.ac.jp/pub/Linux/ArchLinux/$repo/os/$arch
+# Hong Kong
+Server = https://mirror.xtom.com.hk/archlinux/$repo/os/$arch
+# Japan
+Server = https://mirrors.cat.net/archlinux/$repo/os/$arch
+# Hong Kong
+Server = https://asia.mirror.pkgbuild.com/$repo/os/$arch
+# Hong Kong
+Server = https://hkg.mirror.rackspace.com/archlinux/$repo/os/$arch
+# Hong Kong
+Server = https://arch-mirror.wtako.net/$repo/os/$arch

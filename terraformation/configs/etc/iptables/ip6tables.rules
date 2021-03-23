@@ -1,0 +1,13 @@
+*filter
+
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [0:0]
+
+# Allow established and related incoming connections
+-A INPUT -m conntrack --ctstate RELATED,ESTABLISHED -j ACCEPT 
+
+# Allow loopback
+-A INPUT -i lo -j ACCEPT 
+
+COMMIT
