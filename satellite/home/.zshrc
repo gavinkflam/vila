@@ -91,11 +91,12 @@ fi
 ########################################
 # asdf version manager
 
-if [[ -d "$HOME/.asdf" ]]; then
-  function asdf () {
-    source $HOME/.asdf/asdf.sh
-    asdf "$@"
-  }
+if [[ -f "$HOME/.asdf/asdf.sh" ]]; then
+  source $HOME/.asdf/asdf.sh
+fi
+
+if [[ ! -d "$HOME/.asdf/shims" ]]; then
+  asdf reshim
 fi
 
 ########################################
