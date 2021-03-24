@@ -66,11 +66,9 @@ RUN \
     -c 'qa!' && \
   # Install asdf and plugins
   git clone https://github.com/asdf-vm/asdf.git $USER_HOME/.asdf --branch v0.8.0 && \
-  $USER_HOME/.asdf/bin/asdf plugin-add direnv && \
-  $USER_HOME/.asdf/bin/asdf plugin-add clojure && \
   $USER_HOME/.asdf/bin/asdf plugin-add java && \
-  $USER_HOME/.asdf/bin/asdf plugin-add nodejs && \
-  $USER_HOME/.asdf/plugins/nodejs/bin/import-release-team-keyring
+  $USER_HOME/.asdf/bin/asdf plugin-add clojure https://github.com/asdf-community/asdf-clojure.git && \
+  $USER_HOME/.asdf/bin/asdf plugin-add nodejs
 
 USER root
 COPY entrypoint.sh /opt/styx/entrypoint.sh
