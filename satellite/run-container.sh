@@ -12,6 +12,8 @@ docker run -d \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v $HOME/dev:/home/dev/dev \
   -v $HOME/.ssh/authorized_keys:/home/dev/.ssh/authorized_keys \
+  -v styx-asdf-installs:/home/dev/.asdf/installs \
+  -v styx-maven-repository:/home/dev/.m2/repository \
   -v /etc/ssh/ssh_host_dsa_key:/etc/ssh/ssh_host_dsa_key \
   -v /etc/ssh/ssh_host_dsa_key.pub:/etc/ssh/ssh_host_dsa_key.pub \
   -v /etc/ssh/ssh_host_ecdsa_key:/etc/ssh/ssh_host_ecdsa_key \
