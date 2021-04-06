@@ -26,6 +26,10 @@ styx_user_home() {
   getent passwd $(logname) | cut -d: -f6
 }
 
+styx_user_sudo() {
+  sudo -u $(logname) $@
+}
+
 styx_array_minus() {
   echo "$1 $2 $2" | tr ' ' '\n' | sort | uniq -u
 }
@@ -75,7 +79,7 @@ styx_configure_network() {
   styx_install_config_file /etc/iwd/main.conf
   styx_install_config_file /etc/systemd/resolved.conf
   styx_enable_service iwd.service
-  
+
   ## systemd-resolved
   ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
   styx_enable_service systemd-resolved.service
@@ -114,10 +118,14 @@ styx_configure_packages() {
     grub efibootmgr lvm2
     # Connectivity
     iwd
+    # Build
+    base-devel
     # Other tools
     git man-db vim openssh docker
     # Security
     rkhunter
+    # cryptboot
+    efitools sbsigntools
   )
   pacman -Syu --needed "${packages[@]}"
 }
@@ -136,7 +144,7 @@ styx_configure_sshd() {
   styx_log 'Configure SSHD' ''
 
   styx_install_config_file /etc/ssh/sshd_config
-  
+
   if [[ -f /etc/ssh/ssh_host_rsa_key.pub ]]; then
     styx_log '>Generate SSHD host keys' 'SSHD host keys found, skipping'
   else
@@ -160,6 +168,61 @@ styx_configure_docker() {
   usermod -a -G docker $(logname)
 }
 
+styx_configure_cryptboot() {
+  styx_log 'Configure cryptboot' ''
+  local cryptboot_path="$(styx_user_home)/.styx/cryptboot"
+
+  if [[ -d $cryptboot_path ]]; then
+    styx_log '>Clone repository' 'Repository found, skipping'
+  else
+    styx_log '>Clone repository' 'Repository not found, cloning'
+    mkdir -p $cryptboot_path
+    git clone https://github.com/gavinkflam/cryptboot.git $cryptboot_path
+  fi
+
+  pushd $cryptboot_path
+
+  styx_log '>Fetch updates' ''
+  git pull --rebase
+
+  # Fix ownership
+  chown -R "$(logname):$(logname)" $cryptboot_path
+
+  local pkg_path="$(styx_user_sudo makepkg --packagelist)"
+  if [[ -f "$pkg_path" ]]; then
+    styx_log '>Build package' 'Package found, skipping'
+  else
+    styx_log '>Build package' 'Package not found, building'
+    styx_user_sudo makepkg
+  fi
+
+  styx_log '>Install package' ''
+  pacman -U "$pkg_path" --needed --noconfirm
+  popd
+
+  # Create EFI key
+  if [[ -f "/boot/efikeys/NAME" ]]; then
+    styx_log '>Create EFI key' 'EFI key found, skipping'
+  else
+    styx_log '>Create EFI key' 'EFI key not found, creating'
+    echo -e 'ArchLinux' | cryptboot-efikeys create
+  fi
+
+  # Enroll EFI key
+  if [[ $(cryptboot-efikeys list) =~ 'ArchLinux' ]]; then
+    styx_log '>Enroll EFI key' 'EFI key enrolled, skipping'
+  else
+    styx_log '>Enroll EFI key' 'EFI key not enrolled, enrolling'
+    cryptboot-efikeys enroll
+
+    styx_log '>Enroll EFI key' 'Update and sign GRUB boot loader'
+    cryptboot update-grub
+  fi
+
+  # Install pacman hook
+  styx_install_config_file /etc/pacman.d/hooks/98-secureboot.hook
+}
+
 styx_configure_rkhunter() {
   styx_log 'Configure rkhunter' ''
 
@@ -176,5 +239,6 @@ styx_configure_network &&
   styx_configure_firewall &&
   styx_configure_sshd &&
   styx_configure_docker &&
+  styx_configure_cryptboot &&
   styx_configure_rkhunter &&
   styx_log 'Styx' 'Done configuring, enjoy!'
