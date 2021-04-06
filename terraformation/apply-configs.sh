@@ -75,6 +75,10 @@ styx_enable_service() {
 styx_configure_network() {
   styx_log 'Configure network' ''
 
+  ## dhcpcd
+  styx_enable_service dhcpcd@eno1.service
+  styx_install_config_file /etc/systemd/system/dhcpcd@.service.d/no-wait.conf
+
   ## iwd
   styx_install_config_file /etc/iwd/main.conf
   styx_install_config_file /etc/systemd/resolved.conf
@@ -117,7 +121,7 @@ styx_configure_packages() {
     # Boot
     grub efibootmgr lvm2
     # Connectivity
-    iwd
+    dhcpcd iwd
     # Build
     base-devel
     # Other tools

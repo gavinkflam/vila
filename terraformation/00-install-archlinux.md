@@ -69,7 +69,7 @@ Number  Start  (sector)    End (sector)  Size        Code  Name
 ## Installation
 
 - Install essential packages
-  - `pacstrap /mnt base linux linux-firmware intel-ucode grub efibootmgr lvm2 iwd base-devel man-db vim`
+  - `pacstrap /mnt base linux linux-firmware intel-ucode grub efibootmgr lvm2 dhcpcd iwd base-devel man-db vim`
 - Generate fstab entries for the currently mounted partitions
   - `genfstab -U /mnt >> /mnt/etc/fstab`
 - Change root into the new system
