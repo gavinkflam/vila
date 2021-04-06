@@ -90,7 +90,7 @@ styx_configure_network() {
 }
 
 styx_verify_network() {
-  if [[ $(ping -c1 -W5 google.com 2>&1) =~ '1 received' ]]; then
+  if [[ $(ping -c1 -W5 quad9.net 2>&1) =~ '1 received' ]]; then
     styx_log 'Verify network' 'Connected to the internet'
     return 0
   else
