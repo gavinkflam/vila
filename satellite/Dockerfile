@@ -69,6 +69,7 @@ RUN \
   $USER_HOME/.asdf/bin/asdf plugin-add java && \
   $USER_HOME/.asdf/bin/asdf plugin-add clojure https://github.com/asdf-community/asdf-clojure.git && \
   $USER_HOME/.asdf/bin/asdf plugin-add nodejs && \
+  $USER_HOME/.asdf/bin/asdf plugin-add maven && \
   # Create empty directories for volumes
   mkdir -p $USER_HOME/.asdf/installs && \
   mkdir -p $USER_HOME/.m2/repository
