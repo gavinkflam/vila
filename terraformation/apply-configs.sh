@@ -105,16 +105,21 @@ styx_configure_pacman_mirrors() {
 }
 
 styx_configure_packages() {
-  local packages='linux linux-firmware intel-ucode grub efibootmgr lvm2 iwd man-db man-pages texinfo vim openssh docker rkhunter'
-  local missing_packages=$(styx_array_minus "$packages" "$(pacman -Qqe)")
+  styx_log 'Configure packages' 'Install packages and perform system upgrade'
 
-  if [[ -n $missing_packages ]]; then
-    styx_log 'Configure packages' "Install missing packages ($missing_packages) and perform system upgrade"
-    pacman -Syu $missing_packages
-  else
-    styx_log 'Configure packages' 'No missing packages found, perform system upgrade'
-    pacman -Syu
-  fi
+  local packages=(
+    # Kernel
+    linux linux-firmware intel-ucode
+    # Boot
+    grub efibootmgr lvm2
+    # Connectivity
+    iwd
+    # Other tools
+    git man-db vim openssh docker
+    # Security
+    rkhunter
+  )
+  pacman -Syu --needed "${packages[@]}"
 }
 
 styx_configure_firewall() {
