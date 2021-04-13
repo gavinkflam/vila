@@ -22,6 +22,11 @@ RUN \
     openssh \
     # tmux, zsh, neovim
     tmux zsh neovim python-pynvim the_silver_searcher \
+    # OpenJDK
+    ## https://blog.adoptopenjdk.net/2021/01/prerequisites-for-font-support-in-adoptopenjdk/
+    freetype2 \
+    fontconfig \
+    ttf-dejavu \
     # Clojure
     rlwrap \
     # asdf-java
